@@ -1,0 +1,196 @@
+{
+  "welcome": "Davom etish uchun shaharni tanlang:",
+  "select_language": "Iltimos, tilni tanlang:",
+  "language_selected": "Til o'zbekchaga o'zgartirildi",
+  "change_language": "🌐 Tilni o'zgartirish",
+  "profile": "Profil ma'lumotlari:\nID: ${id}\nIsmi: ${name}",
+  "help": "Mavjud buyruqlar:\n/start - Botni ishga tushirish\n/profile - Profilni ko'rish\n/register - Ro'yxatdan o'tish\n/language - Tilni o'zgartirish\n/menu - Buyruqlar menyusini ko'rsatish",
+  "language_changed": "Til o'zbekchaga o'zgartirildi",
+  "register": "Iltimos, aloqa ma'lumotlaringizni baham ko'rish orqali ro'yxatdan o'ting",
+  "share_contact": "Kontaktni ulashish",
+  "contact_received": "Rahmat! ${phone} telefon raqamingiz qayd etildi",
+  "already_registered": "Siz allaqachon ${phone} telefon raqami bilan ro'yxatdan o'tgansiz",
+  "registration_required": "Iltimos, ushbu funksiyadan foydalanish uchun avval ro'yxatdan o'ting",
+  "unknown_command": "Kechirasiz, men bu buyruqni tushunmayman.",
+  "error_occurred": "Xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
+  "language_invalid": "Iltimos, yaroqli til kodini kiriting: en yoki ru.",
+  "profile_message": "Sizning profil ma'lumotlaringiz:",
+  "profile_id": "Sizning ID: ${id}",
+  "profile_name": "Sizning ismingiz: ${name}",
+  "back_to_main": "Asosiy menyuga qaytish",
+  "city_selected": "Siz ${city} ni tanladingiz",
+  "bot_restarted": "Bot qayta ishga tushirildi. Boshidan boshlaymiz...",
+  "tashkent": "Toshkent",
+  "samarkand": "Samarqand",
+  "bukhara": "Buxoro",
+  "khiva": "Xiva",
+  "andijan": "Andijon",
+  "fergana": "Farg'ona",
+  "main_menu": "Asosiy menyu",
+  "order_flow_placeholder": "Bu yerda buyurtma jarayoni amalga oshiriladi",
+  "my_orders_placeholder": "Bu yerda sizning buyurtmalaringiz ko'rsatiladi",
+  "cashback_placeholder": "Bu yerda keshbek haqida ma'lumot ko'rsatiladi",
+  "feedback_placeholder": "Bu yerda fikr-mulohaza shakli ko'rsatiladi",
+  "join_team_placeholder": "Ahil jamoamizda ishlashga taklif qilamiz! Telegramdan chiqmay, shu yerning o'zida anketani to'ldirish uchun quyidagi tugmani bosing.",
+  "promotions_placeholder": "Aktsiyalar bu yerda ko'rsatiladi",
+  "command_menu": "Buyruqlar menyusi",
+  "goTo": "O'tish",
+  "mainKeyboard": {
+    "startOrder": "🛍 Buyurtma",
+    "myOrders": "📖 Mening buyurtmalarim",
+    "cashback": "💸 Keshbek",
+    "callback": "☎️ Qayta qo'ng'iroq",
+    "changeSettings": "⚙️Sozlash ℹ️ Ma'lumotlar",
+    "joinTeam": "🙋🏻‍♂️ Jamoaga qo'shiling",
+    "sale": "🔥 Aksiyalar",
+    "commandMenu": "📋 Menyu"
+  },
+  "menu": {
+    "title": "Menyu",
+    "change_name": "Ismni o'zgartirish",
+    "change_number": "Raqamni o'zgartirish",
+    "change_city": "Shaharni o'zgartirish",
+    "change_language": "Tilni o'zgartirish",
+    "branch_info": "Filiallar haqida ma'lumotlar",
+    "public_offer": "Ommaviy taklif",
+    "back": "⬅️ Ortga"
+  },
+  "changeName": {
+    "enter_name": "Iltimos, ismingiz va familiyangizni kiriting.",
+    "back": "⬅️ Ortga",
+    "success": "Ismingiz muvaffaqiyatli o'zgartirildi: ${name}"
+  },
+  "changeNumber": {
+    "enter_number": "Telefon raqamingizni yuborish yoki kiriting: +998 ** *** ****",
+    "back": "⬅️ Ortga",
+    "my_number": "📱 Mening raqamim",
+    "current_number": "Sizning joriy raqamingiz: ${phone}",
+    "success": "Telefon raqamingiz muvaffaqiyatli o'zgartirildi: ${phone}",
+    "invalid_format": "Noto'g'ri raqam formati. Iltimos, raqamni quyidagi formatda kiriting: +998 ** *** ****"
+  },
+  "not_specified": "Ko'rsatilmagan",
+  "changeCity": {
+    "select_city": "Iltimos, shaharni tanlang:",
+    "back": "⬅️ Ortga",
+    "success": "Shahar muvaffaqiyatli o'zgartirildi: ${city}",
+    "no_cities": "Afsuski, shaharlar ro'yxati bo'sh. Iltimos, keyinroq qayta urinib ko'ring."
+  },
+  "changeLanguage": {
+    "select_language": "Tilni tanlang:",
+    "back": "⬅️ Orqaga",
+    "success": "Til muvaffaqiyatli o'zgartirildi",
+    "languages": {
+      "uz": "🇺🇿 O'zbekcha",
+      "ru": "🇷🇺 Русский",
+      "en": "🇬🇧 English"
+    }
+  },
+  "branchInfo": {
+    "select_branch": "Iltimos, ma'lumotlarni ko'rish uchun filial tanlang:",
+    "no_branches": "Tanlangan shaharda filiallar topilmadi.",
+    "branch_details": "${name}\n\n${desc}"
+  },
+  "feedback": {
+    "text": "<b>Agar siz bizga yozishni yoki fikr qoldirishni istasangiz, biz xursand bo'lamiz.</b>",
+    "review": "✍️ Fikr bildirish",
+    "writeUs": "💬 Biz bilan bog'lanish",
+    "writeUsText": "Agar sizda savollar yoki takliflar bo'lsa, iltimos biz bilan bog'laning.",
+    "back": "⬅️ Orqaga"
+  },
+  "review": {
+    "title": "✅ Les Ailes xizmati sharhi.",
+    "product_rating": "<b>Mahsulot</b>\nIltimos, mahsulotlarimiz sifatini baholang:",
+    "service_rating": "<b>Xizmat</b>\nIltimos, xizmatimizni baholang:",
+    "delivery_rating": "<b>Yetkazib berish</b>\nIltimos, yetkazib berishimizni baholang:",
+    "rating_received": "Baholanganingiz uchun rahmat!",
+    "product_selected": "<b>Mahsulot</b>\nSiz mahsulotlarimizni baholadingiz: ${rating} ⭐",
+    "service_selected": "<b>Xizmat</b>\nSiz xizmatimizni baholadingiz: ${rating} ⭐",
+    "delivery_selected": "<b>Yetkazib berish</b>\nSiz yetkazib berishimizni baholadingiz: ${rating} ⭐",
+    "thank_you": "<b>Fikringiz uchun rahmat!</b>\n\nSizning baholaringiz:\nMahsulot: ${product} ⭐\nXizmat: ${service} ⭐\nYetkazib berish: ${delivery} ⭐\n\nTanlovingiz uchun rahmat va biz ishimizni 5 balli tizimda baholashingizdan mamnun bo'lamiz.",
+    "please_use_buttons": "Iltimos, baholash uchun tugmalardan foydalaning.",
+    "explanation": "Tanlovingiz uchun rahmat va biz ishimizni 5 balli tizimda baholashingizdan mamnun bo'lamiz.",
+    "confirm": "✅ Tasdiqlash",
+    "review_completed": "Rahmat! Fikringiz tasdiqlandi.",
+    "can_confirm": "Iltimos, baholaringizni tasdiqlang yoki orqaga qayting."
+  },
+  "startOrder": {
+    "firstText": "<b>O'zingiz</b> 🙋‍♂️ olib keting yoki <b>yetkazib berishni</b> 🚙 tanlang",
+    "back": "⬅️ Orqaga",
+    "deliveryType": {
+      "deliver": "🚙 Yetkazib berish",
+      "pickup": "🏃 Olib ketish"
+    },
+    "delivery": {
+      "text": "<b>Buyurtmani qayerga yetkazish kerak 🚙?\nQaerdaligingizni jo'natsangiz 📍, sizga eng yaqin filial va yetkazib berish narxini aniqlaymiz 💵.</b>",
+      "myAddress": "🗺 Manzillarim",
+      "noAddressFound": "Sizda saqlangan manzillar yo'q",
+      "error": "Iltimos, geolokatsiyangizni baham ko'ring",
+      "back": "⬅️ Orqaga",
+      "sendLocation": "📍 Lokatsiyani jo'natish",
+      "locationReceived": "Rahmat! Lokatsiyangiz qabul qilindi. Yetkazib berish narxini hisoblamoqdamiz...",
+      "addNewAddress": "Yangi manzil qo'shish uchun lokatsiyangizni baham ko'rishingiz mumkin",
+      "savedAddress": "Sizda saqlangan manzil bor:\n${address}",
+      "useThisAddress": "📍 Shu manzilni ishlatish"
+    },
+    "pickup": {
+      "text": "<b>Qayerdasiz 👀? Lokatsiyangizni jo'nating 📍, va biz sizga eng yaqin filiallarni aniqlaymiz</b>",
+      "back": "⬅️ Orqaga",
+      "orderHere": "Bu yerda buyurtma berish 🌐",
+      "getLocation": "📍 Eng yaqin filialni aniqlash",
+      "selectBranch": "Filialni tanlang",
+      "orderHereText": "Lokatsiyangiz bilan buyurtma qiling - https://lesailes.uz/",
+      "locationRequest": "📍 Iltimos, eng yaqin filiallarni aniqlashimiz uchun geolokatsiyangizni baham ko'ring",
+      "locationReceived": "Rahmat! Koordinatalaringiz qabul qilindi. Eng yaqin filialni izlamoqdamiz...",
+      "processingLocation": "Lokatsiyangizni taqdim qilganingiz uchun rahmat! Buyurtma berish tafsilotlarini aniqlashtirish uchun siz bilan bog'lanamiz."
+    },
+    "location": {
+      "request": "📍 Geolokatsiyani jo'natish",
+      "processing": "Geolokatsiyangizni qayta ishlamoqdamiz...",
+      "success": "Geolokatsiya muvaffaqiyatli qabul qilindi: ${latitude}, ${longitude}",
+      "findingBranch": "Lokatsiyangiz asosida eng yaqin filialni izlamoqdamiz...",
+      "addressConfirmation": "Manzilingiz: ${address}",
+      "confirmLocation": "Tasdiqlang yoki lokatsiyangizni qayta jo'nating 📍",
+      "confirm": "✅ Tasdiqlash",
+      "sendAgain": "📍 Lokatsiyani qayta jo'natish",
+      "back": "⬅️ Ortga"
+    },
+    "redirecting_to_categories": "Ajoyib! Endi mahsulot kategoriyasini tanlang:"
+  },
+  "loading": "Yuklanmoqda...",
+  "error": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
+  "back": "⬅️ Orqaga",
+  "categories": {
+    "title": "<b>Mahsulot kategoriyalari</b>",
+    "empty": "Hozirda mavjud kategoriyalar yo'q.",
+    "selected": "Siz tanladingiz: ${categoryName}",
+    "not_found": "Kategoriya topilmadi. Iltimos, klaviaturadan tanlang.",
+    "view_products": "Mahsulotlarni ko'rish",
+    "products_coming_soon": "Ushbu kategoriya mahsulotlari tez orada mavjud bo'ladi!",
+    "back": "⬅️ Orqaga"
+  },
+  "products": {
+    "title": "<b>Mahsulotlar</b>",
+    "select": "Nimadan boshlaymiz?",
+    "back": "⬅️ Orqaga",
+    "price": "Narx",
+    "add_to_cart": "📥 Savatga qo'shish ✅",
+    "product_added_to_cart": "Mahsulot savatga qo'shildi!",
+    "added_to_cart": "Savatga qo'shildi!",
+    "no_category": "Kategoriya tanlanmagan",
+    "empty": "Ushbu kategoriyada mahsulotlar mavjud emas",
+    "not_found": "Mahsulot topilmadi",
+    "quantity": "Miqdori",
+    "product_added_success": "Mahsulot \"${productName}\" muvaffaqiyatli savatga qo'shildi ✅",
+    "related_products": "Sizga quyidagilar ham yoqishi mumkin:",
+    "continue": "Davom etamizmi?"
+  },
+  "newOrder": {
+    "welcome": "Mahsulot tanlang:",
+    "addToCart": "Savatga qo'shish",
+    "price": "Narxi",
+    "help": "Mahsulotlarni tanlash uchun tugmalardan foydalaning",
+    "itemAdded": "Mahsulot savatga qo'shildi"
+  },
+  "dismiss": "Yopish",
+  "skip": "O'tkazib yuborish"
+} 
