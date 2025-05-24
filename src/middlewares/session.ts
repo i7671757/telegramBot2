@@ -2,6 +2,13 @@ import { session } from 'telegraf';
 import fs from 'fs';
 import { config } from '../config';
 
+// Define the session structure
+interface SessionData {
+  language: string;
+  step: string | null;
+  data: Record<string, any>;
+}
+
 // Ensure session file exists
 const ensureSessionFile = () => {
   if (!fs.existsSync(config.sessionPath)) {
@@ -32,7 +39,7 @@ const fileStore = {
 
 export const sessionMiddleware = session({
   store: fileStore,
-  defaultSession: () => ({
+  defaultSession: (): SessionData => ({
     language: 'en',
     step: null,
     data: {},

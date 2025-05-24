@@ -2,8 +2,13 @@ import { Scenes, Markup } from 'telegraf';
 import type { MyContext } from '../config/context';
 import { fetchProductsByCategory, getProductName, getProductDescription, getProductImageUrl, checkImageAvailability, fetchRelatedProducts } from '../utils/products';
 import type { Product } from '../utils/products';
+import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
+const { match } = require("telegraf-i18n");
 
 export const productsScene = new Scenes.BaseScene<MyContext>('products');
+
+// Регистрируем глобальные обработчики команд для этой сцены
+registerSceneCommandHandlers(productsScene, 'Products');
 
 productsScene.enter(async (ctx) => {
   try {
@@ -64,8 +69,10 @@ async function displayAllProducts(
   // Create buttons for products
   const productButtons: any[][] = [];
   
-  // Add back button at the top
-  productButtons.push([ctx.i18n.t('back') || 'Back']);
+  // Add back button and cart button at the top
+  const backButtonText = ctx.i18n.t('back') || 'Back';
+  const cartButtonText = ctx.i18n.t('cart_button') || 'Cart';
+  productButtons.push([backButtonText, cartButtonText]);
   
   // Create product buttons in 2 columns
   const formattedProducts = products.map(product => {
@@ -152,11 +159,58 @@ productsScene.action(/add_to_cart_(\d+)/, async (ctx) => {
   
   await ctx.answerCbQuery(ctx.i18n.t('products.added_to_cart') || 'Added to cart!');
   
-  // Here you would implement adding the product to cart with quantity
-  // Get product name
+  // Add product to cart with quantity
   const selectedProduct = ctx.session.selectedProduct;
   const language = ctx.i18n.locale();
   const productName = selectedProduct ? getProductName(selectedProduct, language) : '';
+  
+  if (selectedProduct) {
+    const userId = ctx.from?.id;
+    if (userId) {
+      console.log(`Adding product to cart for user ${userId}: ${productName} (ID: ${selectedProduct.id})`);
+      
+      // Import cart functions from categories scene
+      const { getOrCreateCart } = await import('./categories.scene');
+      const cart = getOrCreateCart(userId);
+      
+      console.log(`Current cart items before adding: ${cart.items.length}`);
+      
+      // Check if product already exists in cart
+      const existingItem = cart.items.find(item => item.id === selectedProduct.id);
+      
+      if (existingItem) {
+        // Update quantity
+        console.log(`Product already in cart, updating quantity from ${existingItem.quantity} to ${existingItem.quantity + quantity}`);
+        existingItem.quantity += quantity;
+      } else {
+        // Add new item to cart
+        console.log(`Adding new item to cart: ${productName} x${quantity} at ${selectedProduct.price} each`);
+        cart.items.push({
+          id: selectedProduct.id,
+          name: productName,
+          price: selectedProduct.price,
+          quantity: quantity
+        });
+      }
+      
+      // Recalculate total
+      cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      console.log(`Cart updated. Total items: ${cart.items.length}, Total price: ${cart.total}`);
+    } else {
+      console.log('No user ID found, cannot add to cart');
+    }
+  } else {
+    console.log('No selected product found, cannot add to cart');
+  }
+  
+  // Delete the product message (колонка с товаром)
+  try {
+    if (ctx.callbackQuery && ctx.callbackQuery.message) {
+      await ctx.deleteMessage(ctx.callbackQuery.message.message_id);
+    }
+  } catch (error) {
+    console.error('Error deleting product message:', error);
+  }
   
   // Show success message with product name using i18n
   await ctx.reply(
@@ -200,6 +254,11 @@ productsScene.on('text', async (ctx) => {
   const messageText = ctx.message.text as string;
   console.log(`Received text in products scene: "${messageText}"`);
   
+  // Пропускаем команды - они должны обрабатываться обработчиками команд сцены
+  if (shouldSkipCommand(messageText, 'Products')) {
+    return;
+  }
+  
   // Ensure session exists
   if (!ctx.session) {
     ctx.session = {};
@@ -228,6 +287,46 @@ productsScene.on('text', async (ctx) => {
     return;
   }
   
+  // Handle cart button
+  if (messageText === ctx.i18n.t('cart_button') || 
+      messageText.includes('🛒') ||
+      messageText.includes('Корзина') ||
+      messageText.includes('Cart') ||
+      messageText.includes('Savat')) {
+    console.log('Cart button detected in products scene');
+    // Set previous scene for back navigation
+    ctx.session.previousScene = 'products';
+    await showCart(ctx);
+    return;
+  }
+  
+  // Handle clear cart
+  if (messageText === ctx.i18n.t('cart.clear') || 
+      messageText.includes('Очистить') ||
+      messageText.includes('Clear') ||
+      messageText.includes('Tozalash')) {
+    console.log('Clear cart button pressed');
+    const userId = ctx.from?.id;
+    if (userId) {
+      // Import cart functions from categories scene
+      const { userCarts } = await import('./categories.scene');
+      userCarts.set(userId, { items: [], total: 0 });
+      await ctx.reply(ctx.i18n.t('cart.cleared') || 'Корзина очищена');
+      await showCart(ctx);
+    }
+    return;
+  }
+
+  // Handle checkout
+  if (messageText === ctx.i18n.t('cart.checkout') || 
+      messageText.includes('Оформить') ||
+      messageText.includes('Checkout') ||
+      messageText.includes('Buyurtma')) {
+    console.log('Checkout button pressed');
+    await ctx.reply(ctx.i18n.t('cart.checkout_message') || 'Функция оформления заказа будет добавлена позже');
+    return;
+  }
+
   // Handle back button with more specific detection and logging
   if (messageText === ctx.i18n.t('back') || 
       messageText.includes(ctx.i18n.t('back')) ||
@@ -259,29 +358,57 @@ productsScene.on('text', async (ctx) => {
       // Store as the current selected product
       ctx.session.selectedProduct = selectedRelatedProduct;
       
-      // Initialize product quantity
+      // Initialize product quantity - always reset to 1 for related product selection
       if (!ctx.session.productQuantities) {
         ctx.session.productQuantities = {};
       }
       
       const safeProductId = String(selectedRelatedProduct.id);
       
-      if (!ctx.session.productQuantities[safeProductId]) {
-        ctx.session.productQuantities[safeProductId] = 1;
-      }
+      // Always reset quantity to 1 for related products (they are auto-added to cart)
+      ctx.session.productQuantities[safeProductId] = 1;
       
       // Get product name for the success message
       const productName = getProductName(selectedRelatedProduct, language);
       
       // Add the product to cart with quantity 1
-      // In a real app, this would update a cart data structure
-      // For this bot, simply storing the product in session is sufficient
-      
-      // Simulate adding to cart action
       console.log(`Auto adding to cart: product ID ${safeProductId}`);
       
-      // This would be where you'd update any cart total or add to a cart array
-      // For demonstration, we'll just show the success message as if it was added
+      // Actually add the product to cart
+      const userId = ctx.from?.id;
+      if (userId) {
+        console.log(`Adding related product to cart for user ${userId}: ${productName} (ID: ${selectedRelatedProduct.id})`);
+        
+        // Import cart functions from categories scene
+        const { getOrCreateCart } = await import('./categories.scene');
+        const cart = getOrCreateCart(userId);
+        
+        console.log(`Current cart items before adding related product: ${cart.items.length}`);
+        
+        // Check if product already exists in cart
+        const existingItem = cart.items.find(item => item.id === selectedRelatedProduct.id);
+        
+        if (existingItem) {
+          // Update quantity
+          console.log(`Related product already in cart, updating quantity from ${existingItem.quantity} to ${existingItem.quantity + 1}`);
+          existingItem.quantity += 1;
+        } else {
+          // Add new item to cart
+          console.log(`Adding new related product to cart: ${productName} x1 at ${selectedRelatedProduct.price} each`);
+          cart.items.push({
+            id: selectedRelatedProduct.id,
+            name: productName,
+            price: selectedRelatedProduct.price,
+            quantity: 1
+          });
+        }
+        
+        // Recalculate total
+        cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+        console.log(`Cart updated after adding related product. Total items: ${cart.items.length}, Total price: ${cart.total}`);
+      } else {
+        console.log('No user ID found, cannot add related product to cart');
+      }
       
       // Show success message with product name using i18n
       await ctx.reply(
@@ -320,7 +447,7 @@ productsScene.on('text', async (ctx) => {
     // Save selected product in session
     ctx.session.selectedProduct = selectedProduct;
     
-    // Initialize product quantity if not set
+    // Initialize product quantity - always reset to 1 for new product selection
     if (!ctx.session.productQuantities) {
       ctx.session.productQuantities = {};
     }
@@ -328,12 +455,11 @@ productsScene.on('text', async (ctx) => {
     // Use string ID for product
     const safeProductId = String(selectedProduct.id);
     
-    if (!ctx.session.productQuantities[safeProductId]) {
-      ctx.session.productQuantities[safeProductId] = 1;
-    }
+    // Always reset quantity to 1 when selecting a product (fresh selection)
+    ctx.session.productQuantities[safeProductId] = 1;
     
-    // Get current quantity for this product
-    const currentQuantity = ctx.session.productQuantities[safeProductId] || 1;
+    // Get current quantity for this product (will always be 1 for new selection)
+    const currentQuantity = ctx.session.productQuantities[safeProductId];
     
     // Display product info
     const productName = getProductName(selectedProduct, language);
@@ -616,8 +742,10 @@ async function displayProductsWithCustomMessage(
   // Create buttons for products
   const productButtons: any[][] = [];
   
-  // Add back button at the top
-  productButtons.push([ctx.i18n.t('back') || 'Back']);
+  // Add back button and cart button at the top
+  const backButtonText = ctx.i18n.t('back') || 'Back';
+  const cartButtonText = ctx.i18n.t('cart_button') || 'Cart';
+  productButtons.push([backButtonText, cartButtonText]);
   
   // Create product buttons in 2 columns
   const formattedProducts: string[] = [];
@@ -650,3 +778,317 @@ async function displayProductsWithCustomMessage(
   // Show products with the custom message
   await ctx.replyWithHTML(message, keyboard);
 } 
+
+
+productsScene.hears(match('feedback.review'), async (ctx) => {
+  // Enter the review scene
+  await ctx.scene.enter('review');
+});
+
+productsScene.hears(match('feedback.back'), async (ctx) => {
+  await ctx.scene.enter('mainMenu');
+});
+
+productsScene.command('feedback', async (ctx) => {
+console.log('Feedback command received in callback scene, reloading the scene');
+await ctx.scene.reenter(); // Reenter the same scene to reset it
+});
+
+// Add a start command handler
+productsScene.command('start', async (ctx) => {
+console.log('Callback scene: /start command received, restarting bot');
+
+// Exit the current scene
+await ctx.scene.leave();
+
+// Send a restart message
+await ctx.reply(ctx.i18n.t('bot_restarted') || 'Bot has been restarted. Starting from the beginning...');
+
+// Go to the start scene (formerly language scene)
+return ctx.scene.enter('start');
+});
+
+// Show cart contents
+async function showCart(ctx: MyContext) {
+  try {
+    console.log('showCart function called in products scene');
+    const userId = ctx.from?.id;
+    if (!userId) {
+      console.log('No user ID found in showCart');
+      await ctx.reply(ctx.i18n.t('error') || 'User ID not found');
+      return;
+    }
+
+    console.log(`Showing cart for user ${userId}`);
+    
+    // Import cart functions from categories scene
+    const { getOrCreateCart } = await import('./categories.scene');
+    const cart = getOrCreateCart(userId);
+
+    console.log(`Cart has ${cart.items.length} items`);
+
+    if (cart.items.length === 0) {
+      console.log('Cart is empty, showing empty message');
+      await ctx.reply(
+        ctx.i18n.t('cart.empty') || 'Ваша корзина пуста',
+        Markup.keyboard([
+          [ctx.i18n.t('back') || 'Back']
+        ]).resize()
+      );
+      return;
+    }
+
+    // Build cart message with numbered items
+    let cartMessage = `🛒 <b>${ctx.i18n.t('cart.title') || 'Ваша корзина'}:</b>\n\n`;
+
+    // Create inline keyboard for each item
+    const inlineButtons: any[][] = [];
+
+    cart.items.forEach((cartItem, index) => {
+      const itemTotal = cartItem.price * cartItem.quantity;
+      const formattedItemTotal = new Intl.NumberFormat('ru-RU').format(itemTotal);
+      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} сум\n\n`;
+      
+      // Create inline buttons for this item: [❌] [1] [-] [+]
+      inlineButtons.push([
+        Markup.button.callback(`❌ ${cartItem.name}`, `remove_item_${cartItem.id}`)
+      ]);
+      inlineButtons.push([
+        Markup.button.callback('-', `decrease_cart_${cartItem.id}`),
+        Markup.button.callback(`${cartItem.quantity}`, `item_quantity_${cartItem.id}`),
+        Markup.button.callback('+', `increase_cart_${cartItem.id}`)
+      ]);
+    });
+
+    // Recalculate cart total
+    cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
+    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} сум</b>`;
+
+    // Add action buttons at the bottom
+    inlineButtons.push([
+      Markup.button.callback(ctx.i18n.t('cart.clear') || 'Очистить корзину', 'clear_cart'),
+      Markup.button.callback(ctx.i18n.t('cart.checkout') || 'Оформить заказ', 'checkout_cart')
+    ]);
+
+    // Create regular keyboard for back button
+    const regularKeyboard = Markup.keyboard([
+      [ctx.i18n.t('back') || 'Back']
+    ]).resize();
+
+    // Send message with inline keyboard
+    await ctx.replyWithHTML(cartMessage, {
+      reply_markup: {
+        inline_keyboard: inlineButtons
+      }
+    });
+
+    // Send back button separately
+    await ctx.reply(ctx.i18n.t('cart.back_message') || 'Используйте кнопку ниже для возврата:', regularKeyboard);
+
+  } catch (error) {
+    console.error('Error showing cart:', error);
+    await ctx.reply(ctx.i18n.t('error') || 'Произошла ошибка при отображении корзины');
+  }
+}
+
+// Function to update cart message without recreating it
+async function updateCartMessage(ctx: MyContext) {
+  try {
+    const userId = ctx.from?.id;
+    if (!userId) return;
+
+    // Import cart functions from categories scene
+    const { getOrCreateCart } = await import('./categories.scene');
+    const cart = getOrCreateCart(userId);
+
+    if (cart.items.length === 0) {
+      // If cart is empty, delete the message and show empty cart
+      try {
+        await ctx.deleteMessage();
+      } catch (error) {
+        console.error('Error deleting message:', error);
+      }
+      await showCart(ctx);
+      return;
+    }
+
+    // Build cart message with numbered items
+    let cartMessage = `🛒 <b>${ctx.i18n.t('cart.title') || 'Ваша корзина'}:</b>\n\n`;
+
+    // Create inline keyboard for each item
+    const inlineButtons: any[][] = [];
+
+    cart.items.forEach((cartItem, index) => {
+      const itemTotal = cartItem.price * cartItem.quantity;
+      const formattedItemTotal = new Intl.NumberFormat('ru-RU').format(itemTotal);
+      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} сум\n\n`;
+      
+      // Create inline buttons for this item: [❌] [1] [-] [+]
+      inlineButtons.push([
+        Markup.button.callback(`❌ ${cartItem.name}`, `remove_item_${cartItem.id}`)
+      ]);
+      inlineButtons.push([
+        Markup.button.callback('-', `decrease_cart_${cartItem.id}`),
+        Markup.button.callback(`${cartItem.quantity}`, `item_quantity_${cartItem.id}`),
+        Markup.button.callback('+', `increase_cart_${cartItem.id}`)
+      ]);
+    });
+
+    // Recalculate cart total
+    cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
+    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} сум</b>`;
+
+    // Add action buttons at the bottom
+    inlineButtons.push([
+      Markup.button.callback(ctx.i18n.t('cart.clear') || 'Очистить корзину', 'clear_cart'),
+      Markup.button.callback(ctx.i18n.t('cart.checkout') || 'Оформить заказ', 'checkout_cart')
+    ]);
+
+    // Update the existing message instead of creating a new one
+    await ctx.editMessageText(cartMessage, {
+      parse_mode: 'HTML',
+      reply_markup: {
+        inline_keyboard: inlineButtons
+      }
+    });
+
+  } catch (error) {
+    console.error('Error updating cart message:', error);
+    // Fallback to full recreation if edit fails
+    try {
+      await ctx.deleteMessage();
+    } catch (deleteError) {
+      console.error('Error deleting message:', deleteError);
+    }
+    await showCart(ctx);
+  }
+}
+
+// Handle cart inline button actions
+productsScene.action(/remove_item_(\d+)/, async (ctx) => {
+  const itemId = parseInt(ctx.match[1]);
+  console.log(`Remove item ${itemId} from cart`);
+  
+  const userId = ctx.from?.id;
+  if (!userId) return;
+  
+  // Import cart functions from categories scene
+  const { getOrCreateCart, userCarts } = await import('./categories.scene');
+  const cart = getOrCreateCart(userId);
+  
+  // Remove item from cart
+  cart.items = cart.items.filter(item => item.id !== itemId);
+  
+  // Recalculate total
+  cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  
+  await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
+  
+  // Update cart message instead of recreating it
+  await updateCartMessage(ctx);
+});
+
+productsScene.action(/increase_cart_(\d+)/, async (ctx) => {
+  const itemId = parseInt(ctx.match[1]);
+  console.log(`Increase quantity for item ${itemId} in cart`);
+  
+  const userId = ctx.from?.id;
+  if (!userId) return;
+  
+  // Import cart functions from categories scene
+  const { getOrCreateCart } = await import('./categories.scene');
+  const cart = getOrCreateCart(userId);
+  
+  // Find and increase quantity
+  const item = cart.items.find(item => item.id === itemId);
+  if (item && item.quantity < 20) {
+    item.quantity++;
+    
+    // Recalculate total
+    cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    
+    await ctx.answerCbQuery();
+    
+    // Update cart message instead of recreating it
+    await updateCartMessage(ctx);
+  } else {
+    await ctx.answerCbQuery(ctx.i18n.t('cart.max_quantity') || 'Максимальное количество: 20');
+  }
+});
+
+productsScene.action(/decrease_cart_(\d+)/, async (ctx) => {
+  const itemId = parseInt(ctx.match[1]);
+  console.log(`Decrease quantity for item ${itemId} in cart`);
+  
+  const userId = ctx.from?.id;
+  if (!userId) return;
+  
+  // Import cart functions from categories scene
+  const { getOrCreateCart } = await import('./categories.scene');
+  const cart = getOrCreateCart(userId);
+  
+  // Find and decrease quantity
+  const item = cart.items.find(item => item.id === itemId);
+  if (item) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      
+      // Recalculate total
+      cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      
+      await ctx.answerCbQuery();
+      
+      // Update cart message instead of recreating it
+      await updateCartMessage(ctx);
+    } else {
+      // If quantity is 1, remove the item
+      cart.items = cart.items.filter(item => item.id !== itemId);
+      
+      // Recalculate total
+      cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      
+      await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
+      
+      // Update cart message instead of recreating it
+      await updateCartMessage(ctx);
+    }
+  }
+});
+
+productsScene.action(/item_quantity_(\d+)/, async (ctx) => {
+  const itemId = parseInt(ctx.match[1]);
+  const userId = ctx.from?.id;
+  if (!userId) return;
+  
+  // Import cart functions from categories scene
+  const { getOrCreateCart } = await import('./categories.scene');
+  const cart = getOrCreateCart(userId);
+  const item = cart.items.find(item => item.id === itemId);
+  
+  if (item) {
+    await ctx.answerCbQuery(`${ctx.i18n.t('products.quantity') || 'Количество'}: ${item.quantity}`);
+  }
+});
+
+productsScene.action('clear_cart', async (ctx) => {
+  console.log('Clear cart button pressed');
+  const userId = ctx.from?.id;
+  if (userId) {
+    // Import cart functions from categories scene
+    const { userCarts } = await import('./categories.scene');
+    userCarts.set(userId, { items: [], total: 0 });
+    await ctx.answerCbQuery(ctx.i18n.t('cart.cleared') || 'Корзина очищена');
+    
+    // Update cart message instead of recreating it (will show empty cart)
+    await updateCartMessage(ctx);
+  }
+});
+
+productsScene.action('checkout_cart', async (ctx) => {
+  console.log('Checkout button pressed');
+  await ctx.answerCbQuery();
+  await ctx.reply(ctx.i18n.t('cart.checkout_message') || 'Функция оформления заказа будет добавлена позже');
+}); 
+

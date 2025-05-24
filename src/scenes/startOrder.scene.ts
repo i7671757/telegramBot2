@@ -2,26 +2,7 @@ const { match } = require("telegraf-i18n");
 import { Scenes, Markup, Context } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import axios from 'axios';
-
-// Define Terminal interface
-interface Terminal {
-    id: number;
-    name: string;
-    name_uz: string;
-    name_en: string;
-    desc: string;
-    desc_uz: string;
-    desc_en: string;
-    active: boolean;
-    city_id: number;
-    address: string;
-    address_uz: string;
-    address_en: string;
-    phone: string;
-    location: string;
-    latitude: string;
-    longitude: string;
-}
+import { fetchTerminals, getTerminalById, getTerminalName, getTerminalDesc, getTerminalAddress, type Terminal } from '../utils/cities';
 
 // Расширяем тип данных сессии для нашего контекста
 interface MySessionData {
@@ -32,7 +13,7 @@ interface MySessionData {
     };
     currentCity?: string;
     terminals?: Terminal[];
-    selectedBranch?: Terminal;
+    selectedBranch?: number | string | null;
 }
 
 // Расширяем тип сессии сцены
@@ -44,7 +25,7 @@ interface MySceneSession extends Scenes.SceneSession {
     };
     currentCity?: string;
     terminals?: Terminal[];
-    selectedBranch?: Terminal;
+    selectedBranch?: number | string | null;
 }
 
 // Используем расширенный тип для контекста
@@ -481,15 +462,13 @@ startOrderScene.hears(match('startOrder.pickup.selectBranch'), async (ctx) => {
 
         console.log(`Selected city ID: ${ctx.session.currentCity}`);
 
-        // Fetch branches from API
-        const response = await fetch('https://api.lesailes.uz/api/terminals');
-        const data = await response.json() as { data: Array<Terminal> };
+        // Fetch branches from API using the utility function
+        const allTerminals = await fetchTerminals();
         
-        console.log(`Total terminals fetched: ${data.data.length}`);
-        console.log(`Active terminals: ${data.data.filter(t => t.active).length}`);
+        console.log(`Total terminals fetched: ${allTerminals.length}`);
         
-        // Filter active terminals and those matching the selected city
-        const terminals = data.data.filter((terminal) => {
+        // Filter terminals matching the selected city
+        const terminals = allTerminals.filter((terminal) => {
             const matches = terminal.active && terminal.city_id.toString() === ctx.session?.currentCity;
             if (terminal.active) {
                 console.log(`Terminal: ${terminal.name}, city_id: ${terminal.city_id}, currentCity: ${ctx.session.currentCity}, matches: ${matches}`);
@@ -507,59 +486,18 @@ startOrderScene.hears(match('startOrder.pickup.selectBranch'), async (ctx) => {
         // Get current language
         const language = ctx.i18n.locale();
 
-        // Helper function to get branch name based on language
-        const getBranchName = (terminal: Terminal, language: string): string => {
-            switch (language) {
-                case 'uz':
-                    return terminal.name_uz || terminal.name;
-                case 'en':
-                    return terminal.name_en || terminal.name;
-                default:
-                    return terminal.name;
-            }
-        };
-
-        // Helper function to get branch address based on language
-        const getBranchAddress = (terminal: Terminal, language: string): string => {
-            switch (language) {
-                case 'uz':
-                    return terminal.address_uz || terminal.address;
-                case 'en':
-                    return terminal.address_en || terminal.address;
-                default:
-                    return terminal.address;
-            }
-        };
-
-        // Helper function to get branch description based on language
-        const getBranchDesc = (terminal: Terminal, language: string): string => {
-            switch (language) {
-                case 'uz':
-                    return terminal.desc_uz || terminal.desc;
-                case 'en':
-                    return terminal.desc_en || terminal.desc;
-                default:
-                    return terminal.desc;
-            }
-        };
-
         // Create keyboard with branches in a grid (2 columns)
         const buttons: string[][] = [];
         let row: string[] = [];
 
         for (const terminal of terminals) {
-            const branchName = getBranchName(terminal, language);
+            const branchName = getTerminalName(terminal, language);
             row.push(branchName);
 
             if (row.length === 2) {
                 buttons.push([...row]);
                 row = [];
             }
-        }
-
-        // Add remaining branch if any
-        if (row.length > 0) {
-            buttons.push([...row]);
         }
 
         // Add back button
@@ -602,52 +540,16 @@ startOrderScene.on('text', async (ctx) => {
         return; // No terminals in session, likely not in branch selection mode
     }
 
-    // Helper function to get branch name based on language
-    const getBranchName = (terminal: Terminal, language: string): string => {
-        switch (language) {
-            case 'uz':
-                return terminal.name_uz || terminal.name;
-            case 'en':
-                return terminal.name_en || terminal.name;
-            default:
-                return terminal.name;
-        }
-    };
-
-    // Helper function to get branch address based on language
-    const getBranchAddress = (terminal: Terminal, language: string): string => {
-        switch (language) {
-            case 'uz':
-                return terminal.address_uz || terminal.address;
-            case 'en':
-                return terminal.address_en || terminal.address;
-            default:
-                return terminal.address;
-        }
-    };
-
-    // Helper function to get branch description based on language
-    const getBranchDesc = (terminal: Terminal, language: string): string => {
-        switch (language) {
-            case 'uz':
-                return terminal.desc_uz || terminal.desc;
-            case 'en':
-                return terminal.desc_en || terminal.desc;
-            default:
-                return terminal.desc;
-        }
-    };
-
     // Find selected terminal
     const selectedTerminal = terminals.find(terminal => 
-        getBranchName(terminal, language) === text
+        getTerminalName(terminal, language) === text
     );
 
     if (selectedTerminal) {
         // Format branch information
-        const branchName = getBranchName(selectedTerminal, language);
-        const branchDesc = getBranchDesc(selectedTerminal, language);
-        const branchAddress = getBranchAddress(selectedTerminal, language) || branchDesc; // Use desc as fallback
+        const branchName = getTerminalName(selectedTerminal, language);
+        const branchDesc = getTerminalDesc(selectedTerminal, language);
+        const branchAddress = getTerminalAddress(selectedTerminal, language) || branchDesc; // Use desc as fallback
 
         // Log complete terminal info for debugging
         console.log('Selected terminal details:', {
@@ -661,7 +563,7 @@ startOrderScene.on('text', async (ctx) => {
         });
 
         // Save only the selected branch in session (not the full terminals array)
-        ctx.session.selectedBranch = selectedTerminal;
+        ctx.session.selectedBranch = selectedTerminal.id;
         // After selecting a branch, we don't need the full terminals list anymore
         ctx.session.terminals = undefined;
 

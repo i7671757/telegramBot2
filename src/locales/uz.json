@@ -159,6 +159,19 @@
   "loading": "Yuklanmoqda...",
   "error": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
   "back": "⬅️ Orqaga",
+  "cart_button": "🛒 Savat",
+  "cart": {
+    "title": "Sizning savatingiz",
+    "empty": "Savatingiz bo'sh",
+    "total": "Jami",
+    "clear": "🗑 Savatni tozalash",
+    "checkout": "✅ Buyurtma berish",
+    "cleared": "Savat tozalandi",
+    "checkout_message": "Buyurtma berish funksiyasi keyinroq qo'shiladi",
+    "item_removed": "Mahsulot savatdan olib tashlandi",
+    "max_quantity": "Maksimal miqdor: 20",
+    "back_message": "Orqaga qaytish uchun quyidagi tugmani ishlating:"
+  },
   "categories": {
     "title": "<b>Mahsulot kategoriyalari</b>",
     "empty": "Hozirda mavjud kategoriyalar yo'q.",

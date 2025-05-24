@@ -17,1436 +17,875 @@
         "phone": "+998909901057",
         "currentCity": "2",
         "__language_code": "ru",
-        "selectedCity": {
-          "id": 2,
-          "xml_id": "d8204cd5-4f3b-45a6-b6ec-6b0c31abe5f5",
-          "name": "Ташкент",
-          "name_uz": "Toshkent",
-          "map_zoom": "13.760000",
-          "lat": "41.311158",
-          "lon": "69.279737",
-          "active": true,
-          "sort": 1,
-          "phone": "+998712004242",
-          "slug": "tashkent",
-          "bounds": "69.121678,41.163577,69.477725,41.422501",
-          "polygons": "69.128359,41.268156999999995,69.131587,41.269059999999996,69.134207,41.271735,69.136849,41.272946,69.140481,41.276094,69.140956,41.277795999999995,69.143072,41.278599,69.14468099999999,41.28039,69.146281,41.281189,69.147487,41.280938,69.146256,41.276178,69.146862,41.264949,69.14766999999999,41.262465999999996,69.152318,41.257897,69.16091899999999,41.252508999999996,69.163371,41.250116,69.166724,41.240251,69.164551,41.235859,69.16883,41.234711,69.17406199999999,41.228311,69.17383099999999,41.227142,69.171825,41.226031,69.172448,41.225437,69.1719,41.225131999999995,69.17440599999999,41.222522999999995,69.173963,41.221705,69.175516,41.221347,69.17452899999999,41.218765,69.176369,41.217679,69.177613,41.218942999999996,69.179644,41.217906,69.180585,41.219012,69.18368,41.216887,69.18139,41.214518999999996,69.185349,41.211558,69.18516199999999,41.210423999999996,69.182919,41.208298,69.183037,41.207167,69.182244,41.206813,69.182814,41.205957,69.18563499999999,41.204938,69.184677,41.200238999999996,69.185696,41.196953,69.20217699999999,41.178349999999995,69.205163,41.176108,69.208795,41.174372,69.22782099999999,41.168127,69.2372,41.166047,69.246847,41.165943999999996,69.269052,41.16363,69.27765699999999,41.16429,69.283547,41.166765,69.302005,41.178768,69.349649,41.214557,69.396428,41.244779,69.382689,41.255393999999995,69.384897,41.256813,69.385859,41.256161,69.387585,41.257101,69.395308,41.263166999999996,69.395867,41.262741,69.397637,41.264666,69.397499,41.265350999999995,69.395214,41.266051,69.385718,41.265116,69.382656,41.265786,69.381892,41.267573,69.384434,41.270997,69.38459,41.272270999999996,69.387379,41.2744,69.389943,41.275278,69.40397899999999,41.287441,69.419676,41.299400999999996,69.42032,41.300598,69.424032,41.302605,69.426446,41.306051,69.429783,41.308648,69.435587,41.311333999999995,69.44225,41.316196,69.451605,41.321290999999995,69.45344,41.324639999999995,69.45624,41.327389,69.467107,41.334227,69.46862999999999,41.334575,69.47363,41.343049,69.477728,41.346329,69.47395399999999,41.348894,69.466701,41.346437,69.459437,41.345242999999996,69.439343,41.344674999999995,69.40828499999999,41.342352999999996,69.41039599999999,41.344719999999995,69.41197,41.34876,69.410704,41.355565,69.407038,41.361526,69.404803,41.363828,69.401507,41.363054,69.400969,41.364886999999996,69.399807,41.364793999999996,69.398882,41.365967999999995,69.39581299999999,41.364283,69.39262699999999,41.36588,69.390042,41.365896,69.375875,41.361307,69.36345399999999,41.362341,69.36174199999999,41.361382,69.357372,41.356254,69.353788,41.354760999999996,69.35090799999999,41.354710999999995,69.344021,41.356024999999995,69.337904,41.359828,69.324895,41.369859999999996,69.31893,41.382705,69.3168,41.384521,69.311696,41.385135,69.300989,41.383928999999995,69.285277,41.38378,69.280318,41.385518999999995,69.26379,41.39602,69.260622,41.397267,69.256446,41.397892999999996,69.238466,41.398483,69.234762,41.398140999999995,69.230989,41.396761999999995,69.215385,41.387105,69.211139,41.386818,69.210325,41.383958,69.173579,41.360565,69.168825,41.356401999999996,69.165539,41.349795,69.163988,41.336797999999995,69.162888,41.333724,69.159784,41.328157,69.157916,41.328246,69.156711,41.327244,69.154816,41.327278,69.154669,41.325969,69.153437,41.325235,69.153548,41.323420999999996,69.154532,41.322474,69.153533,41.321106,69.154294,41.32064,69.152487,41.320324,69.147759,41.313393999999995,69.146472,41.313606,69.148018,41.311658,69.147221,41.310157,69.148279,41.309906,69.14895,41.308352,69.148501,41.305306,69.147503,41.303999,69.145161,41.302782,69.144735,41.300591,69.142802,41.299876999999995,69.14282899999999,41.29887,69.141066,41.296827,69.138426,41.294942,69.138094,41.292438,69.133648,41.289746,69.13380599999999,41.288700999999996,69.13203899999999,41.288018,69.131901,41.287290999999996,69.134872,41.283927,69.134081,41.281258,69.132829,41.280372,69.13331099999999,41.278931,69.13149,41.278996,69.128565,41.275965,69.128132,41.274085,69.125483,41.272017,69.125187,41.270109,69.122709,41.26989,69.121762,41.265549,69.123256,41.267244999999996,69.125254,41.266883",
-          "name_en": "Tashkent"
-        },
-        "selectedBranch": {
-          "id": 1,
-          "created_at": "2021-11-04T16:55:14.000000Z",
-          "updated_at": "2025-04-10T15:22:30.000000Z",
-          "terminal_id": "24448fa6-63e0-46bf-953f-ba24af65e19e",
-          "name": "Ц-5",
-          "desc": "Проспект Ш. Рашидова, 16A",
-          "name_uz": "M-5",
-          "desc_uz": "Sh. Rashidov shox k. 16A",
-          "name_en": "C-5",
-          "desc_en": "Sh. Rashidov 16A",
-          "delivery_time": null,
-          "pickup_time": null,
-          "latitude": "41.328163",
-          "longitude": "69.273811",
-          "open_work": "2025-03-31T05:00:00.097Z",
-          "close_work": "2022-03-21T21:45:00.000Z",
-          "open_weekend": "2024-03-11T05:00:00.000Z",
-          "close_weekend": "2022-03-21T21:45:00.000Z",
-          "tg_group": "-1001433651286",
-          "active": true,
-          "location": null,
-          "delivery_type": "all",
-          "payme_active": true,
-          "payme_test_mode": false,
-          "payme_merchant_id": "61cb03a9294a641eee21ba45",
-          "payme_secure_key": "dbVxQ4#jJta6ZuTHEb3&7p4KeDrpTgmGwY&R",
-          "payme_secure_key_test": null,
-          "payme_print": "no",
-          "payme_callback_time": null,
-          "click_active": true,
-          "click_merchant_service_id": "19943",
-          "click_merchant_user_id": "23058",
-          "click_secret_key": "C1abCDr4srP",
-          "click_merchant_id": "11624",
-          "city_id": 2,
-          "near": "Магазин Артель",
-          "services": "delivery,parking",
-          "near_uz": "Artel do'koni",
-          "project": "les",
-          "express24_id": 8861,
-          "delivery_distance": null,
-          "my_uzcard_branch_id": "552",
-          "my_uzcard_active": true
-        },
-        "selectedCategory": {
-          "id": 8,
-          "attribute_data": {
-            "name": {
-              "chopar": {
-                "ru": "Бургеры",
-                "uz": "Burgerlar",
-                "en": "Burgers"
-              }
-            },
-            "xml_id": {
-              "chopar": {
-                "ru": "Бургеры",
-                "uz": "",
-                "val": "0ce148f6-7423-4a2e-987b-37cb0257b078"
-              }
-            }
-          },
-          "_lft": 23,
-          "_rgt": 24,
-          "parent_id": null,
-          "created_at": "2021-11-04T17:06:12.000000Z",
-          "updated_at": "2023-10-17T14:13:38.000000Z",
-          "sort": "min_price:asc",
-          "layout_id": null,
-          "drafted_at": null,
-          "draft_parent_id": null,
-          "active": 1,
-          "half_mode": 0,
-          "order": 5,
-          "icon": "🍔",
-          "cities": null,
-          "asset": [
-            {
-              "id": 1010,
-              "asset_source_id": 2,
-              "location": "categories/2022/02/11",
-              "kind": "image",
-              "sub_kind": "png",
-              "width": "56",
-              "height": "48",
-              "title": "Бургеры",
-              "original_filename": "16.png",
-              "caption": null,
-              "size": 6691,
-              "external": 0,
-              "extension": "png",
-              "filename": "ToeIv6RCx8ZgJMqxnqnU7LXCajqjTEzKG5BJE8nQ.png",
-              "created_at": "2022-02-11T14:13:46.000000Z",
-              "updated_at": "2022-02-11T14:13:46.000000Z",
-              "assetable_id": 8,
-              "asset_id": 1010,
-              "assetableId": 221,
-              "link": "https://api.lesailes.uz/storage/categories/2022/02/11/ToeIv6RCx8ZgJMqxnqnU7LXCajqjTEzKG5BJE8nQ.png"
-            }
-          ]
-        },
+        "selectedCity": 2,
+        "selectedBranch": 1,
         "products": [
           {
-            "id": 42,
+            "id": 73,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Classic",
-                  "ru": "Классик",
-                  "uz": "Klassik"
+                  "en": "Chicken corn",
+                  "ru": "Чикен корн",
+                  "uz": "Chiken korn"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Классик",
+                  "ru": "Чикен корн",
                   "uz": "",
-                  "val": "9457564f-10d2-471e-be4a-d97d584f928b"
+                  "val": "61f45457-ac19-4890-ac48-5c83165e513a"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Soft bun, tender chicken fillet, fresh tomatoes, pickled cucumbers, salad leaves, mayonnaise and ketchup sauces</p>",
-                  "ru": "<p>Мягкая булочка, нежное куриное филе в фирменной панировке, свежие помидоры, маринованные огурцы, салатные листья, соусы майонез и кетчуп</p>",
-                  "uz": "<p>Yumshoq bulochka, maxsus panirovka bilan qoplangan mayin tovuq filesi, pomidor bo'laklari, tuzlangan bodring, salat bargi, mayonez va ketchup sousi</p>"
+                  "en": "<p>Tender chicken pieces</p>",
+                  "ru": "<p>Нежные куриные кусочки</p>",
+                  "uz": "<p>Yumshoq tovuq bo'lakchalari</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-02-10T04:06:42.000000Z",
+            "created_at": "2021-11-04T17:06:14.000000Z",
+            "updated_at": "2023-11-23T10:58:05.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Классик",
+            "custom_name": "Чикен корн",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 4,
-            "weight": 249,
-            "additional_sales": "14,33,7,105,106",
-            "weight_unit": "g",
-            "is_double_parent": 0,
-            "is_double_child": null,
-            "price": "25000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/HMmLQ3u9NuBSxwYLU6tAsYOHusLb2sJBSd7saBVY.webp",
-            "modifiers": [
-              {
-                "id": 1,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без помидора",
-                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 2,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соуса",
-                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 3,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без льда",
-                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 4,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соленых огурцов",
-                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 5,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без майонеза",
-                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 6,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без салатного листа",
-                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 7,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без лука",
-                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 8,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без кетчупа",
-                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
-            "variants": []
-          },
-          {
-            "id": 62,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Caesar burger",
-                  "ru": "Цезарь бургер",
-                  "uz": "Sezar burger"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Цезарь бургер",
-                  "uz": "",
-                  "val": "d37b681d-f062-4b1c-9322-1effcd10bda7"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Soft bun, juicy chicken cutlet, fresh tomatoes, iceberg lettuce, caesar sauce</p>",
-                  "ru": "<p>Мягкая булочка, сочная куриная котлета в фирменной панировке, свежие помидоры, салатные листья айсберг, соус цезарь</p>",
-                  "uz": "<p>Yumshoq bulochka, maxsus panirovka bilan qoplangan sarxil tovuq kotleti, sarxil pomidor bo'laklari, aysberg salati, sezar sousi.</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-02-10T04:07:01.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Цезарь бургер",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 1,
-            "weight": 278,
-            "additional_sales": "14,33,7,104,105,106",
-            "weight_unit": "g",
-            "is_double_parent": 0,
-            "is_double_child": null,
-            "price": "27000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/ZtbevHISVM690STmbgWNWqF0TQDi3Y4IF2tuOF7i.webp",
-            "modifiers": [
-              {
-                "id": 24,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Барбекю бургер БОНУС",
-                "xml_id": "2f56a2cd-e7dd-4a70-819a-5d2390e10d59",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 25,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Чикен чиз Бонус",
-                "xml_id": "159593b3-f89d-44f7-a288-4dae7172bdc2",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 26,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Бигер Бонус",
-                "xml_id": "b7c351b4-eb6f-489f-9d52-ba412e7a8e8a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 27,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Классик Бонус",
-                "xml_id": "adcc10ae-8cd2-4cdd-a7cc-74c269a13939",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 28,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Сингер Бонус",
-                "xml_id": "e46b723b-7541-4b1c-824a-c19472d12731",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 29,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Цезарь бургер Бонус",
-                "xml_id": "21dd7442-f493-4743-8713-45cecfac2b21",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 30,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Халапеньо бургер Бонус",
-                "xml_id": "9e3e52e9-e111-4407-bfba-cfb692b22e41",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 31,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер Бонус",
-                "xml_id": "b8a73a4b-53f7-4ce4-9d08-8374deb22f83",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 32,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер чиз Бонус",
-                "xml_id": "1ba48d32-4531-417a-884b-534b08d5548a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
-            "variants": []
-          },
-          {
-            "id": 146,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Сингер",
-                  "uz": "Singer",
-                  "en": "Singer"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Сингер",
-                  "uz": "",
-                  "en": null,
-                  "val": "258710e3-33eb-4769-a0bd-28115006a7d1"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Мягкая булочка, нежное куриное филе в фирменной панировке, свежие помидоры, маринованные огурцы, салатные листья, соусы майонез и чили</span></p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Yumshoq bulochka, maxsus panirovka bilan qoplangan mayin tovuq filesi, pomidor bo'laklari, tuzlangan bodring, salat bargi, mayonez va chili sousi</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Soft bun, tender chicken fillet, fresh tomatoes, pickled cucumbers, salad leaves, mayonnaise and chili sauces</span></p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-10-17T13:00:50.000000Z",
-            "updated_at": "2025-02-10T04:07:48.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Сингер",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 1,
-            "weight": 259,
+            "sort": 20,
+            "weight": 105,
             "additional_sales": null,
             "weight_unit": "g",
-            "is_double_parent": 0,
+            "is_double_parent": null,
             "is_double_child": null,
-            "price": "27000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/10/18/sQSJcoIUMOsvBLwOOG4dSKxd7bC5XMTYZ0ehn8Ml.webp",
-            "modifiers": [
-              {
-                "id": 24,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Барбекю бургер БОНУС",
-                "xml_id": "2f56a2cd-e7dd-4a70-819a-5d2390e10d59",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 25,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Чикен чиз Бонус",
-                "xml_id": "159593b3-f89d-44f7-a288-4dae7172bdc2",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 26,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Бигер Бонус",
-                "xml_id": "b7c351b4-eb6f-489f-9d52-ba412e7a8e8a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 27,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Классик Бонус",
-                "xml_id": "adcc10ae-8cd2-4cdd-a7cc-74c269a13939",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 28,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Сингер Бонус",
-                "xml_id": "e46b723b-7541-4b1c-824a-c19472d12731",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 29,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Цезарь бургер Бонус",
-                "xml_id": "21dd7442-f493-4743-8713-45cecfac2b21",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 30,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Халапеньо бургер Бонус",
-                "xml_id": "9e3e52e9-e111-4407-bfba-cfb692b22e41",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 31,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер Бонус",
-                "xml_id": "b8a73a4b-53f7-4ce4-9d08-8374deb22f83",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 32,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер чиз Бонус",
-                "xml_id": "1ba48d32-4531-417a-884b-534b08d5548a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
+            "price": "20000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2022/02/16/KmhdUqmEKWbGPxqGszEmP1Ib3f5UhE4xLQZm63US.webp",
             "variants": []
           },
           {
-            "id": 132,
+            "id": 54,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "ru": "Барбекю бургер",
-                  "uz": "Barbekyu burger",
-                  "en": "BBQ burger"
+                  "en": "Wings, 3 pcs",
+                  "ru": "Крылышки, 3 шт",
+                  "uz": "Qanot, 3 dona"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Барбекю бургер",
+                  "ru": "Крылышки 3",
                   "uz": "",
-                  "en": null,
-                  "val": "c060bfcb-ce8b-4e24-9652-b0d1aabce54b"
+                  "val": "affdb105-823a-4a54-9d4a-8b353c917eea"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p>Мягкая булочка, сочная куриная котлета в фирменной панировке, свежие помидоры, салатные листья айсберг, соус майонез и аппетитный соус Барбекю</p>",
-                  "uz": "<p>Yumshoq bulochka, maxsus panirovka bilan qoplangan mazali tovuq kotleti, pomidor bo'laklari, aysberg salati, mayonez sousi va ishtahaochar <span style=\"color: rgb(0, 0, 0);\">barbekyu sousi</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Soft bun,juicy chucken cutlet in author’s breading, fresh tomatoes, Iceberg lettuce, mayonnaise and BBQ sauce</span></p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-04-22T19:00:58.000000Z",
-            "updated_at": "2025-02-10T04:05:25.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Барбекю бургер",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 3,
-            "weight": 297,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": 0,
-            "is_double_child": null,
-            "price": "27000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/04/25/S0O61PZTefWH1w13BSArFUsGGiDqgm3wDIOd1mWW.png",
-            "modifiers": [
-              {
-                "id": 24,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Барбекю бургер БОНУС",
-                "xml_id": "2f56a2cd-e7dd-4a70-819a-5d2390e10d59",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 25,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Чикен чиз Бонус",
-                "xml_id": "159593b3-f89d-44f7-a288-4dae7172bdc2",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 26,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Бигер Бонус",
-                "xml_id": "b7c351b4-eb6f-489f-9d52-ba412e7a8e8a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 27,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Классик Бонус",
-                "xml_id": "adcc10ae-8cd2-4cdd-a7cc-74c269a13939",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 28,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Сингер Бонус",
-                "xml_id": "e46b723b-7541-4b1c-824a-c19472d12731",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 29,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Цезарь бургер Бонус",
-                "xml_id": "21dd7442-f493-4743-8713-45cecfac2b21",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 30,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Халапеньо бургер Бонус",
-                "xml_id": "9e3e52e9-e111-4407-bfba-cfb692b22e41",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 31,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер Бонус",
-                "xml_id": "b8a73a4b-53f7-4ce4-9d08-8374deb22f83",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 32,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер чиз Бонус",
-                "xml_id": "1ba48d32-4531-417a-884b-534b08d5548a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
-            "variants": []
-          },
-          {
-            "id": 41,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Chicken cheese",
-                  "ru": "Чикен чиз",
-                  "uz": "Chiken chiz"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Чикен Чиз",
-                  "uz": "",
-                  "val": "05cb4e99-ce3b-46b3-93c1-4eecca45600c"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Soft bun, juicy chicken cutlet, cheddar cheese, fresh tomatoes, iceberg lettuce, mayonnaise and ketchup sauces</p>",
-                  "ru": "<p>Мягкая булочка, сочная куриная котлета, сыр чеддер, свежие помидоры, салатные листья айсберг, соусы майонез и кетчуп</p>",
-                  "uz": "<p>Yumshoq bulochka, sarxil tovuq kotleti, Chedder pishlog'i, sarxil pomidor bo'laklari, aysberg salati, mayonez va ketchup sousi.</p>"
+                  "en": "<p>Crispy chicken wings (Halal). 3 pcs</p>",
+                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 3 шт</p>",
+                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 3 dona</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-02-10T04:06:20.000000Z",
+            "updated_at": "2024-08-20T12:41:51.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Чикен чиз",
+            "custom_name": "Крылышки, 3 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 9,
+            "weight": 177,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "24000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2022/02/16/q6Zz1EDiIhMMt4cAHvKT2AbikYGhInSipE9qawmg.webp",
+            "variants": []
+          },
+          {
+            "id": 58,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Spicy wings, 3 pcs",
+                  "ru": "Острые крылышки, 3 шт",
+                  "uz": "Achchiq qanot, 3 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Крылышки острые 3",
+                  "uz": "",
+                  "val": "10824811-0af0-4365-871f-9361aa90833f"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Spicy Crispy chicken wings (Halal). 3 pcs</p>",
+                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 3 шт</p>",
+                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 3 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-12-10T06:33:03.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Острые крылышки, 3 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 10,
+            "weight": 177,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "24000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2022/05/06/ybcbXwjTDHdH04M44P3cxxRIVhFDh5GKajwkGbfj.png",
+            "variants": []
+          },
+          {
+            "id": 35,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Strips, 3 pcs",
+                  "ru": "Стрипсы, 3 шт",
+                  "uz": "Strips, 3 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Стрипсы 3",
+                  "uz": "",
+                  "val": "014113f0-d557-4d09-a942-296fd7fd3dd6"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Tender chicken fillet (Halal). 3 pcs</p>",
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 3 шт</p>",
+                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 3 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-05-01T11:09:42.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Стрипсы, 3 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 11,
+            "weight": 159,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "24000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2022/02/16/czIAmoDEKlYtbcMcZoxH1vgdxI8iibrvio2yeKeV.webp",
+            "variants": []
+          },
+          {
+            "id": 109,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Spicy strips, 3 pcs",
+                  "ru": "Острые стрипсы, 3 шт",
+                  "uz": "Achchiq strips, 3 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Острые Стрипсы, 3 шт",
+                  "uz": "",
+                  "val": "41122e12-12a2-473a-9e37-2d9c29f6b10d"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 3 pcs</p>",
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 3 шт</p>",
+                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 3 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2022-03-15T17:30:28.000000Z",
+            "updated_at": "2024-12-10T06:33:37.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Острые стрипсы, 3 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 12,
+            "weight": 159,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "24000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2022/05/06/uwcVinTefseVa26Q2T1nt98KITURkb6NMR9Yx92O.png",
+            "variants": []
+          },
+          {
+            "id": 170,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Чизи чикен корн",
+                  "uz": "Chizi chiken korn",
+                  "en": "Cheesy chicken corn"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Чизи чикен корн",
+                  "uz": "",
+                  "en": null,
+                  "val": "cfc8bd27-32d8-4eb2-9c3a-ed37ba8a4813"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p>Нежные куриные кусочки в сырному соусе</p>",
+                  "uz": "<p>Pishloq sousidagi yumshoq tovuq bo'lakchalari</p>",
+                  "en": "<p>Cheesy tender chicken pieces</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2023-02-27T07:22:32.000000Z",
+            "updated_at": "2023-11-23T11:01:59.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Чизи чикен корн",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 18,
+            "weight": 290,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "40000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2023/02/27/YFNM3iOwoH1MOePLcvaokIXMYLfxINYevTQ0wpwP.webp",
+            "variants": []
+          },
+          {
+            "id": 57,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Wings, 7 pcs",
+                  "ru": "Крылышки, 7 шт",
+                  "uz": "Qanot, 7 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Крылышки 7",
+                  "uz": "",
+                  "val": "be724b45-206c-4a36-a092-7311a672c0b4"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Crispy chicken wings (Halal). 7 pcs</p>",
+                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 7 шт</p>",
+                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 7 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2025-01-03T04:33:10.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Крылышки, 7 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
             "sort": 5,
-            "weight": 284,
-            "additional_sales": "7,14,82,104,104,105,106",
+            "weight": 413,
+            "additional_sales": null,
             "weight_unit": "g",
-            "is_double_parent": 0,
+            "is_double_parent": null,
             "is_double_child": null,
-            "price": "27000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/2wAZOqWIyajn3IJGjqmVjvlODqMfWnLhmecJY2ru.webp",
-            "modifiers": [
-              {
-                "id": 1,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без помидора",
-                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 2,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соуса",
-                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 3,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без льда",
-                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 4,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соленых огурцов",
-                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 5,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без майонеза",
-                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 6,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без салатного листа",
-                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 7,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без лука",
-                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 8,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без кетчупа",
-                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
+            "price": "48000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/W8y7PD5HxKVE09dsalOy0sT791uKJGM9VzeNy3df.webp",
             "variants": []
           },
           {
-            "id": 147,
+            "id": 60,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "ru": "Халапеньо бургер",
-                  "uz": "Xalapenyo burger",
-                  "en": "Jalapeno burger"
+                  "en": "Spicy wings, 7 pcs",
+                  "ru": "Острые крылышки, 7 шт",
+                  "uz": "Achchiq qanot, 7 dona"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Халапеьо бургер",
+                  "ru": "Крылышки острые 7",
                   "uz": "",
-                  "en": null,
-                  "val": "0291abb9-1fd1-46a1-9711-44200bb74b03"
+                  "val": "3809e16d-4749-4067-b4b3-00aba77767ad"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Мягкая булочка, нежное куриное филе в фирменной панировке, свежие помидоры, салатные листья, перец халапеньо, соусы майонез и кетчуп</span></p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Yumshoq bulochka, maxsus panirovka bilan qoplangan mayin tovuq filesi, pomidor bo'laklari, salat bargi, xalapenyo qalampiri, mayonez va ketchup sousi</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Soft bun, tender chicken fillet, fresh tomatoes, salad leaves, jalapeno pepper, mayonnaise and ketchup sauces</span></p>"
+                  "en": "<p>Spicy Crispy chicken wings (Halal). 7 pcs</p>",
+                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 7 шт</p>",
+                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 7 dona</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2022-10-17T13:00:50.000000Z",
-            "updated_at": "2025-04-07T11:16:30.000000Z",
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2025-01-03T04:33:05.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Халапеньо бургер",
+            "custom_name": "Острые крылышки, 7 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 6,
+            "weight": 413,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "48000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/45UrGaoHKB4u2g1xFlW7VxbAedcV3TdBGRvo3i5g.webp",
+            "variants": []
+          },
+          {
+            "id": 37,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Strips, 7 pcs",
+                  "ru": "Стрипсы, 7 шт",
+                  "uz": "Strips, 7 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Стрипсы 7",
+                  "uz": "",
+                  "val": "46258075-a42a-4532-86e8-f0f2fd89a35c"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Tender chicken fillet (Halal). 7 pcs</p>",
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 7 шт</p>",
+                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 7 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2025-01-03T04:32:42.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Стрипсы, 7 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 7,
+            "weight": 371,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "48000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/B25DuO18GBbTXSMs5DyUpeUuGlosSEy3N40QIxAA.webp",
+            "variants": []
+          },
+          {
+            "id": 111,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Spicy strips, 7 pcs",
+                  "ru": "Острые стрипсы, 7 шт",
+                  "uz": "Achchiq strips, 7 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Острые Стрипсы, 7 шт",
+                  "uz": "",
+                  "val": "e1ba6f5a-ed86-4a5f-82a3-64465472070a"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 7 pcs</p>",
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 7 шт</p>",
+                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 7 dona</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2022-03-15T17:30:28.000000Z",
+            "updated_at": "2025-01-03T04:33:17.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Острые стрипсы, 7 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 8,
+            "weight": 371,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "48000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/nzNRKtRXxtPVOqT8YI5yZLuPK2RG4oCHKJlqr4Le.webp",
+            "variants": []
+          },
+          {
+            "id": 219,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Крылышки, 17 шт",
+                  "uz": "Qanot, 17 dona",
+                  "en": "Wings, 17pcs"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Крылышки, 17 шт",
+                  "uz": "",
+                  "en": null,
+                  "val": "ee4a1775-258e-4b17-8ee1-112e96031f59"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 17 шт.</p>",
+                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 17 dona</p>",
+                  "en": "<p>Crispy chicken wings (Halal). 17 pcs</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2024-05-01T10:43:06.000000Z",
+            "updated_at": "2024-12-10T06:29:06.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Крылышки, 17 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
             "sort": 1,
-            "weight": 229,
+            "weight": 0,
             "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": 0,
+            "weight_unit": null,
+            "is_double_parent": null,
             "is_double_child": null,
-            "price": "28000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/10/18/142uHGuYKiJogZqsuofbSobB5HylR2Dw11ljgp3E.webp",
-            "modifiers": [
-              {
-                "id": 24,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Барбекю бургер БОНУС",
-                "xml_id": "2f56a2cd-e7dd-4a70-819a-5d2390e10d59",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 25,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Чикен чиз Бонус",
-                "xml_id": "159593b3-f89d-44f7-a288-4dae7172bdc2",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 26,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Бигер Бонус",
-                "xml_id": "b7c351b4-eb6f-489f-9d52-ba412e7a8e8a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 27,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Классик Бонус",
-                "xml_id": "adcc10ae-8cd2-4cdd-a7cc-74c269a13939",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 28,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Сингер Бонус",
-                "xml_id": "e46b723b-7541-4b1c-824a-c19472d12731",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 29,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Цезарь бургер Бонус",
-                "xml_id": "21dd7442-f493-4743-8713-45cecfac2b21",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 30,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Халапеньо бургер Бонус",
-                "xml_id": "9e3e52e9-e111-4407-bfba-cfb692b22e41",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 31,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер Бонус",
-                "xml_id": "b8a73a4b-53f7-4ce4-9d08-8374deb22f83",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 32,
-                "created_at": "2025-03-05T05:43:16.000000Z",
-                "updated_at": "2025-03-05T05:43:16.000000Z",
-                "name": "Лонгер чиз Бонус",
-                "xml_id": "1ba48d32-4531-417a-884b-534b08d5548a",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8eb40138-67d3-407f-a8eb-18e8d26c0524",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
+            "price": "108000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/5jph5BXv4keEY3SKRwv9JfvBQwAlVKYuCpBuGvXl.webp",
             "variants": []
           },
           {
-            "id": 40,
+            "id": 220,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Biger",
-                  "ru": "Бигер",
-                  "uz": "Biger"
+                  "ru": "Острые крылышки, 17 шт",
+                  "uz": "Achchiq qanot, 17 dona",
+                  "en": "Spicy wings, 17 pcs"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Бигер",
+                  "ru": "Острые крылышки, 17 шт",
                   "uz": "",
-                  "val": "8a98c9ee-14ca-4769-b7fc-c227b439169d"
+                  "en": null,
+                  "val": "52d00c3d-4a1a-4872-bcb7-4cac92ab2c31"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Soft bun, smoked beef, tender chicken fillet, cheddar cheese, fresh tomatoes, pickled cucumbers, salad leaves, mayonnaise and ketchup sauces</p>",
-                  "ru": "<p>Мягкая булочка, копченная говядина, нежное куриное филе в фирменной панировке, сыр чеддер, свежие помидоры, маринованные огурцы, салатные листья, соусы майонез и кетчуп</p>",
-                  "uz": "<p>Yumshoq bulochka, dudlangan mol go'shti, maxsus panirovka bilan qoplangan mayin tovuq filesi, Chedder pishlog'i, pomidor bo'laklari, tuzlangan bodring, salat bargi, mayonez va ketchup souslari</p>"
+                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 17 шт.</p>",
+                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 17 dona</p>",
+                  "en": "<p>Spicy Crispy chicken wings (Halal). 17 pcs</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-02-10T04:06:04.000000Z",
+            "created_at": "2024-05-01T10:43:06.000000Z",
+            "updated_at": "2024-12-10T06:34:04.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Бигер",
+            "custom_name": "Острые крылышки, 17 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
             "sort": 2,
-            "weight": 282,
-            "additional_sales": "14,33,7,105,106",
-            "weight_unit": "g",
-            "is_double_parent": 0,
+            "weight": 0,
+            "additional_sales": null,
+            "weight_unit": null,
+            "is_double_parent": null,
             "is_double_child": null,
-            "price": "30000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/pOFudHsA8LfVZldlFcgOUSXiXrrbkeSwMQLi5tPQ.webp",
-            "modifiers": [
-              {
-                "id": 1,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без помидора",
-                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 2,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соуса",
-                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 3,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без льда",
-                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 4,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соленых огурцов",
-                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 5,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без майонеза",
-                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 6,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без салатного листа",
-                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 7,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без лука",
-                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 8,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без кетчупа",
-                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              }
-            ],
+            "price": "108000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/176OEnpvQo1aJ43aF8nX2ZxFWVt0puHJjwk3z2W6.webp",
             "variants": []
           },
           {
-            "id": 133,
+            "id": 222,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "ru": "Дабл чикен чиз",
-                  "uz": "Dabl chiken chiz",
-                  "en": "Double chicken cheese"
+                  "ru": "Стрипсы, 17 шт",
+                  "uz": "Strips, 17 dona",
+                  "en": "Strips, 17 pcs"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Дабл чикен чиз",
+                  "ru": "Стрипсы, 17 шт",
                   "uz": "",
                   "en": null,
-                  "val": "89c6f8e3-3040-4268-8fa2-d9b40e715525"
+                  "val": "8d923373-ba7d-4220-a024-f787a9c1a111"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Мягкая булочка, две сочные куриные котлеты, сыр чеддер, свежие помидоры, маринованные огурцы, салатные листья айсберг, соусы майонез и кетчуп</span></p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Yumshoqqina bulochka,ikkita shirador tovuq kotleti chedder pishlog‘i, yangi pomidor, marinadlangan bodiring, aysberg salat barglari, mayonez va ketchup souslari</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Soft bun,two juicy chucken cutlets, cheddar cheese, fresh tomatoes, pickles, iceberg lettuce, mayonnaise and ketchup</span></p>"
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 17 шт.</p>",
+                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 17 dona</p>",
+                  "en": "<p>Tender chicken fillet (Halal). 17 pcs</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2022-04-25T03:50:54.000000Z",
-            "updated_at": "2025-02-10T04:07:26.000000Z",
+            "created_at": "2024-05-01T10:43:06.000000Z",
+            "updated_at": "2024-12-10T06:28:51.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Дабл чикен чиз",
+            "custom_name": "Стрипсы, 17 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 1,
-            "weight": 409,
+            "sort": 3,
+            "weight": 0,
             "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": 0,
+            "weight_unit": null,
+            "is_double_parent": null,
             "is_double_child": null,
-            "price": "34000.00000",
-            "category_id": 8,
-            "image": "https://api.lesailes.uz/storage/products/2022/04/25/sJsfijBgVVVtyo3Cv7kjWyp737OA2cLES7Rv0OoA.png",
-            "modifiers": [
-              {
-                "id": 1,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без помидора",
-                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
+            "price": "108000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/b7AVCcKDPPEjoDxu4fcnH11JuZ9Gd4EEHk4nRE50.webp",
+            "variants": []
+          },
+          {
+            "id": 221,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Острые стрипсы, 17 шт",
+                  "uz": "Achchiq strips, 17 dona",
+                  "en": "Spicy strips, 17 pcs"
+                }
               },
-              {
-                "id": 2,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соуса",
-                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
+              "xml_id": {
+                "chopar": {
+                  "ru": "Острые Стрипсы, 17 шт",
+                  "uz": "",
+                  "en": null,
+                  "val": "a0092518-cef8-4816-a983-ad60aa04b4f9"
+                }
               },
-              {
-                "id": 3,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без льда",
-                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 4,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без соленых огурцов",
-                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 5,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без майонеза",
-                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 6,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без салатного листа",
-                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 7,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без лука",
-                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
-              },
-              {
-                "id": 8,
-                "created_at": "2021-11-04T17:06:12.000000Z",
-                "updated_at": "2021-11-04T17:06:12.000000Z",
-                "name": "без кетчупа",
-                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
-                "price": 0,
-                "weight": 0,
-                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
-                "name_uz": null,
-                "assets": []
+              "description": {
+                "chopar": {
+                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 17 шт.</p>",
+                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 17 dona</p>",
+                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 3 pcs</p>"
+                }
               }
-            ],
+            },
+            "option_data": [],
+            "created_at": "2024-05-01T10:43:06.000000Z",
+            "updated_at": "2024-12-10T06:34:14.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Острые стрипсы, 17 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 4,
+            "weight": 0,
+            "additional_sales": null,
+            "weight_unit": null,
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "108000.00000",
+            "category_id": 6,
+            "image": "https://api.lesailes.uz/storage/products/2024/05/01/GmsQ1rmjhPy14CEToKwtet5zaUSqMECdfHKQK2DV.webp",
             "variants": []
           }
         ],
         "selectedProduct": {
-          "id": 106,
+          "id": 170,
           "attribute_data": {
             "name": {
               "chopar": {
-                "en": "Extra cheese",
-                "ru": "Экстра сыр",
-                "uz": "Qo'shimcha pishloq"
+                "ru": "Чизи чикен корн",
+                "uz": "Chizi chiken korn",
+                "en": "Cheesy chicken corn"
               }
             },
             "xml_id": {
               "chopar": {
-                "ru": "Экстра сыр",
+                "ru": "Чизи чикен корн",
                 "uz": "",
-                "val": "01e6f6ee-8f72-41af-8a6b-121f04294768"
+                "en": null,
+                "val": "cfc8bd27-32d8-4eb2-9c3a-ed37ba8a4813"
               }
             },
             "description": {
               "chopar": {
-                "en": null,
-                "ru": null,
-                "uz": null
+                "ru": "<p>Нежные куриные кусочки в сырному соусе</p>",
+                "uz": "<p>Pishloq sousidagi yumshoq tovuq bo'lakchalari</p>",
+                "en": "<p>Cheesy tender chicken pieces</p>"
               }
             }
           },
           "option_data": [],
-          "created_at": "2022-02-08T10:00:46.000000Z",
-          "updated_at": "2023-11-23T07:51:18.000000Z",
+          "created_at": "2023-02-27T07:22:32.000000Z",
+          "updated_at": "2023-11-23T11:01:59.000000Z",
           "deleted_at": null,
           "product_family_id": 2,
           "layout_id": null,
           "group_pricing": 0,
           "drafted_at": null,
           "draft_parent_id": null,
-          "custom_name": "Экстра сыр",
+          "custom_name": "Чизи чикен корн",
           "product_id": null,
           "custom_name_uz": null,
           "active": 1,
           "modifier_prod_id": null,
           "box_id": null,
-          "sort": 1,
-          "weight": 12,
+          "sort": 18,
+          "weight": 290,
           "additional_sales": null,
           "weight_unit": "g",
           "is_double_parent": null,
           "is_double_child": null,
-          "price": "4000.00000",
-          "category_id": 18,
-          "image": "https://api.lesailes.uz/storage/products/2022/02/16/adM8BYl6zv0HJ85cv9YUiMLWSEjg3LeQqYnpiD8D.webp",
+          "price": "40000.00000",
+          "category_id": 6,
+          "image": "https://api.lesailes.uz/storage/products/2023/02/27/YFNM3iOwoH1MOePLcvaokIXMYLfxINYevTQ0wpwP.webp",
           "variants": []
         },
         "productQuantities": {
           "7": 1,
+          "20": 1,
           "21": 1,
-          "30": 1,
-          "34": 1,
+          "25": 1,
+          "33": 1,
           "42": 1,
+          "45": 1,
+          "51": 1,
+          "54": 1,
+          "58": 1,
+          "62": 1,
+          "63": 1,
           "65": 1,
+          "66": 1,
+          "71": 1,
+          "73": 1,
+          "99": 1,
+          "105": 1,
           "106": 1,
-          "143": 1
+          "114": 1,
+          "129": 1,
+          "132": 1,
+          "137": 1,
+          "141": 1,
+          "146": 1,
+          "148": 1,
+          "149": 1,
+          "170": 1,
+          "171": 1
         },
         "address": "Узбекистан, Ташкент, Шарафа Рашидова улица",
         "coordinates": {
           "latitude": 41.328073,
           "longitude": 69.274114
-        }
+        },
+        "selectedCategory": {
+          "id": 6,
+          "attribute_data": {
+            "name": {
+              "chopar": {
+                "ru": "Курочка",
+                "uz": "Tovuq",
+                "en": "Chicken"
+              }
+            },
+            "xml_id": {
+              "chopar": {
+                "ru": "Курочка",
+                "uz": "",
+                "val": "cfb90b82-072c-427c-a7bd-f22344c7d41f"
+              }
+            }
+          },
+          "_lft": 19,
+          "_rgt": 20,
+          "parent_id": null,
+          "created_at": "2021-11-04T17:06:12.000000Z",
+          "updated_at": "2024-08-20T11:05:05.000000Z",
+          "sort": "min_price:asc",
+          "layout_id": null,
+          "drafted_at": null,
+          "draft_parent_id": null,
+          "active": 1,
+          "half_mode": 0,
+          "order": 2,
+          "icon": "🍗",
+          "cities": null,
+          "asset": [
+            {
+              "id": 1008,
+              "asset_source_id": 2,
+              "location": "categories/2022/02/11",
+              "kind": "image",
+              "sub_kind": "png",
+              "width": "62",
+              "height": "48",
+              "title": "Курица",
+              "original_filename": "19.png",
+              "caption": null,
+              "size": 6476,
+              "external": 0,
+              "extension": "png",
+              "filename": "BxUfVFDIQusN9uO8UeLWt387Q41Z0C9qtYBFo5DT.png",
+              "created_at": "2022-02-11T14:13:17.000000Z",
+              "updated_at": "2022-02-11T14:13:17.000000Z",
+              "assetable_id": 6,
+              "asset_id": 1008,
+              "assetableId": 219,
+              "link": "https://api.lesailes.uz/storage/categories/2022/02/11/BxUfVFDIQusN9uO8UeLWt387Q41Z0C9qtYBFo5DT.png"
+            }
+          ]
+        },
+        "previousScene": "products"
       }
     }
   ]

@@ -1,5 +1,6 @@
 import { Context, Scenes } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
+import { type Terminal } from '../utils/cities';
 
 interface MySceneSession extends Scenes.SceneSessionData {
   // Add any custom scene session properties here
@@ -11,10 +12,10 @@ interface MySession extends Scenes.SceneSession<MySceneSession> {
   phone?: string | null;
   currentCity?: string | null;
   cities?: any[];
-  selectedCity?: any;
+  selectedCity?: number | string | null;
   userName?: string;
   terminals?: Terminal[];
-  selectedBranch?: Terminal;
+  selectedBranch?: number | string | null;
   ratings?: {
     product: number;
     service: number;
@@ -28,25 +29,7 @@ interface MySession extends Scenes.SceneSession<MySceneSession> {
   productQuantities?: {
     [productId: string]: number;
   };
-}
-
-interface Terminal {
-  id: number;
-  name: string;
-  name_uz: string;
-  name_en: string;
-  desc: string;
-  desc_uz: string;
-  desc_en: string;
-  active: boolean;
-  city_id: number;
-  address: string;
-  address_uz: string;
-  address_en: string;
-  phone: string;
-  location: string;
-  latitude: string;
-  longitude: string;
+  previousScene?: string;
 }
 
 export interface MyContext extends Context {

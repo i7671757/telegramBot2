@@ -1,5 +1,6 @@
 import { Scenes, Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
+import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
 
 // Используем type для контекста
 type MyContext = Scenes.SceneContext & {
@@ -9,6 +10,9 @@ type MyContext = Scenes.SceneContext & {
 
 // Создаем сцену настроек
 export const settingsScene = new Scenes.BaseScene<MyContext>('settings');
+
+// Регистрируем глобальные обработчики команд для этой сцены
+registerSceneCommandHandlers(settingsScene, 'Settings');
 
 // При входе в сцену показываем клавиатуру с опциями настроек
 settingsScene.enter(async (ctx) => {
@@ -61,6 +65,11 @@ settingsScene.command('feedback', async (ctx) => {
 // Обрабатываем все текстовые сообщения
 settingsScene.on('text', async (ctx) => {
   const text = ctx.message.text;
+
+  // Пропускаем команды - они должны обрабатываться обработчиками команд сцены
+  if (shouldSkipCommand(text, 'Settings')) {
+    return;
+  }
 
   // Обрабатываем каждую кнопку на основе переведенного текста
   if (text === ctx.i18n.t('menu.change_name')) {

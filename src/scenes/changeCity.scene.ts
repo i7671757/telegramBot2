@@ -112,8 +112,8 @@ changeCityScene.on('text', async (ctx) => {
     // Save selected city ID in session
     ctx.session.currentCity = currentCity.id.toString();
     
-    // Save only the selected city in the session instead of the entire cities array
-    ctx.session.selectedCity = currentCity;
+    // Save only the city ID in the session instead of the entire city object
+    ctx.session.selectedCity = currentCity.id;
     
     // Clear the full cities array to save space
     ctx.session.cities = undefined;

@@ -66,3 +66,35 @@ bun run index.ts
 - /profile - View profile information
 - /help - Show available commands
 - /back - Return to the main menu
+
+## Session Optimization
+
+The bot has been optimized to reduce session file size by storing only IDs instead of full objects:
+
+### Changes Made:
+- **selectedCity**: Now stores only the city ID (number) instead of the full city object
+- **selectedBranch**: Now stores only the branch/terminal ID (number) instead of the full terminal object
+- **Automatic Migration**: When the bot starts, it automatically converts existing sessions from full objects to IDs
+- **API Integration**: City and terminal information is fetched from API when needed using the stored IDs
+- **Temporary Data Cleanup**: Arrays like `cities` and `terminals` are removed after selection to save space
+
+### Benefits:
+- **Significantly Reduced File Size**: Session files are much smaller (from ~50KB+ to ~2KB per session)
+- **Better Performance**: Faster session loading and saving
+- **Memory Efficiency**: Less memory usage for session storage
+- **Cleaner Data**: No redundant temporary data stored in sessions
+
+### Maintenance Scripts:
+- `cleanCitySessions.cjs` - Manual script to clean existing sessions from full city and branch objects
+- `cleanSessions.js` - General session cleanup script
+
+### Usage:
+```bash
+# Clean city and branch data from sessions manually
+node cleanCitySessions.cjs
+
+# General session cleanup
+node cleanSessions.js
+```
+
+The bot automatically handles the migration when started, so no manual intervention is required for normal operation.

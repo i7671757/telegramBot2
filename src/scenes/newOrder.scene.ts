@@ -5,6 +5,9 @@ const { match } = require("telegraf-i18n");
 
 export const newOrderScene = new Scenes.BaseScene<MyContext>('newOrder');
 
+
+
+
 // Types for API responses
 interface FoodItem {
   id: number;
@@ -262,6 +265,15 @@ newOrderScene.action(/add_to_cart_(\d+)/, async (ctx) => {
     // Confirm addition
     await ctx.answerCbQuery(`${quantity} × ${item.name} добавлено в корзину`);
     
+    // Delete the product message (колонка с товаром)
+    try {
+      if (ctx.callbackQuery && ctx.callbackQuery.message) {
+        await ctx.deleteMessage(ctx.callbackQuery.message.message_id);
+      }
+    } catch (error) {
+      console.error('Error deleting product message:', error);
+    }
+    
     // Show cart summary
     const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
     await ctx.reply(
@@ -458,3 +470,33 @@ newOrderScene.on('text', async (ctx) => {
     ]).resize()
   );
 }); 
+
+
+newOrderScene.hears(match('feedback.review'), async (ctx) => {
+  // Enter the review scene
+  await ctx.scene.enter('review');
+});
+
+newOrderScene.hears(match('feedback.back'), async (ctx) => {
+  await ctx.scene.enter('mainMenu');
+});
+
+newOrderScene.command('feedback', async (ctx) => {
+console.log('Feedback command received in callback scene, reloading the scene');
+await ctx.scene.reenter(); // Reenter the same scene to reset it
+});
+
+// Add a start command handler
+newOrderScene.command('start', async (ctx) => {
+console.log('Callback scene: /start command received, restarting bot');
+
+// Exit the current scene
+await ctx.scene.leave();
+
+// Send a restart message
+await ctx.reply(ctx.i18n.t('bot_restarted') || 'Bot has been restarted. Starting from the beginning...');
+
+// Go to the start scene (formerly language scene)
+return ctx.scene.enter('start');
+}); 
+

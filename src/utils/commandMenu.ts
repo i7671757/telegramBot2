@@ -201,4 +201,58 @@ export const registerGlobalCommandHandlers = (bot: any) => {
   // });
 
   console.log('Global command handlers have been registered');
+};
+
+/**
+ * Регистрирует глобальные обработчики команд в сцене
+ * @param {object} scene Сцена Telegraf
+ * @param {string} sceneName Название сцены для логирования
+ */
+export const registerSceneCommandHandlers = (scene: any, sceneName: string) => {
+  // Обработчик команды /start
+  scene.command('start', async (ctx: any) => {
+    console.log(`${sceneName} scene: /start command received, restarting bot`);
+    await ctx.scene.leave();
+    await ctx.reply(ctx.i18n.t('bot_restarted') || 'Bot has been restarted. Starting from the beginning...');
+    return ctx.scene.enter('start');
+  });
+
+  // Обработчик команды /order
+  scene.command('order', async (ctx: any) => {
+    console.log(`${sceneName} scene: /order command received`);
+    if (!ctx.session.registered) {
+      await ctx.reply(ctx.i18n.t('registration_required'));
+      return ctx.scene.enter('register');
+    }
+    await ctx.reply(ctx.i18n.t('order_flow_placeholder'));
+    return ctx.scene.enter('newOrder');
+  });
+
+  // Обработчик команды /settings
+  scene.command('settings', async (ctx: any) => {
+    console.log(`${sceneName} scene: /settings command received`);
+    return ctx.scene.enter('settings');
+  });
+
+  // Обработчик команды /feedback
+  scene.command('feedback', async (ctx: any) => {
+    console.log(`${sceneName} scene: /feedback command received`);
+    return ctx.scene.enter('callback');
+  });
+
+  console.log(`Global command handlers have been registered for ${sceneName} scene`);
+};
+
+/**
+ * Проверяет, является ли сообщение командой, и пропускает её
+ * @param {string} messageText Текст сообщения
+ * @param {string} sceneName Название сцены для логирования
+ * @returns {boolean} true если это команда и её нужно пропустить
+ */
+export const shouldSkipCommand = (messageText: string, sceneName: string): boolean => {
+  if (messageText.startsWith('/')) {
+    console.log(`Skipping command "${messageText}" in ${sceneName} scene - should be handled by command handlers`);
+    return true;
+  }
+  return false;
 }; 

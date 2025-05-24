@@ -1,6 +1,7 @@
 import { Scenes } from 'telegraf';
 import { Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
+import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
 
 // Custom session type
 interface MySessionData extends Scenes.SceneSessionData {
@@ -24,6 +25,9 @@ type MainMenuButton =
   // | 'categories';
 
 export const mainMenuScene = new Scenes.BaseScene<MyContext>('mainMenu');
+
+// Регистрируем глобальные обработчики команд для этой сцены
+registerSceneCommandHandlers(mainMenuScene, 'MainMenu');
 
 // Helper function to create main menu keyboard
 const getMainMenuKeyboard = (ctx: MyContext) => {
@@ -122,6 +126,11 @@ mainMenuScene.command('feedback', async (ctx) => {
 mainMenuScene.hears(/.*/, async (ctx) => {
   const text = ctx.message.text;
   console.log(`Main menu button pressed: "${text}"`);
+  
+  // Пропускаем команды - они должны обрабатываться обработчиками команд сцены
+  if (shouldSkipCommand(text, 'MainMenu')) {
+    return;
+  }
   
   const buttonKey = getButtonKey(ctx, text);
   console.log(`Mapped button key: ${buttonKey}`);

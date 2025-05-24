@@ -1,60 +1,6 @@
 import { Scenes, Markup } from 'telegraf';
 import type { MyContext } from '../config/context';
-
-interface Terminal {
-  id: number;
-  name: string;
-  name_uz: string;
-  name_en: string;
-  desc: string;
-  desc_uz: string;
-  desc_en: string;
-  active: boolean;
-  city_id: number;
-  address: string;
-  address_uz: string;
-  address_en: string;
-  phone: string;
-  location: string;
-  latitude: string;
-  longitude: string;
-}
-
-// Helper function to get branch name based on language
-const getBranchName = (terminal: Terminal, language: string): string => {
-  switch (language) {
-    case 'uz':
-      return terminal.name_uz || terminal.name;
-    case 'en':
-      return terminal.name_en || terminal.name;
-    default:
-      return terminal.name;
-  }
-};
-
-// Helper function to get branch address based on language
-const getBranchAddress = (terminal: Terminal, language: string): string => {
-  switch (language) {
-    case 'uz':
-      return terminal.address_uz || terminal.address;
-    case 'en':
-      return terminal.address_en || terminal.address;
-    default:
-      return terminal.address;
-  }
-};
-
-// Helper function to get branch description based on language
-const getBranchDesc = (terminal: Terminal, language: string): string => {
-  switch (language) {
-    case 'uz':
-      return terminal.desc_uz || terminal.desc;
-    case 'en':
-      return terminal.desc_en || terminal.desc;
-    default:
-      return terminal.desc;
-  }
-};
+import { fetchTerminals, getTerminalById, getTerminalName, getTerminalDesc, getTerminalAddress, type Terminal } from '../utils/cities';
 
 // Create branch info scene
 export const branchInfoScene = new Scenes.BaseScene<MyContext>('branchInfo');
@@ -104,15 +50,13 @@ branchInfoScene.enter(async (ctx) => {
 
     console.log(`Selected city ID: ${ctx.session.currentCity}`);
 
-    // Fetch branches from API
-    const response = await fetch('https://api.lesailes.uz/api/terminals');
-    const data = await response.json() as { data: Terminal[] };
+    // Fetch branches from API using the utility function
+    const allTerminals = await fetchTerminals();
     
-    console.log(`Total terminals fetched: ${data.data.length}`);
-    console.log(`Active terminals: ${data.data.filter(t => t.active).length}`);
+    console.log(`Total terminals fetched: ${allTerminals.length}`);
     
-    // Filter active terminals and those matching the selected city
-    const terminals = data.data.filter((terminal: Terminal) => {
+    // Filter terminals matching the selected city
+    const terminals = allTerminals.filter((terminal: Terminal) => {
       const matches = terminal.active && terminal.city_id.toString() === ctx.session?.currentCity;
       if (terminal.active) {
         console.log(`Terminal: ${terminal.name}, city_id: ${terminal.city_id}, currentCity: ${ctx.session.currentCity}, matches: ${matches}`);
@@ -135,7 +79,7 @@ branchInfoScene.enter(async (ctx) => {
     let row: string[] = [];
 
     for (const terminal of terminals) {
-      const branchName = getBranchName(terminal, language);
+      const branchName = getTerminalName(terminal, language);
       row.push(branchName);
 
       if (row.length === 2) {
@@ -181,16 +125,16 @@ branchInfoScene.on('text', async (ctx) => {
 
   // Find selected terminal
   const selectedTerminal = terminals.find(terminal => 
-    getBranchName(terminal, language) === text
+    getTerminalName(terminal, language) === text
   );
 
   if (selectedTerminal) {
     // Format branch information
-    const branchName = getBranchName(selectedTerminal, language);
-    const branchDesc = getBranchDesc(selectedTerminal, language);
+    const branchName = getTerminalName(selectedTerminal, language);
+    const branchDesc = getTerminalDesc(selectedTerminal, language);
 
-    // Save only the selected branch and clear the terminals list
-    ctx.session.selectedBranch = selectedTerminal;
+    // Save only the selected branch ID and clear the terminals list
+    ctx.session.selectedBranch = selectedTerminal.id;
     ctx.session.terminals = undefined;
 
     // Send branch name and description

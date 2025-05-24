@@ -3,7 +3,7 @@ import { Telegraf, Scenes, Markup } from 'telegraf';
 import path from 'path';
 import LocalSession from 'telegraf-session-local';
 import { i18n } from './src/middlewares/i18n';
-import { fetchCities, getCityName } from './src/utils/cities';
+import { fetchCities, getCityName, getCityById } from './src/utils/cities';
 import type { City } from './src/utils/cities';
 import { mainMenuScene } from './src/scenes/mainMenu';
 import { menuScene } from './src/scenes/menu.scene';
@@ -230,8 +230,8 @@ welcomeScene.on('text', (ctx) => {
     ctx.session.currentCity = currentCity.id.toString();
     console.log(`Selected city saved to session: ${currentCity.id}`);
     
-    // Save only the selected city in the session instead of the entire array
-    ctx.session.selectedCity = currentCity;
+    // Save only the city ID in the session instead of the entire city object
+    ctx.session.selectedCity = currentCity.id;
     
     // Clear the full cities array to save space
     ctx.session.cities = undefined;
@@ -249,7 +249,7 @@ welcomeScene.on('text', (ctx) => {
 
 // Profile scene
 const profileScene = new Scenes.BaseScene<MyContext>('profile');
-profileScene.enter((ctx) => {
+profileScene.enter(async (ctx) => {
   // Проверяем целостность сессии
   if (!ctx.session) {
     console.log('Session is missing, initializing with defaults');
@@ -275,16 +275,16 @@ profileScene.enter((ctx) => {
   // Получаем информацию о выбранном городе
   let cityName = 'N/A';
   if (ctx.session.selectedCity) {
-    // Use the directly saved selected city
-    cityName = getCityName(ctx.session.selectedCity, ctx.i18n.locale());
-  } else if (ctx.session.currentCity && ctx.session.cities) {
-    // Legacy fallback
-    const currentCity = ctx.session.cities.find(
-      (city: City) => city.id.toString() === ctx.session.currentCity
-    );
-    
-    if (currentCity) {
-      cityName = getCityName(currentCity, ctx.i18n.locale());
+    // Get city by ID from API
+    const city = await getCityById(ctx.session.selectedCity);
+    if (city) {
+      cityName = getCityName(city, ctx.i18n.locale());
+    }
+  } else if (ctx.session.currentCity) {
+    // Fallback to currentCity if selectedCity is not available
+    const city = await getCityById(ctx.session.currentCity);
+    if (city) {
+      cityName = getCityName(city, ctx.i18n.locale());
     }
   }
   
@@ -453,12 +453,32 @@ bot.launch()
               );
               
               if (selectedCity) {
-                // Add the selected city to the session
-                sessionData.selectedCity = selectedCity;
+                // Save only the city ID instead of the full city object
+                sessionData.selectedCity = selectedCity.id;
                 // Remove the cities array to save space
                 delete sessionData.cities;
-                console.log(`Updated session ${session.id} with selectedCity`);
+                console.log(`Updated session ${session.id} with selectedCity ID: ${selectedCity.id}`);
               }
+            }
+            
+            // If session has selectedCity as full object, convert it to ID only
+            if (sessionData.selectedCity && typeof sessionData.selectedCity === 'object' && sessionData.selectedCity.id) {
+              const cityId = sessionData.selectedCity.id;
+              sessionData.selectedCity = cityId;
+              console.log(`Converted selectedCity object to ID: ${cityId} for session ${session.id}`);
+            }
+            
+            // If session has selectedBranch as full object, convert it to ID only
+            if (sessionData.selectedBranch && typeof sessionData.selectedBranch === 'object' && sessionData.selectedBranch.id) {
+              const branchId = sessionData.selectedBranch.id;
+              sessionData.selectedBranch = branchId;
+              console.log(`Converted selectedBranch object to ID: ${branchId} for session ${session.id}`);
+            }
+            
+            // Remove terminals array if it exists (temporary data)
+            if (sessionData.terminals && Array.isArray(sessionData.terminals)) {
+              delete sessionData.terminals;
+              console.log(`Removed terminals array from session ${session.id}`);
             }
           });
           

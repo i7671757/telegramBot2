@@ -177,6 +177,19 @@
   "loading": "Loading...",
   "error": "An error occurred. Please try again.",
   "back": "⬅️ Back",
+  "cart_button": "🛒 Cart",
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "clear": "🗑 Clear Cart",
+    "checkout": "✅ Checkout",
+    "cleared": "Cart cleared",
+    "checkout_message": "Checkout functionality will be added later",
+    "item_removed": "Item removed from cart",
+    "max_quantity": "Maximum quantity: 20",
+    "back_message": "Use the button below to go back:"
+  },
   "categories": {
     "title": "<b>Product Categories</b>",
     "empty": "No categories available at the moment.",

@@ -1,0 +1,43 @@
+{
+  "version": "2.0",
+  "optimized": true,
+  "sessions": [
+    {
+      "id": "1034682:1034682",
+      "data": {
+        "language": "ru",
+        "registered": true,
+        "phone": "+998909901057",
+        "selectedCityId": 2,
+        "selectedBranchId": 1,
+        "selectedCategoryId": 8,
+        "cart": [],
+        "currentProductId": null,
+        "productQuantities": {},
+        "lastActivity": 1747992967757,
+        "createdAt": 1747992967757
+      }
+    },
+    {
+      "id": "1034682",
+      "data": {
+        "language": "en",
+        "registered": true,
+        "phone": "+998909901057",
+        "selectedCityId": null,
+        "selectedBranchId": null,
+        "selectedCategoryId": null,
+        "cart": [],
+        "currentProductId": null,
+        "productQuantities": {},
+        "lastActivity": 1747993848895,
+        "createdAt": 1747993581600,
+        "__scenes": {
+          "current": "welcome",
+          "state": {}
+        },
+        "__language_code": "ru"
+      }
+    }
+  ]
+}
