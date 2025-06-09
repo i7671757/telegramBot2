@@ -9,883 +9,687 @@
       "id": "1034682:1034682",
       "data": {
         "__scenes": {
-          "current": "products",
+          "current": "mainMenu",
           "state": {}
         },
-        "language": "ru",
+        "language": "en",
         "registered": true,
         "phone": "+998909901057",
         "currentCity": "2",
-        "__language_code": "ru",
+        "__language_code": "en",
         "selectedCity": 2,
-        "selectedBranch": 1,
+        "isAuthenticated": true,
+        "address": "Узбекистан, Ташкент, Шарафа Рашидова улица",
+        "coordinates": {
+          "latitude": 41.328076,
+          "longitude": 69.274209
+        },
+        "previousScene": "categories",
         "products": [
           {
-            "id": 73,
+            "id": 33,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Chicken corn",
-                  "ru": "Чикен корн",
-                  "uz": "Chiken korn"
+                  "en": "Chicken nuggets, 3 pcs",
+                  "ru": "Куриные наггетсы, 3 шт",
+                  "uz": "Tovuq nagetsi, 3 dona"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Чикен корн",
+                  "ru": "Куриные наггетсы 3",
                   "uz": "",
-                  "val": "61f45457-ac19-4890-ac48-5c83165e513a"
+                  "val": "3758ecec-431d-49f6-801a-1f33fd53631e"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Tender chicken pieces</p>",
-                  "ru": "<p>Нежные куриные кусочки</p>",
-                  "uz": "<p>Yumshoq tovuq bo'lakchalari</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:14.000000Z",
-            "updated_at": "2023-11-23T10:58:05.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Чикен корн",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 20,
-            "weight": 105,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "20000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/16/KmhdUqmEKWbGPxqGszEmP1Ib3f5UhE4xLQZm63US.webp",
-            "variants": []
-          },
-          {
-            "id": 54,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Wings, 3 pcs",
-                  "ru": "Крылышки, 3 шт",
-                  "uz": "Qanot, 3 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Крылышки 3",
-                  "uz": "",
-                  "val": "affdb105-823a-4a54-9d4a-8b353c917eea"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Crispy chicken wings (Halal). 3 pcs</p>",
-                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 3 шт</p>",
-                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 3 dona</p>"
+                  "en": "<p>Delicious minced chicken nuggets</p>",
+                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
+                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2024-08-20T12:41:51.000000Z",
+            "updated_at": "2025-05-01T04:43:33.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Крылышки, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 9,
-            "weight": 177,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "24000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/16/q6Zz1EDiIhMMt4cAHvKT2AbikYGhInSipE9qawmg.webp",
-            "variants": []
-          },
-          {
-            "id": 58,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Spicy wings, 3 pcs",
-                  "ru": "Острые крылышки, 3 шт",
-                  "uz": "Achchiq qanot, 3 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Крылышки острые 3",
-                  "uz": "",
-                  "val": "10824811-0af0-4365-871f-9361aa90833f"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Spicy Crispy chicken wings (Halal). 3 pcs</p>",
-                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 3 шт</p>",
-                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 3 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2024-12-10T06:33:03.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Острые крылышки, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 10,
-            "weight": 177,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "24000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2022/05/06/ybcbXwjTDHdH04M44P3cxxRIVhFDh5GKajwkGbfj.png",
-            "variants": []
-          },
-          {
-            "id": 35,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Strips, 3 pcs",
-                  "ru": "Стрипсы, 3 шт",
-                  "uz": "Strips, 3 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Стрипсы 3",
-                  "uz": "",
-                  "val": "014113f0-d557-4d09-a942-296fd7fd3dd6"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Tender chicken fillet (Halal). 3 pcs</p>",
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 3 шт</p>",
-                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 3 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2024-05-01T11:09:42.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Стрипсы, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 11,
-            "weight": 159,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "24000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/16/czIAmoDEKlYtbcMcZoxH1vgdxI8iibrvio2yeKeV.webp",
-            "variants": []
-          },
-          {
-            "id": 109,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Spicy strips, 3 pcs",
-                  "ru": "Острые стрипсы, 3 шт",
-                  "uz": "Achchiq strips, 3 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Острые Стрипсы, 3 шт",
-                  "uz": "",
-                  "val": "41122e12-12a2-473a-9e37-2d9c29f6b10d"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 3 pcs</p>",
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 3 шт</p>",
-                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 3 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-03-15T17:30:28.000000Z",
-            "updated_at": "2024-12-10T06:33:37.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Острые стрипсы, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 12,
-            "weight": 159,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "24000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2022/05/06/uwcVinTefseVa26Q2T1nt98KITURkb6NMR9Yx92O.png",
-            "variants": []
-          },
-          {
-            "id": 170,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Чизи чикен корн",
-                  "uz": "Chizi chiken korn",
-                  "en": "Cheesy chicken corn"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Чизи чикен корн",
-                  "uz": "",
-                  "en": null,
-                  "val": "cfc8bd27-32d8-4eb2-9c3a-ed37ba8a4813"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Нежные куриные кусочки в сырному соусе</p>",
-                  "uz": "<p>Pishloq sousidagi yumshoq tovuq bo'lakchalari</p>",
-                  "en": "<p>Cheesy tender chicken pieces</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2023-02-27T07:22:32.000000Z",
-            "updated_at": "2023-11-23T11:01:59.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Чизи чикен корн",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 18,
-            "weight": 290,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "40000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2023/02/27/YFNM3iOwoH1MOePLcvaokIXMYLfxINYevTQ0wpwP.webp",
-            "variants": []
-          },
-          {
-            "id": 57,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Wings, 7 pcs",
-                  "ru": "Крылышки, 7 шт",
-                  "uz": "Qanot, 7 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Крылышки 7",
-                  "uz": "",
-                  "val": "be724b45-206c-4a36-a092-7311a672c0b4"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Crispy chicken wings (Halal). 7 pcs</p>",
-                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 7 шт</p>",
-                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 7 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-01-03T04:33:10.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Крылышки, 7 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 5,
-            "weight": 413,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "48000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/W8y7PD5HxKVE09dsalOy0sT791uKJGM9VzeNy3df.webp",
-            "variants": []
-          },
-          {
-            "id": 60,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "en": "Spicy wings, 7 pcs",
-                  "ru": "Острые крылышки, 7 шт",
-                  "uz": "Achchiq qanot, 7 dona"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Крылышки острые 7",
-                  "uz": "",
-                  "val": "3809e16d-4749-4067-b4b3-00aba77767ad"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p>Spicy Crispy chicken wings (Halal). 7 pcs</p>",
-                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 7 шт</p>",
-                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 7 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-01-03T04:33:05.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Острые крылышки, 7 шт",
+            "custom_name": "Куриные наггетсы, 3 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
             "sort": 6,
-            "weight": 413,
-            "additional_sales": null,
+            "weight": 75,
+            "additional_sales": "19,20,65,71,72",
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "48000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/45UrGaoHKB4u2g1xFlW7VxbAedcV3TdBGRvo3i5g.webp",
+            "price": "15000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2023/01/24/jOF0andmSuQH7HByJ7TxZ00mC23TE5JC8QetB6KZ.webp",
             "variants": []
           },
           {
-            "id": 37,
+            "id": 165,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Strips, 7 pcs",
-                  "ru": "Стрипсы, 7 шт",
-                  "uz": "Strips, 7 dona"
+                  "ru": "Чикен стикс, 3 шт",
+                  "uz": "Chiken stiks, 3 dona",
+                  "en": "Chicken sticks, 3 pcs"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Стрипсы 7",
+                  "ru": "Чикен стикс 3 шт",
                   "uz": "",
-                  "val": "46258075-a42a-4532-86e8-f0f2fd89a35c"
+                  "en": null,
+                  "val": "b77f0cca-f0c0-477f-bb2a-e5888a1d7915"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Tender chicken fillet (Halal). 7 pcs</p>",
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 7 шт</p>",
-                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 7 dona</p>"
+                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
+                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar</p>",
+                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Appetizing minced chicken nuggets in branded breading</span></p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2023-01-24T10:47:15.000000Z",
+            "updated_at": "2025-05-01T04:44:16.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Чикен стикс, 3 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 10,
+            "weight": 75,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "15000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2023/01/24/QRHiz6nJ7S6ZMKS7q3MRvxr8W8btihhZdffA10OM.webp",
+            "variants": []
+          },
+          {
+            "id": 51,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "French fries",
+                  "ru": "Картошка фри",
+                  "uz": "Fri kartoshkasi"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Картошка фри L",
+                  "uz": "",
+                  "val": "cd663038-7855-48d1-b9c4-75898ecc3fdf"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Appetizing and crispy french fries</p>",
+                  "ru": "<p>Картошка фри с аппетитно хрустящей корочкой</p>",
+                  "uz": "<p>Ishtahaochar, qarsildoq fri kartoshkasi.</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-01-03T04:32:42.000000Z",
+            "updated_at": "2024-08-20T11:01:50.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Стрипсы, 7 шт",
+            "custom_name": "Картошка фри",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 7,
-            "weight": 371,
-            "additional_sales": null,
+            "sort": 11,
+            "weight": 91,
+            "additional_sales": "19,20,65,71,72",
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "48000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/B25DuO18GBbTXSMs5DyUpeUuGlosSEy3N40QIxAA.webp",
+            "price": "16000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2022/02/23/kp8eGfzJqockuM9osFGgJRxQytAl93lgRtcFLo9d.webp",
             "variants": []
           },
           {
-            "id": 111,
+            "id": 261,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Spicy strips, 7 pcs",
-                  "ru": "Острые стрипсы, 7 шт",
-                  "uz": "Achchiq strips, 7 dona"
+                  "ru": "АКЦИЯ на Куриные шарики с сыром, 3 шт",
+                  "uz": "Pishloqli tovuq sharchalariga Aksiya, 3 dona",
+                  "en": "Bonus for the Cheesy chicken balls, 3 pcs"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Острые Стрипсы, 7 шт",
-                  "uz": "",
-                  "val": "e1ba6f5a-ed86-4a5f-82a3-64465472070a"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 7 pcs</p>",
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 7 шт</p>",
-                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 7 dona</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-03-15T17:30:28.000000Z",
-            "updated_at": "2025-01-03T04:33:17.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Острые стрипсы, 7 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 8,
-            "weight": 371,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "48000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/nzNRKtRXxtPVOqT8YI5yZLuPK2RG4oCHKJlqr4Le.webp",
-            "variants": []
-          },
-          {
-            "id": 219,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Крылышки, 17 шт",
-                  "uz": "Qanot, 17 dona",
-                  "en": "Wings, 17pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Крылышки, 17 шт",
+                  "ru": "АКЦИЯ Куриные шарики с сыром, 3 шт ",
                   "uz": "",
                   "en": null,
-                  "val": "ee4a1775-258e-4b17-8ee1-112e96031f59"
+                  "val": "990f20fa-6106-4e7d-989f-f80079cf4d02"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p>Хрустящие куриные крылышки (Halal) в фирменной панировке. 17 шт.</p>",
-                  "uz": "<p>Maxsus panirovkadagi, tovuqning xushta‘m qanotlari (Halal). 17 dona</p>",
-                  "en": "<p>Crispy chicken wings (Halal). 17 pcs</p>"
+                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Нежные и сочные куриные шарики с сыром в фирменной панировке.</span>Акция! Получите 3 наггетса в подарок!</p>",
+                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, yumshoq va mazali, pishloqli tovuq sharchalari.Aksiya! 3 ta naggetsni sovg'aga oling!</span></p>",
+                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Tender and juicy chicken balls.</span>Bonus! Get 3 nuggets as a gift!</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2024-05-01T10:43:06.000000Z",
-            "updated_at": "2024-12-10T06:29:06.000000Z",
+            "created_at": "2025-04-30T07:00:39.000000Z",
+            "updated_at": "2025-05-16T06:39:14.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Крылышки, 17 шт",
+            "custom_name": "АКЦИЯ на Куриные шарики с сыром, 3 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 1,
-            "weight": 0,
+            "sort": -1,
+            "weight": 1,
             "additional_sales": null,
             "weight_unit": null,
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "108000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/5jph5BXv4keEY3SKRwv9JfvBQwAlVKYuCpBuGvXl.webp",
+            "price": "17000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2025/05/01/TLfsH8TxJBxAKUnbrwFGhn18bLT6upTcIMHdyKb9.webp",
             "variants": []
           },
           {
-            "id": 220,
+            "id": 156,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "ru": "Острые крылышки, 17 шт",
-                  "uz": "Achchiq qanot, 17 dona",
-                  "en": "Spicy wings, 17 pcs"
+                  "ru": "Картофельные шарики с сыром, 7 шт",
+                  "uz": "Pishloqli kartoshka sharchalari, 7 dona",
+                  "en": "Potato balls with cheese, 7 pcs"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Острые крылышки, 17 шт",
+                  "ru": "Картофельные шарики с сыром 7 шт",
                   "uz": "",
                   "en": null,
-                  "val": "52d00c3d-4a1a-4872-bcb7-4cac92ab2c31"
+                  "val": "9be1998f-b344-4744-bc67-057691ce5350"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p>Куриные крылышки (Halal) в фирменной панировке, приправленные острыми специями. 17 шт.</p>",
-                  "uz": "<p>Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning xushta‘m qanotlari (Halal). 17 dona</p>",
-                  "en": "<p>Spicy Crispy chicken wings (Halal). 17 pcs</p>"
+                  "ru": "<p>Сытные картофельные шарики с сыром в фирменной панировке. 7 шт</p>",
+                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, pishloqli kartoshka sharchalari. 7 dona</span></p>",
+                  "en": "<p>Tasty potato balls with cheese. 7 pcs</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2024-05-01T10:43:06.000000Z",
-            "updated_at": "2024-12-10T06:34:04.000000Z",
+            "created_at": "2022-11-15T09:13:25.000000Z",
+            "updated_at": "2024-08-13T11:40:56.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Острые крылышки, 17 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 2,
-            "weight": 0,
-            "additional_sales": null,
-            "weight_unit": null,
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "108000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/176OEnpvQo1aJ43aF8nX2ZxFWVt0puHJjwk3z2W6.webp",
-            "variants": []
-          },
-          {
-            "id": 222,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Стрипсы, 17 шт",
-                  "uz": "Strips, 17 dona",
-                  "en": "Strips, 17 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Стрипсы, 17 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "8d923373-ba7d-4220-a024-f787a9c1a111"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке. 17 шт.</p>",
-                  "uz": "<p>Tovuqning maxsus panirovkadagi mayin filesi (Halal). 17 dona</p>",
-                  "en": "<p>Tender chicken fillet (Halal). 17 pcs</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2024-05-01T10:43:06.000000Z",
-            "updated_at": "2024-12-10T06:28:51.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Стрипсы, 17 шт",
+            "custom_name": "Картофельные шарики с сыром, 7 шт",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
             "sort": 3,
-            "weight": 0,
+            "weight": 175,
             "additional_sales": null,
-            "weight_unit": null,
+            "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "108000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/b7AVCcKDPPEjoDxu4fcnH11JuZ9Gd4EEHk4nRE50.webp",
+            "price": "18000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2022/11/15/vLdLVsVy4sXPQJQKGtTkVybXkbThJVSDTq7xkdhV.webp",
             "variants": []
           },
           {
-            "id": 221,
+            "id": 66,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "ru": "Острые стрипсы, 17 шт",
-                  "uz": "Achchiq strips, 17 dona",
-                  "en": "Spicy strips, 17 pcs"
+                  "en": "Country style potatoes",
+                  "ru": "Картошка по-деревенски",
+                  "uz": "Jaydari kartoshka"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Острые Стрипсы, 17 шт",
+                  "ru": "Картошка по-деревенски L",
                   "uz": "",
-                  "en": null,
-                  "val": "a0092518-cef8-4816-a983-ad60aa04b4f9"
+                  "val": "36bbc8c2-f8bc-4a40-a25d-fae99a2f955f"
                 }
               },
               "description": {
                 "chopar": {
-                  "ru": "<p>Нежнейшее куриное филе (Halal) в фирменной панировке, приправленные острыми специями. 17 шт.</p>",
-                  "uz": "<p><span style=\"color: black;\">Maxsus panirovkadagi, o‘tkir ziravorli, tovuqning</span> mayin filesi (Halal). 17 dona</p>",
-                  "en": "<p><span style=\"color: black;\">Spicy</span>, tender chicken fillet (Halal). 3 pcs</p>"
+                  "en": "<p>Delicious potato slices with spices</p>",
+                  "ru": "<p>Аппетитные ломтики картофеля со специями</p>",
+                  "uz": "<p>Ziravorlar bilan qovurilgan, ishtahaochar kartoshka bo'laklari.</p>"
                 }
               }
             },
             "option_data": [],
-            "created_at": "2024-05-01T10:43:06.000000Z",
-            "updated_at": "2024-12-10T06:34:14.000000Z",
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-08-20T11:02:02.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Острые стрипсы, 17 шт",
+            "custom_name": "Картошка по-деревенски",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 4,
-            "weight": 0,
+            "sort": 12,
+            "weight": 120,
+            "additional_sales": "19,20,65,71,72",
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "18000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2022/02/23/VFbXTLqlOFyISDb2RkM49liUAe9GR1n3UdaPUBwP.webp",
+            "variants": []
+          },
+          {
+            "id": 34,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Chicken nuggets, 5 pcs",
+                  "ru": "Куриные наггетсы, 5 шт",
+                  "uz": "Tovuq nagetsi, 5 dona"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Куриные наггетсы 5",
+                  "uz": "",
+                  "val": "41497d7e-fe1c-4252-92d9-905d914835b1"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Appetizing minced chicken nuggets in branded breading</p>",
+                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
+                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar.</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2025-05-01T04:43:54.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Куриные наггетсы, 5 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 5,
+            "weight": 125,
+            "additional_sales": "19,20,65,71,72",
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "20000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2023/01/24/Yf0tksk8T27V4GgT2heBeQtvWQZMc8FYSXTOFMqO.webp",
+            "variants": []
+          },
+          {
+            "id": 166,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Чикен стикс, 5 шт",
+                  "uz": "Chiken stiks, 5 dona",
+                  "en": "Chicken sticks, 5 pcs"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Чикен стикс 5 шт",
+                  "uz": "",
+                  "en": null,
+                  "val": "09471f5f-eea9-4549-a2a2-4b155663713d"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p>Аппетитные наггетсы из куриного фарша (Halal) в фирменной панировке</p>",
+                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar (Halal)</p>",
+                  "en": "<p>Delicious minced chicken nuggets (Halal)</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2023-01-24T10:47:15.000000Z",
+            "updated_at": "2024-08-13T11:43:24.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Чикен стикс, 5 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 9,
+            "weight": 125,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "20000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2023/01/25/M88mdNCSaakpn9zgM1GXkdzDavMWgRyecWH91thT.webp",
+            "variants": []
+          },
+          {
+            "id": 262,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "АКЦИЯ на Куриные шарики с сыром, 5 шт",
+                  "uz": "Pishloqli tovuq sharchalariga Aksiya, 5 dona",
+                  "en": "Bonus for the Cheesy chicken balls, 5 pcs"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "АКЦИЯ Куриные шарики с сыром, 5 шт",
+                  "uz": "",
+                  "en": null,
+                  "val": "e376071c-7ee0-4aa5-aaab-9b982ee08f69"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Нежные и сочные куриные шарики с сыром в фирменной панировке.</span></p><p>Акция! Получите 5 наггетсов в подарок!</p>",
+                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, yumshoq va mazali, pishloqli tovuq sharchalari.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Aksiya! 5 ta naggetsni sovg'aga oling!</span></p>",
+                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Tender and juicy chicken balls.</span></p><p>Bonus! Get 5 nuggets as a gift!</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2025-04-30T07:00:39.000000Z",
+            "updated_at": "2025-05-16T06:39:27.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "АКЦИЯ на Куриные шарики с сыром, 5 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": -2,
+            "weight": 1,
             "additional_sales": null,
             "weight_unit": null,
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "108000.00000",
-            "category_id": 6,
-            "image": "https://api.lesailes.uz/storage/products/2024/05/01/GmsQ1rmjhPy14CEToKwtet5zaUSqMECdfHKQK2DV.webp",
+            "price": "23000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2025/05/01/qdNUGGCEkg1KVUU5xYbpDm6bhJjvfwMRqp2kwPOT.webp",
+            "variants": []
+          },
+          {
+            "id": 155,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Картофельные шарики с сыром, 11 шт",
+                  "uz": "Pishloqli kartoshka sharchalari, 11 dona",
+                  "en": "Potato balls with cheese, 11 pcs"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "картофельные шарики с сыром 11 шт",
+                  "uz": "",
+                  "en": null,
+                  "val": "83094528-f2df-4924-9b36-b489b7510e12"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p>Сытные картофельные шарики с сыром в фирменной панировке. 11 шт</p>",
+                  "uz": "<p>Maxsus panirovkadagi, pishloqli kartoshka sharchalari. 11 dona</p>",
+                  "en": "<p>Tasty potato balls with cheese. 11 pcs</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2022-11-14T07:00:24.000000Z",
+            "updated_at": "2024-08-13T11:40:43.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Картофельные шарики с сыром, 11 шт",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 2,
+            "weight": 275,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "25000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2022/11/15/b7DfHdd7xXD8BBSMGreVClZ9stwFV0zlyv3vJH83.png",
+            "variants": []
+          },
+          {
+            "id": 171,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "ru": "Фри баскет",
+                  "uz": "Fri basket",
+                  "en": "French fries basket"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Фри баскет",
+                  "uz": "",
+                  "en": null,
+                  "val": "7c5a216c-8d53-4404-a8fc-59ca8328f93a"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "ru": "<p>Ещё больше картошки фри с аппетитно хрустящей корочкой</p>",
+                  "uz": "<p>Yanada ko'proq ishtahaochar, qarsildoq fri kartoshkasi</p>",
+                  "en": "<p>Even more appetizing and crispy french fries</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2023-02-27T07:22:32.000000Z",
+            "updated_at": "2023-11-23T11:13:13.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Фри баскет",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 14,
+            "weight": 182,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "29000.00000",
+            "category_id": 5,
+            "image": "https://api.lesailes.uz/storage/products/2023/02/27/YXTQXg0BiotZoFri7R9rHhsKxz96kt4GrEzCU96W.webp",
             "variants": []
           }
         ],
         "selectedProduct": {
-          "id": 170,
+          "id": 19,
           "attribute_data": {
             "name": {
               "chopar": {
-                "ru": "Чизи чикен корн",
-                "uz": "Chizi chiken korn",
-                "en": "Cheesy chicken corn"
+                "en": "Ketchup",
+                "ru": "Кетчуп",
+                "uz": "Ketchup"
               }
             },
             "xml_id": {
               "chopar": {
-                "ru": "Чизи чикен корн",
+                "ru": "Кетчуп ",
                 "uz": "",
-                "en": null,
-                "val": "cfc8bd27-32d8-4eb2-9c3a-ed37ba8a4813"
+                "val": "3067edb0-b825-4aff-b92d-eb5724292f36"
               }
             },
             "description": {
               "chopar": {
-                "ru": "<p>Нежные куриные кусочки в сырному соусе</p>",
-                "uz": "<p>Pishloq sousidagi yumshoq tovuq bo'lakchalari</p>",
-                "en": "<p>Cheesy tender chicken pieces</p>"
+                "en": null,
+                "ru": null,
+                "uz": null
               }
             }
           },
           "option_data": [],
-          "created_at": "2023-02-27T07:22:32.000000Z",
-          "updated_at": "2023-11-23T11:01:59.000000Z",
+          "created_at": "2021-11-04T17:06:13.000000Z",
+          "updated_at": "2023-11-23T11:19:50.000000Z",
           "deleted_at": null,
           "product_family_id": 2,
           "layout_id": null,
           "group_pricing": 0,
           "drafted_at": null,
           "draft_parent_id": null,
-          "custom_name": "Чизи чикен корн",
+          "custom_name": "Кетчуп",
           "product_id": null,
           "custom_name_uz": null,
           "active": 1,
           "modifier_prod_id": null,
           "box_id": null,
-          "sort": 18,
-          "weight": 290,
+          "sort": 1,
+          "weight": 15,
           "additional_sales": null,
           "weight_unit": "g",
           "is_double_parent": null,
           "is_double_child": null,
-          "price": "40000.00000",
-          "category_id": 6,
-          "image": "https://api.lesailes.uz/storage/products/2023/02/27/YFNM3iOwoH1MOePLcvaokIXMYLfxINYevTQ0wpwP.webp",
+          "price": "4000.00000",
+          "category_id": 1,
+          "image": "https://api.lesailes.uz/storage/products/2023/11/02/rDBrPGwFET7ang8QoYYt7MdH8FWT3AafTLjZUbMJ.webp",
           "variants": []
         },
         "productQuantities": {
           "7": 1,
-          "20": 1,
-          "21": 1,
-          "25": 1,
+          "19": 1,
           "33": 1,
-          "42": 1,
-          "45": 1,
-          "51": 1,
+          "46": 1,
+          "49": 1,
           "54": 1,
-          "58": 1,
-          "62": 1,
           "63": 1,
-          "65": 1,
-          "66": 1,
           "71": 1,
           "73": 1,
-          "99": 1,
-          "105": 1,
           "106": 1,
           "114": 1,
-          "129": 1,
-          "132": 1,
-          "137": 1,
           "141": 1,
-          "146": 1,
-          "148": 1,
-          "149": 1,
-          "170": 1,
-          "171": 1
+          "165": 1,
+          "246": 1
         },
-        "address": "Узбекистан, Ташкент, Шарафа Рашидова улица",
-        "coordinates": {
-          "latitude": 41.328073,
-          "longitude": 69.274114
+        "cart": {
+          "items": [],
+          "total": 0,
+          "updatedAt": "2025-06-09T13:11:39.302Z"
         },
-        "selectedCategory": {
-          "id": 6,
-          "attribute_data": {
-            "name": {
-              "chopar": {
-                "ru": "Курочка",
-                "uz": "Tovuq",
-                "en": "Chicken"
-              }
-            },
-            "xml_id": {
-              "chopar": {
-                "ru": "Курочка",
-                "uz": "",
-                "val": "cfb90b82-072c-427c-a7bd-f22344c7d41f"
-              }
-            }
-          },
-          "_lft": 19,
-          "_rgt": 20,
-          "parent_id": null,
-          "created_at": "2021-11-04T17:06:12.000000Z",
-          "updated_at": "2024-08-20T11:05:05.000000Z",
-          "sort": "min_price:asc",
-          "layout_id": null,
-          "drafted_at": null,
-          "draft_parent_id": null,
-          "active": 1,
-          "half_mode": 0,
-          "order": 2,
-          "icon": "🍗",
-          "cities": null,
-          "asset": [
-            {
-              "id": 1008,
-              "asset_source_id": 2,
-              "location": "categories/2022/02/11",
-              "kind": "image",
-              "sub_kind": "png",
-              "width": "62",
-              "height": "48",
-              "title": "Курица",
-              "original_filename": "19.png",
-              "caption": null,
-              "size": 6476,
-              "external": 0,
-              "extension": "png",
-              "filename": "BxUfVFDIQusN9uO8UeLWt387Q41Z0C9qtYBFo5DT.png",
-              "created_at": "2022-02-11T14:13:17.000000Z",
-              "updated_at": "2022-02-11T14:13:17.000000Z",
-              "assetable_id": 6,
-              "asset_id": 1008,
-              "assetableId": 219,
-              "link": "https://api.lesailes.uz/storage/categories/2022/02/11/BxUfVFDIQusN9uO8UeLWt387Q41Z0C9qtYBFo5DT.png"
-            }
-          ]
+        "expectingTimeSlotSelection": true,
+        "selectedPickupTime": "✅ As soon as possible",
+        "selectedPaymentMethod": "📱 Payme",
+        "expectingAdditionalPhone": false,
+        "additionalPhone": "не указан",
+        "expectingCutleryChoice": false,
+        "includeCutlery": false,
+        "expectingOrderConfirmation": false,
+        "ratings": {
+          "product": 5,
+          "service": 5,
+          "delivery": 5
         },
-        "previousScene": "products"
+        "selectedBranch": 8,
+        "deliveryType": "pickup",
+        "step": "pickup.chooseBranch"
+      }
+    },
+    {
+      "id": "123:123",
+      "data": {
+        "__scenes": {},
+        "__language_code": "en"
       }
     }
   ]

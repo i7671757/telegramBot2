@@ -36,4 +36,26 @@ export const config = {
   botToken: process.env.BOT_TOKEN || '',
   sessionPath: process.env.SESSION_PATH || './sessions.json',
   isDev: process.env.NODE_ENV !== 'production',
+  webhook: {
+    url: process.env.WEBHOOK_URL || '',
+    path: process.env.WEBHOOK_PATH || '/webhook',
+    port: parseInt(process.env.PORT || '3000'),
+    host: process.env.HOST || '0.0.0.0'
+  },
+  api: {
+    baseUrl: process.env.API_URL || 'https://api.lesailes.uz/',
+    endpoints: {
+      checkTgExists: 'check_tg_exists',
+      sendOtp: 'ss_zz',
+      verifyOtp: 'auth_otp',
+      getCsrf: 'keldi',
+      getCities: 'cities/public'
+    }
+  },
+  auth: {
+    otpLength: 6,
+    otpExpiry: 300, // 5 minutes in seconds
+    maxRetries: 3,
+    supportedCountryCode: '+998' // Uzbekistan
+  }
 }; 

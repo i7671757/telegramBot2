@@ -1,10 +1,12 @@
 import { Scenes } from 'telegraf';
 import { Markup } from 'telegraf';
+import type { AuthContext } from '../middlewares/auth';
+const { match } = require("telegraf-i18n");
 
 // Define a simple context type to avoid compatibility issues
 type MyContext = any;
 
-export const profileScene = new Scenes.BaseScene<MyContext>('profile');
+export const profileScene = new Scenes.BaseScene<AuthContext>('profile');
 
 // On scene enter
 profileScene.enter(async (ctx) => {
@@ -23,7 +25,7 @@ profileScene.enter(async (ctx) => {
 });
 
 // Handle back to main button
-profileScene.hears(/.*back_to_main.*/, async (ctx) => {
+profileScene.hears(match('back_to_main'), async (ctx) => {
   await ctx.scene.enter('welcome');
 });
 

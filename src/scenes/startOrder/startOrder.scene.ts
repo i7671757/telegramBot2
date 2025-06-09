@@ -2,7 +2,9 @@ const { match } = require("telegraf-i18n");
 import { Scenes, Markup, Context } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import axios from 'axios';
-import { fetchTerminals, getTerminalById, getTerminalName, getTerminalDesc, getTerminalAddress, type Terminal } from '../utils/cities';
+import { fetchTerminals, getTerminalById, getTerminalName, getTerminalDesc, getTerminalAddress, type Terminal } from '../../utils/cities';
+import type { AuthContext } from '../../middlewares/auth';
+import { selectPickup, selectPickupBranch } from './helpers';
 
 // Расширяем тип данных сессии для нашего контекста
 interface MySessionData {
@@ -14,6 +16,7 @@ interface MySessionData {
     currentCity?: string;
     terminals?: Terminal[];
     selectedBranch?: number | string | null;
+    deliveryType?: 'pickup' | 'delivery';
 }
 
 // Расширяем тип сессии сцены
@@ -27,12 +30,6 @@ interface MySceneSession extends Scenes.SceneSession {
     terminals?: Terminal[];
     selectedBranch?: number | string | null;
 }
-
-// Используем расширенный тип для контекста
-type MyContext = Scenes.SceneContext & {
-    i18n: TelegrafI18n;
-    session: MySceneSession;
-};
 
 // Функция для получения адреса по координатам
 async function getAddressByCoordinates(latitude: number, longitude: number, language: string = 'ru'): Promise<string> {
@@ -106,7 +103,7 @@ async function getAddressByCoordinates(latitude: number, longitude: number, lang
     }
 }
 
-export const startOrderScene = new Scenes.BaseScene<MyContext>('startOrder');
+export const startOrderScene = new Scenes.BaseScene<AuthContext>('startOrder');
 
 
 startOrderScene.command('start', async (ctx) => {
@@ -158,6 +155,20 @@ startOrderScene.enter(async (ctx) => {
 
 // Top-level back button handler
 startOrderScene.hears(match('startOrder.back'), async (ctx) => {
+    switch ((ctx.session as any).step) {
+        case 'pickup':
+            delete (ctx.session as any).deliveryType;
+            delete (ctx.session as any).step;
+            return ctx.scene.reenter();
+        case 'delivery':
+            delete (ctx.session as any).deliveryType;
+            delete (ctx.session as any).step;
+            return ctx.scene.reenter();
+        case 'pickup.chooseBranch':
+            (ctx.session as any).step = "pickup";
+            (ctx.session as any).deliveryType = "pickup";
+            return selectPickup(ctx);
+    }
     console.log('Back button pressed in startOrder scene');
     return ctx.scene.enter('mainMenu');
 });
@@ -168,20 +179,7 @@ startOrderScene.hears(match('startOrder.pickup.back'), async (ctx) => {
     return ctx.scene.reenter();
 });
 
-startOrderScene.hears(match('startOrder.deliveryType.pickup'), async (ctx) => {
-    const keyboard = Markup.keyboard([
-        [ctx.i18n.t('startOrder.pickup.back'), Markup.button.locationRequest(ctx.i18n.t('startOrder.pickup.getLocation'))],
-        [ctx.i18n.t('startOrder.pickup.orderHere'), ctx.i18n.t('startOrder.pickup.selectBranch')]
-    ]).resize();
-
-    await ctx.reply(
-        ctx.i18n.t('startOrder.pickup.text'),
-        { 
-            parse_mode: "HTML",
-            ...keyboard
-        }
-    );
-});
+startOrderScene.hears(match('startOrder.deliveryType.pickup'), selectPickup);
 
 startOrderScene.hears(match('startOrder.pickup.orderHere'), async (ctx) => {
     return ctx.reply(
@@ -196,6 +194,11 @@ startOrderScene.hears(match('startOrder.pickup.orderHere'), async (ctx) => {
 
 // Handler for delivery option
 startOrderScene.hears(match('startOrder.deliveryType.deliver'), async (ctx) => {
+    // Save delivery type in session
+    (ctx.session as any).deliveryType = 'delivery';
+    (ctx.session as any).step = 'delivery';
+    console.log('User selected delivery type');
+    
     // Create keyboard for delivery option
     const deliveryKeyboard = Markup.keyboard([
         [ctx.i18n.t('startOrder.delivery.myAddress'), Markup.button.locationRequest(ctx.i18n.t('startOrder.delivery.sendLocation'))],
@@ -211,11 +214,6 @@ startOrderScene.hears(match('startOrder.deliveryType.deliver'), async (ctx) => {
     );
 });
 
-// Handler for back button in delivery mode
-startOrderScene.hears(match('startOrder.delivery.back'), async (ctx) => {
-    console.log('Back button pressed in delivery mode');
-    return ctx.scene.reenter();
-});
 
 // Handler for myAddress button
 startOrderScene.hears(match('startOrder.delivery.myAddress'), async (ctx) => {
@@ -452,70 +450,7 @@ startOrderScene.hears(match('startOrder.location.sendAgain'), async (ctx) => {
 });
 
 // Handler for selecting a branch
-startOrderScene.hears(match('startOrder.pickup.selectBranch'), async (ctx) => {
-    try {
-        // Check if city is selected
-        if (!ctx.session?.currentCity) {
-            await ctx.reply(ctx.i18n.t('changeCity.select_city'));
-            return ctx.scene.enter('changeCity');
-        }
-
-        console.log(`Selected city ID: ${ctx.session.currentCity}`);
-
-        // Fetch branches from API using the utility function
-        const allTerminals = await fetchTerminals();
-        
-        console.log(`Total terminals fetched: ${allTerminals.length}`);
-        
-        // Filter terminals matching the selected city
-        const terminals = allTerminals.filter((terminal) => {
-            const matches = terminal.active && terminal.city_id.toString() === ctx.session?.currentCity;
-            if (terminal.active) {
-                console.log(`Terminal: ${terminal.name}, city_id: ${terminal.city_id}, currentCity: ${ctx.session.currentCity}, matches: ${matches}`);
-            }
-            return matches;
-        });
-
-        console.log(`Filtered terminals count: ${terminals.length}`);
-
-        if (terminals.length === 0) {
-            await ctx.reply(ctx.i18n.t('branchInfo.no_branches'));
-            return ctx.scene.reenter();
-        }
-
-        // Get current language
-        const language = ctx.i18n.locale();
-
-        // Create keyboard with branches in a grid (2 columns)
-        const buttons: string[][] = [];
-        let row: string[] = [];
-
-        for (const terminal of terminals) {
-            const branchName = getTerminalName(terminal, language);
-            row.push(branchName);
-
-            if (row.length === 2) {
-                buttons.push([...row]);
-                row = [];
-            }
-        }
-
-        // Add back button
-        buttons.push([ctx.i18n.t('startOrder.back')]);
-
-        const keyboard = Markup.keyboard(buttons).resize();
-        
-        // Save terminals in session for branch selection
-        // We'll remove this from the session after a branch is selected
-        ctx.session.terminals = terminals;
-
-        await ctx.reply(ctx.i18n.t('branchInfo.select_branch'), keyboard);
-    } catch (error) {
-        console.error('Error fetching branches:', error);
-        await ctx.reply(ctx.i18n.t('error_occurred'));
-        return ctx.scene.reenter();
-    }
-});
+startOrderScene.hears(match('startOrder.pickup.selectBranch'), selectPickupBranch);
 // Handle branch selection after "Filiallarni tanlash"
 startOrderScene.on('text', async (ctx) => {
     const text = ctx.message.text;

@@ -38,7 +38,7 @@ interface ApiResponse {
 
 // Function to fetch products by category ID from the API
 export async function fetchProductsByCategory(categoryId: string | number): Promise<Product[]> {
-  const apiUrl = `https://api.lesailes.uz/api/category/${categoryId}/products`;
+  const apiUrl = `${process.env.API_URL}category/${categoryId}/products`;
   console.log(`Making API request to: ${apiUrl}`);
   
   try {
@@ -188,7 +188,7 @@ export async function fetchRelatedProducts(productId: number | string | undefine
       return null;
     }
     
-    const response = await fetch(`https://api.lesailes.uz/api/baskets/product_related/${productId}`);
+    const response = await fetch(`${process.env.API_URL}baskets/product_related/${productId}`);
     
     if (!response.ok) {
       console.error(`Error fetching related products: ${response.status} ${response.statusText}`);

@@ -1,5 +1,6 @@
 import { Scenes, Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
+import type { AuthContext } from '../middlewares/auth';
 
 // Интерфейс для сессии
 interface SessionData {
@@ -18,10 +19,10 @@ type MyContext = Scenes.SceneContext & {
 };
 
 // Создаем сцену для командного меню
-export const commandMenuScene = new Scenes.BaseScene<MyContext>('commandMenu');
+export const commandMenuScene = new Scenes.BaseScene<AuthContext>('commandMenu');
 
 // Функция для создания клавиатуры командного меню
-const getCommandMenuKeyboard = (ctx: MyContext) => {
+const getCommandMenuKeyboard = (ctx: AuthContext) => {
   return Markup.keyboard([
     ['/start'],
     ['/order'],

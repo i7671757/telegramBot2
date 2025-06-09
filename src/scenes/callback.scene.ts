@@ -1,11 +1,11 @@
 import { Markup, Scenes } from "telegraf";
-import type { MyContext } from "../config/context";
+import type { AuthContext } from '../middlewares/auth';
 import TelegrafI18n from 'telegraf-i18n';
 const { match } = require("telegraf-i18n");
 
 
 
-export const callbackScene = new Scenes.BaseScene<MyContext>('callback');
+export const callbackScene = new Scenes.BaseScene<AuthContext>('callback');
 
 callbackScene.enter(async (ctx) => {
   console.log('Entering callback scene');

@@ -1,7 +1,8 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
+const { match } = require("telegraf-i18n");
 
-export const changeNameScene = new Scenes.BaseScene<MyContext>('changeName');
+export const changeNameScene = new Scenes.BaseScene<AuthContext>('changeName');
 
 
 changeNameScene.command('start', async (ctx) => {
@@ -44,7 +45,7 @@ changeNameScene.enter(async (ctx) => {
 });
 
 // Handle back button
-changeNameScene.hears(/⬅️.+/, async (ctx) => {
+changeNameScene.hears(match('changeName.back'), async (ctx) => {
   await ctx.scene.enter('mainMenu');
 });
 
@@ -57,7 +58,13 @@ changeNameScene.on('text', async (ctx) => {
 
   // Save the new name in session
   if (!ctx.session) {
-    ctx.session = {};
+    ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
   }
   ctx.session.userName = newName;
 

@@ -1,9 +1,9 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
 import { fetchTerminals, getTerminalById, getTerminalName, getTerminalDesc, getTerminalAddress, type Terminal } from '../utils/cities';
 
 // Create branch info scene
-export const branchInfoScene = new Scenes.BaseScene<MyContext>('branchInfo');
+export const branchInfoScene = new Scenes.BaseScene<AuthContext>('branchInfo');
 
 branchInfoScene.command('start', async (ctx) => {
  // Leave the current scene to return to the global context

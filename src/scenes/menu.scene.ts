@@ -1,5 +1,5 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
 
 interface Terminal {
   name: string;
@@ -11,7 +11,7 @@ interface Terminal {
   active: boolean;
 }
 
-export const menuScene = new Scenes.BaseScene<MyContext>('menu');
+export const menuScene = new Scenes.BaseScene<AuthContext>('menu');
 
 // Helper function to get branch name based on language
 const getBranchName = (terminal: Terminal, language: string): string => {
@@ -63,7 +63,7 @@ menuScene.command('order', async (ctx) => {
 });
 
 menuScene.command('feedback', async (ctx) => {
-  await ctx.scene.enter('feedback');
+  await ctx.scene.enter('callback');
 });
 
 // Handle all text messages
@@ -105,7 +105,13 @@ menuScene.on('text', async (ctx) => {
   }
   // Handle language selection
   else if (text.match(/🇷🇺.*Русский/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'ru';
     ctx.i18n.locale('ru');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));
@@ -113,7 +119,13 @@ menuScene.on('text', async (ctx) => {
     await ctx.scene.reenter();
   }
   else if (text.match(/🇺🇿.*O'zbekcha/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'uz';
     ctx.i18n.locale('uz');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));
@@ -121,7 +133,13 @@ menuScene.on('text', async (ctx) => {
     await ctx.scene.reenter();
   }
   else if (text.match(/🇬🇧.*English/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'en';
     ctx.i18n.locale('en');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));

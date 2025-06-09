@@ -1,6 +1,6 @@
 # Telegram Bot Project
 
-This is a Telegram bot built using TypeScript and Telegraf framework.
+This is a Telegram bot built using TypeScript and Telegraf framework, running in webhook mode with Elysia.js server.
 
 ## Features
 
@@ -16,6 +16,7 @@ This is a Telegram bot built using TypeScript and Telegraf framework.
   - 🔥 Promotions
 - User registration via phone number
 - Profile management
+- **Webhook mode** for better performance and scalability
 
 ## Project Structure
 
@@ -34,9 +35,25 @@ telegramBot2
 
 ## Setup
 
-1. Create a `.env` file with your Telegram bot token:
-```
-BOT_TOKEN=your_bot_token_here
+1. Create a `.env` file with your configuration:
+```env
+# Bot Configuration
+BOT_TOKEN=your_telegram_bot_token_here
+
+# Webhook Configuration (required for webhook mode)
+WEBHOOK_URL=https://yourdomain.com
+WEBHOOK_PATH=/webhook
+PORT=3000
+HOST=0.0.0.0
+
+# Session Configuration
+SESSION_PATH=./sessions.json
+
+# Environment
+NODE_ENV=production
+
+# API Configuration
+API_URL=https://api.lesailes.uz/
 ```
 
 2. Install dependencies:
@@ -45,8 +62,68 @@ bun install
 ```
 
 3. Run the bot:
-```
+```bash
+# Production mode
+bun start
+
+# Development mode with auto-reload
+bun run dev
+
+# Or directly
 bun run index.ts
+```
+
+## Webhook Management
+
+The project includes utility scripts for webhook management:
+
+```bash
+# Check current webhook status
+bun run webhook:info
+
+# Set webhook URL (uses WEBHOOK_URL from .env)
+bun run webhook:set
+
+# Delete webhook (switch back to polling mode)
+bun run webhook:delete
+```
+
+## Webhook Mode
+
+The bot now runs in **webhook mode** instead of long polling, which provides several advantages:
+
+### Benefits:
+- **Better Performance**: No need to constantly poll Telegram servers
+- **Lower Resource Usage**: More efficient for production environments
+- **Scalability**: Can handle multiple instances behind a load balancer
+- **Real-time Updates**: Instant message processing
+
+### Configuration:
+- **WEBHOOK_URL**: Your public domain (e.g., `https://yourdomain.com`)
+- **WEBHOOK_PATH**: Endpoint path for webhook (default: `/webhook`)
+- **PORT**: Server port (default: `3000`)
+- **HOST**: Server host (default: `0.0.0.0`)
+
+### Deployment Requirements:
+1. **HTTPS**: Telegram requires HTTPS for webhooks
+2. **Public Domain**: Your server must be accessible from the internet
+3. **Valid SSL Certificate**: Required for webhook functionality
+
+### Local Development:
+For local development, you can use tools like:
+- **ngrok**: `ngrok http 3000` to create a public tunnel
+- **localtunnel**: `npx localtunnel --port 3000`
+
+Example with ngrok:
+```bash
+# Terminal 1: Start the bot
+bun run index.ts
+
+# Terminal 2: Create public tunnel
+ngrok http 3000
+
+# Update .env with the ngrok URL
+WEBHOOK_URL=https://abc123.ngrok.io
 ```
 
 ## Workflow

@@ -37,7 +37,7 @@ interface ApiResponse {
 
 // Function to fetch cities from the API
 export async function fetchCities(): Promise<City[]> {
-  const apiUrl = 'https://api.lesailes.uz/api/cities/public';
+  const apiUrl = `${process.env.API_URL}cities/public`;
   console.log(`Making API request to: ${apiUrl}`);
   
   try {
@@ -105,7 +105,7 @@ export async function getCityById(cityId: number | string): Promise<City | null>
 
 // Function to fetch terminals from the API
 export async function fetchTerminals(): Promise<Terminal[]> {
-  const apiUrl = 'https://api.lesailes.uz/api/terminals';
+  const apiUrl = `${process.env.API_URL}terminals`;
   console.log(`Making API request to: ${apiUrl}`);
   
   try {

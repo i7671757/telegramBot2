@@ -1,9 +1,9 @@
 import { Scenes, Markup, Input } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
 import axios from 'axios';
 const { match } = require("telegraf-i18n");
 
-export const newOrderScene = new Scenes.BaseScene<MyContext>('newOrder');
+export const newOrderScene = new Scenes.BaseScene<AuthContext>('newOrder');
 
 
 
@@ -67,7 +67,7 @@ async function getFoodItems(): Promise<FoodItem[]> {
     // Fetch popular products or from a specific category
     // Here we'll use a specific category ID for example (burgers = 7)
     const categoryId = 7;
-    const response = await axios.get(`https://api.lesailes.uz/api/category/${categoryId}/products`);
+    const response = await axios.get(`${process.env.API_URL}category/${categoryId}/products`);
     
     console.log('API response status:', response.status);
     
@@ -277,7 +277,7 @@ newOrderScene.action(/add_to_cart_(\d+)/, async (ctx) => {
     // Show cart summary
     const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
     await ctx.reply(
-      `✅ ${quantity} × ${item.name} добавлено в корзину\nИтого: ${formattedTotal} сум`,
+      `✅ ${quantity} × ${item.name} добавлено в корзину\nИтого: ${formattedTotal} ${ctx.i18n.t('checkout.sum')}`,
       Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Перейти к корзине', 'view_cart')],
         [Markup.button.callback('🔄 Продолжить покупки', 'continue_shopping')]
@@ -316,7 +316,7 @@ newOrderScene.action('continue_shopping', async (ctx) => {
 });
 
 // Update quantity in keyboard
-async function updateQuantityKeyboard(ctx: MyContext, itemId: number, quantity: number) {
+async function updateQuantityKeyboard(ctx: AuthContext, itemId: number, quantity: number) {
   try {
     if (!ctx.callbackQuery) {
       return;
@@ -345,7 +345,7 @@ async function updateQuantityKeyboard(ctx: MyContext, itemId: number, quantity: 
 }
 
 // Show cart contents
-async function showCart(ctx: MyContext) {
+async function showCart(ctx: AuthContext) {
   if (!ctx.from) {
     return;
   }
@@ -368,7 +368,7 @@ async function showCart(ctx: MyContext) {
         const itemTotal = item.price * cartItem.quantity;
         const formattedItemTotal = new Intl.NumberFormat('ru-RU').format(itemTotal);
         
-        cartMessage += `${cartItem.quantity} × ${item.name} = ${formattedItemTotal} сум\n`;
+        cartMessage += `${cartItem.quantity} × ${item.name} = ${formattedItemTotal} ${ctx.i18n.t('checkout.sum')}\n`;
       }
     }
     
@@ -376,55 +376,25 @@ async function showCart(ctx: MyContext) {
     cart.total = await recalculateCartTotal(cart.items);
     
     const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
-    cartMessage += `\n<b>Итого: ${formattedTotal} сум</b>`;
+    cartMessage += `\n<b>Итого: ${formattedTotal} ${ctx.i18n.t('checkout.sum')}</b>`;
     
-    await ctx.replyWithHTML(cartMessage, Markup.inlineKeyboard([
-      [Markup.button.callback('🗑 Очистить корзину', 'clear_cart')],
-      [Markup.button.callback('✅ Оформить заказ', 'checkout')],
-      [Markup.button.callback('🔄 Продолжить покупки', 'continue_shopping')]
-    ]));
+    // Send cart message without action buttons
+    await ctx.replyWithHTML(cartMessage);
+    
+    // Send cart actions in bottom menu
+    await ctx.reply('Используйте кнопки ниже для управления корзиной:', 
+      Markup.keyboard([
+        [ctx.i18n.t('cart.clear') || '🗑 Очистить корзину', ctx.i18n.t('cart.checkout') || '✅ Оформить заказ'],
+        ['🔄 Продолжить покупки', ctx.i18n.t('back') || '⬅️ Назад']
+      ]).resize()
+    );
   } catch (error) {
     console.error('Error showing cart:', error);
     await ctx.reply('Произошла ошибка при отображении корзины');
   }
 }
 
-// Handle clear cart action
-newOrderScene.action('clear_cart', async (ctx) => {
-  if (!ctx.from) {
-    await ctx.answerCbQuery('Ошибка');
-    return;
-  }
-  
-  const userId = ctx.from.id;
-  userCarts.set(userId, { items: [], total: 0 });
-  
-  await ctx.answerCbQuery('Корзина очищена');
-  await ctx.reply('Ваша корзина была очищена');
-});
 
-// Handle checkout action
-newOrderScene.action('checkout', async (ctx) => {
-  if (!ctx.from) {
-    await ctx.answerCbQuery('Ошибка');
-    return;
-  }
-  
-  await ctx.answerCbQuery('');
-  await ctx.reply('Переходим к оформлению заказа...');
-  // Here you would typically enter a checkout scene
-  // For demo purposes we'll just show a confirmation
-  await ctx.reply(
-    'Заказ успешно оформлен! Ожидайте доставку.',
-    Markup.inlineKeyboard([
-      [Markup.button.callback('⬅️ Вернуться в главное меню', 'back_to_main')]
-    ])
-  );
-  
-  // Clear cart after successful order
-  const userId = ctx.from.id;
-  userCarts.set(userId, { items: [], total: 0 });
-});
 
 // Handle back to main menu action
 newOrderScene.action('back_to_main', async (ctx) => {
@@ -432,27 +402,82 @@ newOrderScene.action('back_to_main', async (ctx) => {
   await ctx.scene.enter('mainMenu');
 });
 
-// Handle back button from keyboard
-newOrderScene.hears(/Назад|Back|Orqaga/, async (ctx) => {
-  console.log('Back button pressed in newOrder scene');
-  return ctx.scene.enter('mainMenu');
-});
-
 // Handle the match pattern for back button (for i18n support)
-newOrderScene.hears(match('menu.back'), async (ctx) => {
-  console.log('menu.back match detected in newOrder scene');
-  return ctx.scene.enter('mainMenu');
-});
-
-// More specific pattern for direct button text match
-newOrderScene.hears(/^(Back|Назад|Ortga)$/, async (ctx) => {
-  console.log('Direct back button text match in newOrder scene');
+newOrderScene.hears(match('back'), async (ctx) => {
+  console.log('back match detected in newOrder scene');
   return ctx.scene.enter('mainMenu');
 });
 
 // Handle any other text message
 newOrderScene.on('text', async (ctx) => {
   console.log(`Received text in newOrder scene: "${ctx.message.text}"`);
+  
+  const messageText = ctx.message.text;
+  
+  // Handle clear cart button
+  if (messageText === ctx.i18n.t('cart.clear') || 
+      messageText.includes('🗑') || 
+      messageText.includes('Очистить корзину') ||
+      messageText.includes('Tozalash')) {
+    console.log('Clear cart button pressed in newOrder scene');
+    console.log('Message text:', messageText);
+    console.log('cart.clear translation:', ctx.i18n.t('cart.clear'));
+    
+    if (!ctx.from) {
+      console.log('No user found for cart clearing');
+      return;
+    }
+    
+    const userId = ctx.from.id;
+    console.log(`Clearing cart for user ${userId}`);
+    
+    // Import cart functions from categories scene for consistency
+    const { userCarts: mainUserCarts, syncCartToSession, getOrCreateCart } = await import('./categories.scene');
+    
+    // Get current cart before clearing
+    const cartBefore = getOrCreateCart(userId, ctx);
+    console.log(`Cart before clearing: ${cartBefore.items.length} items, total: ${cartBefore.total}`);
+    
+    // Clear both local and main cart
+    userCarts.set(userId, { items: [], total: 0 });
+    mainUserCarts.set(userId, { items: [], total: 0 });
+    
+    // Also clear session cart
+    if (ctx.session) {
+      ctx.session.cart = { items: [], total: 0, updatedAt: new Date().toISOString() };
+    }
+    
+    // Sync cleared cart to session
+    syncCartToSession(userId, ctx);
+    
+    // Verify cart is cleared
+    const cartAfter = getOrCreateCart(userId, ctx);
+    console.log(`Cart after clearing: ${cartAfter.items.length} items, total: ${cartAfter.total}`);
+    
+    await ctx.reply(ctx.i18n.t('cart.cleared'));
+    return;
+  }
+  
+  // Handle checkout button
+  if (messageText === ctx.i18n.t('cart.checkout') || 
+      messageText.includes('✅') || 
+      messageText.includes('Оформить заказ') ||
+      messageText.includes('Checkout') ||
+      messageText.includes('Buyurtma')) {
+    console.log('Checkout button pressed');
+    if (!ctx.from) return;
+    
+    await ctx.reply(ctx.i18n.t('checkout.checkout_message') || 'Переходим к оформлению заказа...');
+    // Enter checkout scene
+    return ctx.scene.enter('checkout');
+  }
+  
+  // Handle continue shopping button
+  if (messageText.includes('🔄') || messageText.includes('Продолжить покупки')) {
+    console.log('Continue shopping button pressed');
+    await ctx.reply('Продолжаем покупки');
+    return;
+  }
   
   // Check if it's a back button press that wasn't caught by other handlers
   if (ctx.message.text === ctx.i18n.t('back') || 

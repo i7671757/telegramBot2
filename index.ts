@@ -16,14 +16,17 @@ import { sendCommandMenu, setLocalizedCommands, registerGlobalCommandHandlers } 
 import { settingsScene } from './src/scenes/settings.scene';
 import { callbackScene } from './src/scenes/callback.scene';
 import { reviewScene } from './src/scenes/review.scene';
-import { startOrderScene } from './src/scenes/startOrder.scene';
+import { startOrderScene } from './src/scenes/startOrder/startOrder.scene';
 import { categoriesScene } from './src/scenes/categories.scene';
 import { productsScene } from './src/scenes/products.scene';
 import { startScene } from './src/scenes/start.scene';
 import { newOrderScene } from './src/scenes/newOrder.scene';
+import { checkoutScene } from './src/scenes/checkout.scene';
+import { userSignScene } from './src/scenes/userSign.scene';
+import { requireAuth } from './src/middlewares/auth';
+import type { AuthContext } from './src/middlewares/auth';
 import fs from 'fs';
-// Use any type for now to avoid complex type conflicts
-type MyContext = any;
+
 // Check for environment variables
 const BOT_TOKEN = config.botToken;
 if (!BOT_TOKEN) {
@@ -79,7 +82,7 @@ try {
 }
 
 // Registration scene
-const registerScene = new Scenes.BaseScene<MyContext>('register');
+const registerScene = new Scenes.BaseScene<AuthContext>('register');
 registerScene.enter((ctx) => {
   // Create keyboard with contact sharing button
   const keyboard = Markup.keyboard([
@@ -115,7 +118,7 @@ registerScene.on('contact', (ctx) => {
 });
 
 // Welcome scene
-const welcomeScene = new Scenes.BaseScene<MyContext>('welcome');
+const welcomeScene = new Scenes.BaseScene<AuthContext>('welcome');
 welcomeScene.enter(async (ctx) => {
   console.log('Welcome scene entered');
   // Инициализируем сессию, если она пуста
@@ -248,8 +251,8 @@ welcomeScene.on('text', (ctx) => {
 });
 
 // Profile scene
-const profileScene = new Scenes.BaseScene<MyContext>('profile');
-profileScene.enter(async (ctx) => {
+const profileScene = new Scenes.BaseScene<AuthContext>('profile');
+profileScene.enter(requireAuth(), async (ctx, next) => {
   // Проверяем целостность сессии
   if (!ctx.session) {
     console.log('Session is missing, initializing with defaults');
@@ -295,14 +298,16 @@ profileScene.enter(async (ctx) => {
   // Include phone number and city in profile
   const profileText = `${ctx.i18n.t('profile', { id: userId, name })}\nPhone: ${phone}\nCity: ${cityName}`;
   ctx.reply(profileText, keyboard);
+  await next();
 });
-profileScene.command('back', (ctx: any) => ctx.scene.enter('welcome'));
+profileScene.command('back', (ctx: AuthContext) => ctx.scene.enter('welcome'));
 profileScene.on('message', (ctx) => ctx.reply(ctx.i18n.t('back')));
 
 // Create and register all scenes
-const stage = new Scenes.Stage<MyContext>([
+const stage = new Scenes.Stage<AuthContext>([
   startScene,
   registerScene,
+  userSignScene,
   welcomeScene,
   profileScene,
   mainMenuScene,
@@ -317,13 +322,19 @@ const stage = new Scenes.Stage<MyContext>([
   startOrderScene,
   categoriesScene,
   productsScene,
-  newOrderScene
+  newOrderScene,
+  checkoutScene
 ]);
 
 // Register middlewares
 bot.use(localSession.middleware());
 bot.use(i18n.middleware());
-bot.use(stage.middleware());
+bot.use(stage.middleware() as any);
+
+// Применяем middleware авторизации для защищённых сцен
+stage.command('profile', requireAuth(), (ctx) => ctx.scene.enter('profile'));
+stage.command('mainMenu', requireAuth(), (ctx) => ctx.scene.enter('mainMenu'));
+stage.command('order', requireAuth(), (ctx) => ctx.scene.enter('startOrder'));
 
 // Регистрируем глобальные обработчики команд, которые работают в любой сцене
 registerGlobalCommandHandlers(bot);
@@ -393,12 +404,12 @@ startScene.on('message', (ctx) => {
 });
 
 // Команда меню для вызова интерфейса с командами
-bot.command('menu', async (ctx: any) => {
+bot.command('menu', (async (ctx: AuthContext) => {
   await ctx.scene.enter('commandMenu');
-});
+}) as any);
 
 // Error handling
-bot.catch((err: any, ctx: any) => {
+bot.catch(((err: any, ctx: AuthContext) => {
   console.error(`Error for ${ctx.updateType}`, err);
   
   // Определяем тип ошибки и отправляем соответствующее сообщение
@@ -414,101 +425,177 @@ bot.catch((err: any, ctx: any) => {
     ctx.reply(ctx.i18n.t('error_occurred'));
     console.error('Unknown error:', err);
   }
-});
+}) as any);
 
-// Start the bot
-bot.launch()
-  .then(() => {
-    console.log('Bot started successfully');
-    
-    // Устанавливаем глобальные команды меню по умолчанию (на английском)
-    // Используем false для параметра forUser, чтобы установить команды глобально для всех пользователей
-    const defaultContext = {
-      i18n: {
-        locale: () => 'en'
-      }
-    };
-    
-    setLocalizedCommands(bot, defaultContext, false)
-      .then(() => console.log('Default bot commands have been set up globally'))
-      .catch(error => console.error('Error setting default bot commands:', error));
-
-    // Utility function to convert the old cities array structure to the new selectedCity format
-    function updateSessionsWithSelectedCity() {
-      try {
-        // Read sessions file
-        const sessionsFile = fs.readFileSync('sessions.json', 'utf8');
-        const sessions = JSON.parse(sessionsFile);
-        
-        // Check if there are sessions
-        if (sessions.sessions && sessions.sessions.length > 0) {
-          // Process each session
-          sessions.sessions.forEach((session: { id: string; data: any }) => {
-            const sessionData = session.data;
-            
-            // If session has currentCity ID and cities array, extract the selected city
-            if (sessionData.currentCity && sessionData.cities && Array.isArray(sessionData.cities)) {
-              const selectedCity = sessionData.cities.find((city: { id: number | string }) => 
-                city.id.toString() === sessionData.currentCity
-              );
-              
-              if (selectedCity) {
-                // Save only the city ID instead of the full city object
-                sessionData.selectedCity = selectedCity.id;
-                // Remove the cities array to save space
-                delete sessionData.cities;
-                console.log(`Updated session ${session.id} with selectedCity ID: ${selectedCity.id}`);
-              }
-            }
-            
-            // If session has selectedCity as full object, convert it to ID only
-            if (sessionData.selectedCity && typeof sessionData.selectedCity === 'object' && sessionData.selectedCity.id) {
-              const cityId = sessionData.selectedCity.id;
-              sessionData.selectedCity = cityId;
-              console.log(`Converted selectedCity object to ID: ${cityId} for session ${session.id}`);
-            }
-            
-            // If session has selectedBranch as full object, convert it to ID only
-            if (sessionData.selectedBranch && typeof sessionData.selectedBranch === 'object' && sessionData.selectedBranch.id) {
-              const branchId = sessionData.selectedBranch.id;
-              sessionData.selectedBranch = branchId;
-              console.log(`Converted selectedBranch object to ID: ${branchId} for session ${session.id}`);
-            }
-            
-            // Remove terminals array if it exists (temporary data)
-            if (sessionData.terminals && Array.isArray(sessionData.terminals)) {
-              delete sessionData.terminals;
-              console.log(`Removed terminals array from session ${session.id}`);
-            }
-          });
-          
-          // Write the updated sessions back to the file
-          fs.writeFileSync('sessions.json', JSON.stringify(sessions, null, 2));
-          console.log('Sessions file updated successfully');
-        }
-      } catch (error) {
-        console.error('Error updating sessions file:', error);
-      }
-    }
-
-    // Call the function to update existing sessions when the bot starts
-    updateSessionsWithSelectedCity();
-  })
-  .catch((err) => console.error('Failed to start bot:', err));
-
-// Create Elysia server
+// Create Elysia server with webhook handling
 const app = new Elysia()
   .get('/', () => 'Telegram Bot Server is running')
-  .listen(3000);
+  .get('/health', () => ({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    webhook_path: config.webhook.path,
+    webhook_url: config.webhook.url || 'not configured'
+  }))
+  .post(config.webhook.path, async ({ body, set }) => {
+    try {
+      console.log('Received webhook update:', JSON.stringify(body, null, 2));
+      // Handle Telegram webhook
+      await bot.handleUpdate(body as any);
+      set.status = 200;
+      return { ok: true };
+    } catch (error) {
+      console.error('Webhook error:', error);
+      set.status = 500;
+      return { error: 'Internal server error' };
+    }
+  })
+  .listen({
+    hostname: config.webhook.host,
+    port: config.webhook.port
+  });
+console.log('config.webhook.path', config.webhook.path)
+console.log(`🦊 Elysia server is running at ${config.webhook.host}:${config.webhook.port}`);
 
-console.log(`🦊 Elysia server is running at ${app.server?.hostname}:${app.server?.port}`);
+// Setup webhook
+async function setupWebhook() {
+  try {
+    if (config.webhook.url) {
+      const webhookUrl = `${config.webhook.url}${config.webhook.path}`;
+      console.log(`Setting webhook URL: ${webhookUrl}`);
+      
+      // Delete any existing webhook first
+      await bot.telegram.deleteWebhook();
+      console.log('Existing webhook deleted');
+      
+      // Set new webhook
+      await bot.telegram.setWebhook(webhookUrl);
+      console.log('Webhook set successfully');
+      
+      // Verify webhook info
+      const webhookInfo = await bot.telegram.getWebhookInfo();
+      console.log('Webhook info:', {
+        url: webhookInfo.url,
+        has_custom_certificate: webhookInfo.has_custom_certificate,
+        pending_update_count: webhookInfo.pending_update_count,
+        last_error_date: webhookInfo.last_error_date,
+        last_error_message: webhookInfo.last_error_message
+      });
+      
+      // Устанавливаем глобальные команды меню по умолчанию (на английском)
+      const defaultContext = {
+        i18n: {
+          locale: () => 'en'
+        }
+      };
+      
+      await setLocalizedCommands(bot, defaultContext, false);
+      console.log('Default bot commands have been set up globally');
+
+      // Utility function to convert the old cities array structure to the new selectedCity format
+      updateSessionsWithSelectedCity();
+      
+    } else {
+      console.warn('WEBHOOK_URL not set, webhook not configured');
+      console.log('Please set WEBHOOK_URL environment variable to use webhook mode');
+      console.log('For local development, you can use ngrok: ngrok http 3000');
+    }
+  } catch (error) {
+    console.error('Failed to setup webhook:', error);
+    if (error instanceof Error && error.message.includes('HTTPS')) {
+      console.error('Webhook URL must use HTTPS protocol');
+    }
+  }
+}
+
+// Utility function to delete webhook (useful for switching back to polling)
+async function deleteWebhook() {
+  try {
+    await bot.telegram.deleteWebhook();
+    console.log('Webhook deleted successfully');
+  } catch (error) {
+    console.error('Failed to delete webhook:', error);
+  }
+}
+
+// Utility function to convert the old cities array structure to the new selectedCity format
+function updateSessionsWithSelectedCity() {
+  try {
+    // Read sessions file
+    const sessionsFile = fs.readFileSync('sessions.json', 'utf8');
+    const sessions = JSON.parse(sessionsFile);
+    
+    // Check if there are sessions
+    if (sessions.sessions && sessions.sessions.length > 0) {
+      // Process each session
+      sessions.sessions.forEach((session: { id: string; data: any }) => {
+        const sessionData = session.data;
+        
+        // If session has currentCity ID and cities array, extract the selected city
+        if (sessionData.currentCity && sessionData.cities && Array.isArray(sessionData.cities)) {
+          const selectedCity = sessionData.cities.find((city: { id: number | string }) => 
+            city.id.toString() === sessionData.currentCity
+          );
+          
+          if (selectedCity) {
+            // Save only the city ID instead of the full city object
+            sessionData.selectedCity = selectedCity.id;
+            // Remove the cities array to save space
+            delete sessionData.cities;
+            console.log(`Updated session ${session.id} with selectedCity ID: ${selectedCity.id}`);
+          }
+        }
+        
+        // If session has selectedCity as full object, convert it to ID only
+        if (sessionData.selectedCity && typeof sessionData.selectedCity === 'object' && sessionData.selectedCity.id) {
+          const cityId = sessionData.selectedCity.id;
+          sessionData.selectedCity = cityId;
+          console.log(`Converted selectedCity object to ID: ${cityId} for session ${session.id}`);
+        }
+        
+        // If session has selectedBranch as full object, convert it to ID only
+        if (sessionData.selectedBranch && typeof sessionData.selectedBranch === 'object' && sessionData.selectedBranch.id) {
+          const branchId = sessionData.selectedBranch.id;
+          sessionData.selectedBranch = branchId;
+          console.log(`Converted selectedBranch object to ID: ${branchId} for session ${session.id}`);
+        }
+        
+        // Remove terminals array if it exists (temporary data)
+        if (sessionData.terminals && Array.isArray(sessionData.terminals)) {
+          delete sessionData.terminals;
+          console.log(`Removed terminals array from session ${session.id}`);
+        }
+      });
+      
+      // Write the updated sessions back to the file
+      fs.writeFileSync('sessions.json', JSON.stringify(sessions, null, 2));
+      console.log('Sessions file updated successfully');
+    }
+  } catch (error) {
+    console.error('Error updating sessions file:', error);
+  }
+}
+
+// Initialize webhook
+setupWebhook();
 
 // Enable graceful stop
-process.once('SIGINT', () => {
-  console.log('SIGINT received, stopping bot');
-  bot.stop('SIGINT');
-});
-process.once('SIGTERM', () => {
-  console.log('SIGTERM received, stopping bot');
-  bot.stop('SIGTERM');
-});
+let isShuttingDown = false;
+
+const gracefulShutdown = (signal: string) => {
+  if (isShuttingDown) {
+    console.log(`${signal} received, but shutdown already in progress`);
+    return;
+  }
+  
+  isShuttingDown = true;
+  console.log(`${signal} received, stopping bot`);
+  
+  try {
+    bot.stop(signal);
+  } catch (error) {
+    console.error('Error during bot shutdown:', error);
+  }
+};
+
+process.once('SIGINT', () => gracefulShutdown('SIGINT'));
+process.once('SIGTERM', () => gracefulShutdown('SIGTERM'));

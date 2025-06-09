@@ -2,6 +2,8 @@ import { Scenes } from 'telegraf';
 import { Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
+import type { AuthContext } from '../middlewares/auth';
+import { requireAuth } from '../middlewares/auth';
 
 // Custom session type
 interface MySessionData extends Scenes.SceneSessionData {
@@ -24,13 +26,13 @@ type MainMenuButton =
   | 'callback';
   // | 'categories';
 
-export const mainMenuScene = new Scenes.BaseScene<MyContext>('mainMenu');
+export const mainMenuScene = new Scenes.BaseScene<AuthContext>('mainMenu');
 
 // Регистрируем глобальные обработчики команд для этой сцены
 registerSceneCommandHandlers(mainMenuScene, 'MainMenu');
 
 // Helper function to create main menu keyboard
-const getMainMenuKeyboard = (ctx: MyContext) => {
+const getMainMenuKeyboard = (ctx: AuthContext) => {
   return Markup.keyboard([
       [ctx.i18n.t('mainKeyboard.startOrder')],
     [ctx.i18n.t('mainKeyboard.myOrders')],
@@ -40,7 +42,7 @@ const getMainMenuKeyboard = (ctx: MyContext) => {
 };
 
 // Helper function to get button key by its text value
-const getButtonKey = (ctx: MyContext, text: string): MainMenuButton | null => {
+const getButtonKey = (ctx: AuthContext, text: string): MainMenuButton | null => {
   // Создаем карту соответствия переведенного текста и ключа кнопки
   const buttonMap = {
     [ctx.i18n.t('mainKeyboard.startOrder')]: 'startOrder',
@@ -64,7 +66,7 @@ const getButtonKey = (ctx: MyContext, text: string): MainMenuButton | null => {
 };
 
 // On scene enter
-mainMenuScene.enter(async (ctx) => {
+mainMenuScene.enter(requireAuth(), async (ctx) => {
   const keyboard = getMainMenuKeyboard(ctx);
   await ctx.reply(ctx.i18n.t('main_menu'), keyboard);
 });

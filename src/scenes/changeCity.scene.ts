@@ -1,8 +1,9 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
-import { fetchCities, getCityName } from '../utils/cities';
+import type { AuthContext } from '../middlewares/auth';
+import { fetchCities, getCityName, type City } from '../utils/cities';
+const { match } = require("telegraf-i18n");
 
-export const changeCityScene = new Scenes.BaseScene<MyContext>('changeCity');
+export const changeCityScene = new Scenes.BaseScene<AuthContext>('changeCity');
 
 
 changeCityScene.command('start', async (ctx) => {
@@ -74,7 +75,13 @@ changeCityScene.enter(async (ctx) => {
     
     // Save cities in session for later use
     if (!ctx.session) {
-      ctx.session = {};
+      ctx.session = {
+        language: 'en',
+        registered: false,
+        phone: null,
+        currentCity: null,
+        selectedCity: null
+      };
     }
     ctx.session.cities = cities;
     
@@ -88,7 +95,7 @@ changeCityScene.enter(async (ctx) => {
 });
 
 // Handle back button
-changeCityScene.hears(/⬅️.+/, async (ctx) => {
+changeCityScene.hears(match('changeCity.back'), async (ctx) => {
   await ctx.scene.enter('mainMenu');
 });
 

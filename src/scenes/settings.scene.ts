@@ -1,15 +1,10 @@
 import { Scenes, Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
-
-// Используем type для контекста
-type MyContext = Scenes.SceneContext & {
-  i18n: TelegrafI18n;
-  session: any;
-};
+import type { AuthContext } from '../middlewares/auth';
 
 // Создаем сцену настроек
-export const settingsScene = new Scenes.BaseScene<MyContext>('settings');
+export const settingsScene = new Scenes.BaseScene<AuthContext>('settings');
 
 // Регистрируем глобальные обработчики команд для этой сцены
 registerSceneCommandHandlers(settingsScene, 'Settings');
@@ -19,7 +14,7 @@ settingsScene.enter(async (ctx) => {
   console.log('Entering settings scene');
   
   // Добавляем четкое сообщение, что мы вошли в меню настроек
-  await ctx.reply('Вы вошли в меню настроек');
+  await ctx.reply(ctx.i18n.t('settings.title') || 'Вы вошли в меню настроек');
   
   const keyboard = Markup.keyboard([
     [ctx.i18n.t('menu.change_name'), ctx.i18n.t('menu.change_number')],
@@ -105,7 +100,13 @@ settingsScene.on('text', async (ctx) => {
   }
   // Обрабатываем выбор языка
   else if (text.match(/🇷🇺.*Русский/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'ru';
     ctx.i18n.locale('ru');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));
@@ -113,7 +114,13 @@ settingsScene.on('text', async (ctx) => {
     await ctx.scene.reenter();
   }
   else if (text.match(/🇺🇿.*O'zbekcha/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'uz';
     ctx.i18n.locale('uz');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));
@@ -121,7 +128,13 @@ settingsScene.on('text', async (ctx) => {
     await ctx.scene.reenter();
   }
   else if (text.match(/🇬🇧.*English/)) {
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.language = 'en';
     ctx.i18n.locale('en');
     await ctx.reply(ctx.i18n.t('changeLanguage.success'));

@@ -1,7 +1,8 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
+const { match } = require("telegraf-i18n");
 
-export const changeNumberScene = new Scenes.BaseScene<MyContext>('changeNumber');
+export const changeNumberScene = new Scenes.BaseScene<AuthContext>('changeNumber');
 
 // Добавляем обработчик команды /settings
 changeNumberScene.command('settings', async (ctx) => {
@@ -31,7 +32,7 @@ changeNumberScene.enter(async (ctx) => {
 });
 
 // Handle back button
-changeNumberScene.hears(/⬅️.+/, async (ctx) => {
+changeNumberScene.hears(match('changeNumber.back'), async (ctx) => {
   await ctx.scene.enter('mainMenu');
 });
 
@@ -49,7 +50,13 @@ changeNumberScene.on('contact', async (ctx) => {
   
   // Save the new phone number in session
   if (!ctx.session) {
-    ctx.session = {};
+    ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
   }
   ctx.session.phone = phone;
 
@@ -76,7 +83,13 @@ changeNumberScene.on('text', async (ctx) => {
 
   // Save the new phone number in session
   if (!ctx.session) {
-    ctx.session = {};
+    ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
   }
   ctx.session.phone = newPhone;
 

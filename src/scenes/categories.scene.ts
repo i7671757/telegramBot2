@@ -1,5 +1,5 @@
 import { Scenes, Markup } from 'telegraf';
-import type { MyContext } from '../config/context';
+import type { AuthContext } from '../middlewares/auth';
 import { fetchCategories, getCategoryName, getCategoryImageUrl } from '../utils/categories';
 import type { Category } from '../utils/categories';
 import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
@@ -9,7 +9,7 @@ const { match } = require("telegraf-i18n");
 // This will not be saved in the session JSON
 let tempCategories: Category[] = [];
 
-export const categoriesScene = new Scenes.BaseScene<MyContext>('categories');
+export const categoriesScene = new Scenes.BaseScene<AuthContext>('categories');
 
 // Регистрируем глобальные обработчики команд для этой сцены
 registerSceneCommandHandlers(categoriesScene, 'Categories');
@@ -89,27 +89,27 @@ categoriesScene.enter(async (ctx) => {
 
 // Добавляем обработчики команд, чтобы они перехватывались до обработки текста
 categoriesScene.command('feedback', async (ctx) => {
-  console.log('Feedback command received in categories scene, switching to feedback scene');
-  return ctx.scene.enter('feedback');
+  console.log('Feedback command received in categories scene, switching to callback scene');
+  return ctx.scene.enter('callback');
 });
 
 // Dedicated back button handler
-categoriesScene.hears(match('menu.back'), async (ctx) => {
-  console.log('Matched menu.back pattern in categories, now entering mainMenu scene');
+categoriesScene.hears(match('back'), async (ctx) => {
+  console.log('Matched back pattern in categories, now entering startOrder scene');
   await ctx.scene.enter('startOrder');
-});
-
-// Additional specific back button handler with more logging
-categoriesScene.hears(/^(Back|Назад|Ortga)$/, async (ctx) => {
-  console.log('Direct back button match detected in categories scene, entering mainMenu');
-  return ctx.scene.enter('startOrder');
 });
 
 // Handle cart button
 categoriesScene.hears(/^🛒/, async (ctx) => {
   console.log('Cart button pressed in categories scene');
   // Set previous scene for back navigation
-  if (!ctx.session) ctx.session = {};
+  if (!ctx.session) ctx.session = {
+    language: 'en',
+    registered: false,
+    phone: null,
+    currentCity: null,
+    selectedCity: null
+  };
   ctx.session.previousScene = 'categories';
   
   // Show cart contents
@@ -126,7 +126,47 @@ categoriesScene.on('text', async (ctx) => {
     return;
   }
   
-  // Handle cart button
+  // Handle clear cart FIRST (before cart button to avoid conflicts)
+  if (messageText === ctx.i18n.t('cart.clear') || 
+      messageText.includes('🗑') ||
+      messageText.includes('Очистить') ||
+      messageText.includes('Tozalash')) {
+    console.log('Clear cart button pressed in categories scene');
+    console.log('Message text:', messageText);
+    console.log('cart.clear translation:', ctx.i18n.t('cart.clear'));
+    
+    const userId = ctx.from?.id;
+    if (userId) {
+      console.log(`Clearing cart for user ${userId}`);
+      
+      // Get current cart before clearing
+      const cartBefore = getOrCreateCart(userId, ctx);
+      console.log(`Cart before clearing: ${cartBefore.items.length} items, total: ${cartBefore.total}`);
+      
+      // Clear the cart
+      userCarts.set(userId, { items: [], total: 0 });
+      
+      // Also clear session cart
+      if (ctx.session) {
+        ctx.session.cart = { items: [], total: 0, updatedAt: new Date().toISOString() };
+      }
+      
+      // Sync cleared cart to session
+      syncCartToSession(userId, ctx);
+      
+      // Verify cart is cleared
+      const cartAfter = getOrCreateCart(userId, ctx);
+      console.log(`Cart after clearing: ${cartAfter.items.length} items, total: ${cartAfter.total}`);
+      
+      await ctx.reply(ctx.i18n.t('cart.cleared'));
+      await showCart(ctx);
+    } else {
+      console.log('No user ID found for cart clearing');
+    }
+    return;
+  }
+  
+  // Handle cart button (after clear cart to avoid conflicts)
   if (messageText === ctx.i18n.t('cart_button') || 
       messageText.includes('🛒') ||
       messageText.includes('Корзина') ||
@@ -138,21 +178,6 @@ categoriesScene.on('text', async (ctx) => {
     await showCart(ctx);
     return;
   }
-  
-  // Handle clear cart
-  if (messageText === ctx.i18n.t('cart.clear') || 
-      messageText.includes('Очистить') ||
-      messageText.includes('Clear') ||
-      messageText.includes('Tozalash')) {
-    console.log('Clear cart button pressed');
-    const userId = ctx.from?.id;
-    if (userId) {
-      userCarts.set(userId, { items: [], total: 0 });
-      await ctx.reply(ctx.i18n.t('cart.cleared') || 'Корзина очищена');
-      await showCart(ctx);
-    }
-    return;
-  }
 
   // Handle checkout
   if (messageText === ctx.i18n.t('cart.checkout') || 
@@ -160,8 +185,8 @@ categoriesScene.on('text', async (ctx) => {
       messageText.includes('Checkout') ||
       messageText.includes('Buyurtma')) {
     console.log('Checkout button pressed');
-    await ctx.reply(ctx.i18n.t('cart.checkout_message') || 'Функция оформления заказа будет добавлена позже');
-    return;
+    await ctx.reply(ctx.i18n.t('checkout.checkout_message') || 'Переходим к оформлению заказа...');
+    return ctx.scene.enter('checkout');
   }
   
   // Handle back button directly by comparing the full text - go to main menu instead of newOrder
@@ -193,7 +218,13 @@ categoriesScene.on('text', async (ctx) => {
   if (selectedCategory) {
     console.log(`Selected category: ${JSON.stringify(selectedCategory)}`);
     // Save only the selected category in session
-    if (!ctx.session) ctx.session = {};
+    if (!ctx.session) ctx.session = {
+      language: 'en',
+      registered: false,
+      phone: null,
+      currentCity: null,
+      selectedCity: null
+    };
     ctx.session.selectedCategory = selectedCategory;
     
     // Сразу переходим к сцене продуктов
@@ -223,32 +254,59 @@ await ctx.scene.reenter(); // Reenter the same scene to reset it
 const userCarts = new Map<number, {items: Array<{id: number, name: string, price: number, quantity: number}>, total: number}>();
 
 // Initialize cart for user if it doesn't exist
-function getOrCreateCart(userId: number) {
+function getOrCreateCart(userId: number, ctx?: AuthContext) {
   if (!userCarts.has(userId)) {
-    userCarts.set(userId, {
-      items: [],
-      total: 0
-    });
+    // Try to restore cart from session
+    let cartData: {items: Array<{id: number, name: string, price: number, quantity: number}>, total: number} = { items: [], total: 0 };
+    
+    if (ctx?.session?.cart) {
+      // If session has cart data, use it
+      cartData = {
+        items: ctx.session.cart.items || [] as Array<{id: number, name: string, price: number, quantity: number}>,
+        total: ctx.session.cart.total || 0
+      };
+      console.log(`Restored cart from session for user ${userId}: ${cartData.items.length} items, total: ${cartData.total}`);
+    }
+    
+    userCarts.set(userId, cartData);
   }
   return userCarts.get(userId)!;
 }
 
-// Show cart contents
-async function showCart(ctx: MyContext) {
+// Function to sync cart changes back to session
+function syncCartToSession(userId: number, ctx: AuthContext) {
+  const cart = userCarts.get(userId);
+  if (cart && ctx.session) {
+    ctx.session.cart = {
+      items: cart.items,
+      total: cart.total,
+      updatedAt: new Date().toISOString()
+    };
+    console.log(`Synced cart to session for user ${userId}: ${cart.items.length} items, total: ${cart.total}`);
+  }
+}
+
+  // Show cart contents
+async function showCart(ctx: AuthContext) {
   try {
+    console.log('showCart function called in categories scene');
     const userId = ctx.from?.id;
     if (!userId) {
+      console.log('No user ID found in showCart');
       await ctx.reply(ctx.i18n.t('error') || 'User ID not found');
       return;
     }
 
-    const cart = getOrCreateCart(userId);
+    console.log(`Showing cart for user ${userId}`);
+    const cart = getOrCreateCart(userId, ctx);
+    console.log(`Cart has ${cart.items.length} items, total: ${cart.total}`);
 
     if (cart.items.length === 0) {
+      console.log('Cart is empty, showing empty message');
       await ctx.reply(
         ctx.i18n.t('cart.empty') || 'Ваша корзина пуста',
         Markup.keyboard([
-          [ctx.i18n.t('back') || 'Back']
+          [ctx.i18n.t('back') || '⬅️ Назад']
         ]).resize()
       );
       return;
@@ -263,7 +321,7 @@ async function showCart(ctx: MyContext) {
     cart.items.forEach((cartItem, index) => {
       const itemTotal = cartItem.price * cartItem.quantity;
       const formattedItemTotal = new Intl.NumberFormat('ru-RU').format(itemTotal);
-      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} сум\n\n`;
+      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} ${ctx.i18n.t('cart.sum')}\n\n`;
       
       // Create inline buttons for this item: [❌ Name] on first row, [-] [quantity] [+] on second row
       inlineButtons.push([
@@ -279,28 +337,23 @@ async function showCart(ctx: MyContext) {
     // Recalculate cart total
     cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
     const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
-    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} сум</b>`;
+    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} ${ctx.i18n.t('cart.sum')}</b>`;
 
-    // Add action buttons at the bottom
-    inlineButtons.push([
-      Markup.button.callback(ctx.i18n.t('cart.clear') || 'Очистить корзину', 'clear_cart'),
-      Markup.button.callback(ctx.i18n.t('cart.checkout') || 'Оформить заказ', 'checkout_cart')
-    ]);
-
-    // Create regular keyboard for back button
+    // Create regular keyboard with cart actions and back button
     const regularKeyboard = Markup.keyboard([
-      [ctx.i18n.t('back') || 'Back']
+      [ctx.i18n.t('cart.clear') || '🗑 Очистить корзину', ctx.i18n.t('cart.checkout') || '✅ Оформить заказ'],
+      [ctx.i18n.t('back') || '⬅️ Назад']
     ]).resize();
 
-    // Send message with inline keyboard
+    // Send message with inline keyboard (only for item management)
     await ctx.replyWithHTML(cartMessage, {
       reply_markup: {
         inline_keyboard: inlineButtons
       }
     });
 
-    // Send back button separately
-    await ctx.reply(ctx.i18n.t('cart.back_message') || 'Используйте кнопку ниже для возврата:', regularKeyboard);
+    // Send cart actions in bottom menu
+    await ctx.reply(ctx.i18n.t('cart.back_message') || 'Используйте кнопки ниже для управления корзиной:', regularKeyboard);
 
   } catch (error) {
     console.error('Error showing cart:', error);
@@ -309,12 +362,12 @@ async function showCart(ctx: MyContext) {
 }
 
 // Function to update cart message without recreating it
-async function updateCartMessage(ctx: MyContext) {
+async function updateCartMessage(ctx: AuthContext) {
   try {
     const userId = ctx.from?.id;
     if (!userId) return;
 
-    const cart = getOrCreateCart(userId);
+    const cart = getOrCreateCart(userId, ctx);
 
     if (cart.items.length === 0) {
       // If cart is empty, delete the message and show empty cart
@@ -336,7 +389,7 @@ async function updateCartMessage(ctx: MyContext) {
     cart.items.forEach((cartItem, index) => {
       const itemTotal = cartItem.price * cartItem.quantity;
       const formattedItemTotal = new Intl.NumberFormat('ru-RU').format(itemTotal);
-      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} сум\n\n`;
+      cartMessage += `${index + 1}. ${cartItem.name}\n${cartItem.quantity} × ${new Intl.NumberFormat('ru-RU').format(cartItem.price)} = ${formattedItemTotal} ${ctx.i18n.t('cart.sum')}\n\n`;
       
       // Create inline buttons for this item: [❌ Name] on first row, [-] [quantity] [+] on second row
       inlineButtons.push([
@@ -352,15 +405,9 @@ async function updateCartMessage(ctx: MyContext) {
     // Recalculate cart total
     cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
     const formattedTotal = new Intl.NumberFormat('ru-RU').format(cart.total);
-    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} сум</b>`;
+    cartMessage += `<b>${ctx.i18n.t('cart.total') || 'Итого'}: ${formattedTotal} ${ctx.i18n.t('cart.sum')}</b>`;
 
-    // Add action buttons at the bottom
-    inlineButtons.push([
-      Markup.button.callback(ctx.i18n.t('cart.clear') || 'Очистить корзину', 'clear_cart'),
-      Markup.button.callback(ctx.i18n.t('cart.checkout') || 'Оформить заказ', 'checkout_cart')
-    ]);
-
-    // Update the existing message instead of creating a new one
+    // Update the existing message instead of creating a new one (without cart action buttons)
     await ctx.editMessageText(cartMessage, {
       parse_mode: 'HTML',
       reply_markup: {
@@ -388,13 +435,16 @@ categoriesScene.action(/remove_item_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId);
+  const cart = getOrCreateCart(userId, ctx);
   
   // Remove item from cart
   cart.items = cart.items.filter(item => item.id !== itemId);
   
   // Recalculate total
   cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  
+  // Sync changes to session
+  syncCartToSession(userId, ctx);
   
   await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
   
@@ -409,7 +459,7 @@ categoriesScene.action(/increase_cart_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId);
+  const cart = getOrCreateCart(userId, ctx);
   
   // Find and increase quantity
   const item = cart.items.find(item => item.id === itemId);
@@ -418,6 +468,9 @@ categoriesScene.action(/increase_cart_(\d+)/, async (ctx) => {
     
     // Recalculate total
     cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    
+    // Sync changes to session
+    syncCartToSession(userId, ctx);
     
     await ctx.answerCbQuery();
     
@@ -435,7 +488,7 @@ categoriesScene.action(/decrease_cart_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId);
+  const cart = getOrCreateCart(userId, ctx);
   
   // Find and decrease quantity
   const item = cart.items.find(item => item.id === itemId);
@@ -445,6 +498,9 @@ categoriesScene.action(/decrease_cart_(\d+)/, async (ctx) => {
       
       // Recalculate total
       cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      
+      // Sync changes to session
+      syncCartToSession(userId, ctx);
       
       await ctx.answerCbQuery();
       
@@ -456,6 +512,9 @@ categoriesScene.action(/decrease_cart_(\d+)/, async (ctx) => {
       
       // Recalculate total
       cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      
+      // Sync changes to session
+      syncCartToSession(userId, ctx);
       
       await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
       
@@ -470,7 +529,7 @@ categoriesScene.action(/item_quantity_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId);
+  const cart = getOrCreateCart(userId, ctx);
   const item = cart.items.find(item => item.id === itemId);
   
   if (item) {
@@ -478,23 +537,7 @@ categoriesScene.action(/item_quantity_(\d+)/, async (ctx) => {
   }
 });
 
-categoriesScene.action('clear_cart', async (ctx) => {
-  console.log('Clear cart button pressed');
-  const userId = ctx.from?.id;
-  if (userId) {
-    userCarts.set(userId, { items: [], total: 0 });
-    await ctx.answerCbQuery(ctx.i18n.t('cart.cleared') || 'Корзина очищена');
-    
-    // Update cart message instead of recreating it (will show empty cart)
-    await updateCartMessage(ctx);
-  }
-});
 
-categoriesScene.action('checkout_cart', async (ctx) => {
-  console.log('Checkout button pressed');
-  await ctx.answerCbQuery();
-  await ctx.reply(ctx.i18n.t('cart.checkout_message') || 'Функция оформления заказа будет добавлена позже');
-});
 
 // Export cart functions for use in other scenes
-export { getOrCreateCart, userCarts }; 
+export { getOrCreateCart, userCarts, syncCartToSession }; 

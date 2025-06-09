@@ -1,10 +1,11 @@
 import { Scenes } from 'telegraf';
 import { Markup } from 'telegraf';
+import type { AuthContext } from '../middlewares/auth';
 
 // Define a simple context type to avoid compatibility issues
 type MyContext = any;
 
-export const welcomeScene = new Scenes.BaseScene<MyContext>('welcome');
+export const welcomeScene = new Scenes.BaseScene<AuthContext>('welcome');
 
 // On scene enter
 welcomeScene.enter(async (ctx) => {

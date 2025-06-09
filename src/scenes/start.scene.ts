@@ -1,15 +1,10 @@
 import { Scenes, Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import { setLocalizedCommands } from '../utils/commandMenu';
-
-// Use any type for now to avoid complex type conflicts
-type MyContext = Scenes.SceneContext & {
-  i18n: TelegrafI18n;
-  session: any;
-};
+import type { AuthContext } from '../middlewares/auth';
 
 // Create the start scene (renamed from language scene)
-export const startScene = new Scenes.BaseScene<MyContext>('start');
+export const startScene = new Scenes.BaseScene<AuthContext>('start');
 
 startScene.enter((ctx) => {
   console.log('Entered start scene');

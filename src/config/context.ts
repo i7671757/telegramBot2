@@ -30,6 +30,25 @@ interface MySession extends Scenes.SceneSession<MySceneSession> {
     [productId: string]: number;
   };
   previousScene?: string;
+  cart?: {
+    items: Array<{id: number, name: string, price: number, quantity: number}>;
+    total: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+  expectingTimeInput?: boolean;
+  expectingTimeSlotSelection?: boolean;
+  expectingAdditionalPhone?: boolean;
+  additionalPhone?: string;
+  expectingCutleryChoice?: boolean;
+  includeCutlery?: boolean;
+  expectingOrderConfirmation?: boolean;
+  deliveryType?: 'pickup' | 'delivery';
+  address?: string;
+  coordinates?: {
+    latitude: number;
+    longitude: number;
+  };
 }
 
 export interface MyContext extends Context {

@@ -33,7 +33,7 @@ interface ApiResponse {
 
 // Function to fetch categories from the API
 export async function fetchCategories(): Promise<Category[]> {
-  const apiUrl = 'https://api.lesailes.uz/api/categories/root';
+  const apiUrl = `${process.env.API_URL}categories/root`;
   console.log(`Making API request to: ${apiUrl}`);
   
   try {

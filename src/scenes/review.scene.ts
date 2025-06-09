@@ -1,9 +1,9 @@
 import { Markup, Scenes } from "telegraf";
-import type { MyContext } from "../config/context";
+import type { AuthContext } from '../middlewares/auth';
 import TelegrafI18n from 'telegraf-i18n';
 const { match } = require("telegraf-i18n");
 
-export const reviewScene = new Scenes.BaseScene<MyContext>('review');
+export const reviewScene = new Scenes.BaseScene<AuthContext>('review');
 
 // Initialize ratings object in session
 reviewScene.enter(async (ctx) => {
@@ -148,12 +148,12 @@ reviewScene.action('confirm_review', async (ctx) => {
     await ctx.answerCbQuery();
     await ctx.reply(ctx.i18n.t('review.review_completed'));
     
-    // Return to feedback scene
-    await ctx.scene.enter('feedback');
+    // Return to callback scene
+    await ctx.scene.enter('callback');
 });
 
 // Helper function to check if all ratings are complete and show confirm button
-async function checkAllRatingsComplete(ctx: MyContext) {
+async function checkAllRatingsComplete(ctx: AuthContext) {
     if (!ctx.session.ratings) return;
     
     const { product, service, delivery } = ctx.session.ratings;
@@ -173,12 +173,12 @@ async function checkAllRatingsComplete(ctx: MyContext) {
 // Handle confirm button press
 reviewScene.hears(match('review.confirm'), async (ctx) => {
     await ctx.reply(ctx.i18n.t('review.review_completed'));
-    await ctx.scene.enter('feedback');
+    await ctx.scene.enter('callback');
 });
 
 // Handle back command
 reviewScene.hears(match('menu.back'), async (ctx) => {
-    await ctx.scene.enter('feedback');
+    await ctx.scene.enter('callback');
 });
 
 // Handle unexpected messages
