@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "bun run index.ts",
-    "dev": "bun --watch index.ts",
+    "dev": "USE_POLLING=true NODE_ENV=development bun --watch index.ts",
+    "dev:local": "USE_POLLING=true NODE_ENV=development bun --watch index.ts",
     "start:ngrok": "node scripts/start-with-ngrok.cjs",
     "ngrok:update": "node scripts/ngrok-webhook-updater.cjs",
     "webhook:fix": "node scripts/fix-webhook-url.cjs",
@@ -13,7 +14,19 @@
     "test:ngrok": "node scripts/test-ngrok-only.cjs",
     "webhook:info": "node scripts/webhook.js info",
     "webhook:set": "node scripts/webhook.js set",
-    "webhook:delete": "node scripts/webhook.js delete"
+    "webhook:delete": "node scripts/webhook.js delete",
+    "migrate:sessions": "node scripts/migrateToSessionService.js",
+    "sessions:stats": "node -e \"const {sessionService} = require('./dist/services/SessionService.js'); sessionService.getSessionStats().then(console.log)\"",
+    "sessions:cleanup": "node -e \"const {sessionService} = require('./dist/services/SessionService.js'); sessionService.cleanupSessions().then(count => console.log('Cleaned:', count))\"",
+    "security:audit": "node scripts/securityAudit.js",
+    "security:check": "npm audit && node scripts/securityAudit.js",
+    "security:fix": "npm audit fix",
+    "performance:monitor": "node scripts/performanceMonitor.js",
+    "performance:analyze": "npm run performance:monitor",
+    "performance:report": "node scripts/performanceMonitor.js > performance_analysis.txt",
+    "memory:analyze": "node scripts/memoryCleanup.cjs analyze",
+    "memory:cleanup": "node scripts/memoryCleanup.cjs cleanup",
+    "memory:stats": "node scripts/memoryCleanup.cjs analyze"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",

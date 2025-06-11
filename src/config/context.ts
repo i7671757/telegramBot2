@@ -23,7 +23,7 @@ interface MySession extends Scenes.SceneSession<MySceneSession> {
   };
   categories?: any[];
   selectedCategory?: any;
-  products?: any[];
+  products?: number | string | null;
   selectedProduct?: any;
   currentProductsPage?: number;
   productQuantities?: {

@@ -116,7 +116,7 @@ branchInfoScene.on('text', async (ctx) => {
 
   // Handle back button
   if (text === ctx.i18n.t('menu.back')) {
-    return ctx.scene.enter('mainMenu');
+    return ctx.scene.enter('settings');
   }
 
   // Get terminals from session

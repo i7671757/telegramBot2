@@ -33,7 +33,7 @@ changeNumberScene.enter(async (ctx) => {
 
 // Handle back button
 changeNumberScene.hears(match('changeNumber.back'), async (ctx) => {
-  await ctx.scene.enter('mainMenu');
+  await ctx.scene.enter('settings');
 });
 
 // Handle "My number" button
@@ -63,8 +63,8 @@ changeNumberScene.on('contact', async (ctx) => {
   // Confirm the change
   await ctx.reply(ctx.i18n.t('changeNumber.success', { phone }));
   
-  // Return to the menu
-  await ctx.scene.enter('mainMenu');
+  // Return to the settings menu
+  await ctx.scene.enter('settings');
 });
 
 // Handle text input (manual phone number entry)
@@ -96,6 +96,6 @@ changeNumberScene.on('text', async (ctx) => {
   // Confirm the change
   await ctx.reply(ctx.i18n.t('changeNumber.success', { phone: newPhone }));
   
-  // Return to the menu
-  await ctx.scene.enter('mainMenu');
+  // Return to the settings menu
+  await ctx.scene.enter('settings');
 }); 

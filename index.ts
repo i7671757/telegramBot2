@@ -575,8 +575,22 @@ function updateSessionsWithSelectedCity() {
   }
 }
 
-// Initialize webhook
-setupWebhook();
+// Initialize webhook or polling based on environment
+if (process.env.USE_POLLING === 'true' || (process.env.NODE_ENV === 'development' && !config.webhook.url)) {
+  // Use polling for local development
+  console.log('Starting bot in polling mode...');
+  bot.launch({
+    webhook: undefined
+  }).then(() => {
+    console.log('Bot started in polling mode');
+  }).catch((error) => {
+    console.error('Failed to start bot in polling mode:', error);
+    process.exit(1);
+  });
+} else {
+  // Use webhook for production
+  setupWebhook();
+}
 
 // Enable graceful stop
 let isShuttingDown = false;

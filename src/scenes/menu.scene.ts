@@ -1,5 +1,6 @@
 import { Scenes, Markup } from 'telegraf';
 import type { AuthContext } from '../middlewares/auth';
+const { match } = require("telegraf-i18n");
 
 interface Terminal {
   name: string;
@@ -66,6 +67,12 @@ menuScene.command('feedback', async (ctx) => {
   await ctx.scene.enter('callback');
 });
 
+// Handle "back" button from language selection menu
+menuScene.hears(match('back'), async (ctx) => {
+  // Return to menu
+  await ctx.scene.reenter();
+});
+
 // Handle all text messages
 menuScene.on('text', async (ctx) => {
   const text = ctx.message.text;
@@ -88,7 +95,7 @@ menuScene.on('text', async (ctx) => {
         ctx.i18n.t('changeLanguage.languages.uz'),
         ctx.i18n.t('changeLanguage.languages.en')
       ],
-      [ctx.i18n.t('menu.back')]
+      [ctx.i18n.t('back')]
     ]).resize();
     
     await ctx.reply(ctx.i18n.t('changeLanguage.select_language'), keyboard);

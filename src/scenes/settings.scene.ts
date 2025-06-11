@@ -2,6 +2,7 @@ import { Scenes, Markup } from 'telegraf';
 import TelegrafI18n from 'telegraf-i18n';
 import { registerSceneCommandHandlers, shouldSkipCommand } from '../utils/commandMenu';
 import type { AuthContext } from '../middlewares/auth';
+const { match } = require("telegraf-i18n");
 
 // Создаем сцену настроек
 export const settingsScene = new Scenes.BaseScene<AuthContext>('settings');
@@ -57,6 +58,12 @@ settingsScene.command('feedback', async (ctx) => {
   await ctx.scene.enter('callback');
 });
 
+// Обрабатываем кнопку "назад" из меню выбора языка
+settingsScene.hears(match('back'), async (ctx) => {
+  // Возвращаемся в меню настроек
+  await ctx.scene.reenter();
+});
+
 // Обрабатываем все текстовые сообщения
 settingsScene.on('text', async (ctx) => {
   const text = ctx.message.text;
@@ -84,7 +91,7 @@ settingsScene.on('text', async (ctx) => {
         ctx.i18n.t('changeLanguage.languages.uz'),
         ctx.i18n.t('changeLanguage.languages.en')
       ],
-      [ctx.i18n.t('menu.back')]
+      [ctx.i18n.t('back')]
     ]).resize();
     
     await ctx.reply(ctx.i18n.t('changeLanguage.select_language'), keyboard);

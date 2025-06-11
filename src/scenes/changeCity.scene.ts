@@ -96,7 +96,7 @@ changeCityScene.enter(async (ctx) => {
 
 // Handle back button
 changeCityScene.hears(match('changeCity.back'), async (ctx) => {
-  await ctx.scene.enter('mainMenu');
+  await ctx.scene.enter('settings');
 });
 
 // Handle city selection
@@ -132,6 +132,6 @@ changeCityScene.on('text', async (ctx) => {
     await ctx.reply(ctx.i18n.t('changeCity.success', { city: cityName }));
     
     // Return to menu
-    await ctx.scene.enter('mainMenu');
+    await ctx.scene.enter('settings');
   }
 }); 

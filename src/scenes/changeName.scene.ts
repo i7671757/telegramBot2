@@ -46,7 +46,7 @@ changeNameScene.enter(async (ctx) => {
 
 // Handle back button
 changeNameScene.hears(match('changeName.back'), async (ctx) => {
-  await ctx.scene.enter('mainMenu');
+  await ctx.scene.enter('settings');
 });
 
 // Handle text input
@@ -71,6 +71,6 @@ changeNameScene.on('text', async (ctx) => {
   // Confirm the change
   await ctx.reply(ctx.i18n.t('changeName.success', { name: newName }));
   
-  // Return to the menu
-  await ctx.scene.enter('mainMenu');
+  // Return to the settings menu
+  await ctx.scene.enter('settings');
 }); 

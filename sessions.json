@@ -9,14 +9,14 @@
       "id": "1034682:1034682",
       "data": {
         "__scenes": {
-          "current": "mainMenu",
+          "current": "startOrder",
           "state": {}
         },
-        "language": "en",
+        "language": "uz",
         "registered": true,
         "phone": "+998909901057",
         "currentCity": "2",
-        "__language_code": "en",
+        "__language_code": "uz",
         "selectedCity": 2,
         "isAuthenticated": true,
         "address": "Узбекистан, Ташкент, Шарафа Рашидова улица",
@@ -27,629 +27,463 @@
         "previousScene": "categories",
         "products": [
           {
-            "id": 33,
+            "id": 12,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Chicken nuggets, 3 pcs",
-                  "ru": "Куриные наггетсы, 3 шт",
-                  "uz": "Tovuq nagetsi, 3 dona"
+                  "en": "Kids box longer BOY",
+                  "ru": "Кидс бокс лонгер М",
+                  "uz": "Kids box longer O'"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Куриные наггетсы 3",
+                  "ru": "Кидс бокс лонгер BOY",
                   "uz": "",
-                  "val": "3758ecec-431d-49f6-801a-1f33fd53631e"
+                  "val": "62ae3f0d-3e2a-4651-ae17-7c247b1036d5"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Delicious minced chicken nuggets</p>",
-                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
-                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar</p>"
+                  "en": "<p>Mini longer, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лонгер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Longer-mini, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-05-01T04:43:33.000000Z",
+            "updated_at": "2024-08-13T11:19:04.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Куриные наггетсы, 3 шт",
+            "custom_name": "Кидс бокс лонгер М",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 6,
-            "weight": 75,
-            "additional_sales": "19,20,65,71,72",
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "15000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2023/01/24/jOF0andmSuQH7HByJ7TxZ00mC23TE5JC8QetB6KZ.webp",
-            "variants": []
-          },
-          {
-            "id": 165,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Чикен стикс, 3 шт",
-                  "uz": "Chiken stiks, 3 dona",
-                  "en": "Chicken sticks, 3 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Чикен стикс 3 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "b77f0cca-f0c0-477f-bb2a-e5888a1d7915"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
-                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar</p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Appetizing minced chicken nuggets in branded breading</span></p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2023-01-24T10:47:15.000000Z",
-            "updated_at": "2025-05-01T04:44:16.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Чикен стикс, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 10,
-            "weight": 75,
+            "sort": 1,
+            "weight": 580,
             "additional_sales": null,
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "15000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2023/01/24/QRHiz6nJ7S6ZMKS7q3MRvxr8W8btihhZdffA10OM.webp",
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/UoE6NAte3lFDXCNHMk4MBkd4pXWdpowTDE7nFvWJ.webp",
+            "modifiers": [
+              {
+                "id": 1,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без помидора",
+                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 2,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соуса",
+                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 3,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без льда",
+                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 4,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соленых огурцов",
+                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 5,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без майонеза",
+                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 6,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без салатного листа",
+                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 7,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без лука",
+                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 8,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без кетчупа",
+                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              }
+            ],
             "variants": []
           },
           {
-            "id": 51,
+            "id": 13,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "French fries",
-                  "ru": "Картошка фри",
-                  "uz": "Fri kartoshkasi"
+                  "en": "Kids box longer GIRL",
+                  "ru": "Кидс бокс лонгер Д",
+                  "uz": "Kids box longer Q"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Картошка фри L",
+                  "ru": "Кидс бокс лонгер GIRL",
                   "uz": "",
-                  "val": "cd663038-7855-48d1-b9c4-75898ecc3fdf"
+                  "val": "14d34dd8-9f6f-4551-a428-69f0c97ebb6a"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Appetizing and crispy french fries</p>",
-                  "ru": "<p>Картошка фри с аппетитно хрустящей корочкой</p>",
-                  "uz": "<p>Ishtahaochar, qarsildoq fri kartoshkasi.</p>"
+                  "en": "<p>Mini longer, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лонгер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Longer-mini, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2024-08-20T11:01:50.000000Z",
+            "updated_at": "2024-08-13T11:19:19.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Картошка фри",
+            "custom_name": "Кидс бокс лонгер Д",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 11,
-            "weight": 91,
-            "additional_sales": "19,20,65,71,72",
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "16000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/kp8eGfzJqockuM9osFGgJRxQytAl93lgRtcFLo9d.webp",
-            "variants": []
-          },
-          {
-            "id": 261,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "АКЦИЯ на Куриные шарики с сыром, 3 шт",
-                  "uz": "Pishloqli tovuq sharchalariga Aksiya, 3 dona",
-                  "en": "Bonus for the Cheesy chicken balls, 3 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "АКЦИЯ Куриные шарики с сыром, 3 шт ",
-                  "uz": "",
-                  "en": null,
-                  "val": "990f20fa-6106-4e7d-989f-f80079cf4d02"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Нежные и сочные куриные шарики с сыром в фирменной панировке.</span>Акция! Получите 3 наггетса в подарок!</p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, yumshoq va mazali, pishloqli tovuq sharchalari.Aksiya! 3 ta naggetsni sovg'aga oling!</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Tender and juicy chicken balls.</span>Bonus! Get 3 nuggets as a gift!</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2025-04-30T07:00:39.000000Z",
-            "updated_at": "2025-05-16T06:39:14.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "АКЦИЯ на Куриные шарики с сыром, 3 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": -1,
-            "weight": 1,
-            "additional_sales": null,
-            "weight_unit": null,
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "17000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2025/05/01/TLfsH8TxJBxAKUnbrwFGhn18bLT6upTcIMHdyKb9.webp",
-            "variants": []
-          },
-          {
-            "id": 156,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Картофельные шарики с сыром, 7 шт",
-                  "uz": "Pishloqli kartoshka sharchalari, 7 dona",
-                  "en": "Potato balls with cheese, 7 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Картофельные шарики с сыром 7 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "9be1998f-b344-4744-bc67-057691ce5350"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Сытные картофельные шарики с сыром в фирменной панировке. 7 шт</p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, pishloqli kartoshka sharchalari. 7 dona</span></p>",
-                  "en": "<p>Tasty potato balls with cheese. 7 pcs</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-11-15T09:13:25.000000Z",
-            "updated_at": "2024-08-13T11:40:56.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Картофельные шарики с сыром, 7 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 3,
-            "weight": 175,
+            "sort": 1,
+            "weight": 580,
             "additional_sales": null,
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "18000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2022/11/15/vLdLVsVy4sXPQJQKGtTkVybXkbThJVSDTq7xkdhV.webp",
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/10/13/ECQo2Gm2zzpDgb2RP4DXO2qZVqac6zAURKetkKR3.webp",
+            "modifiers": [
+              {
+                "id": 1,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без помидора",
+                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 2,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соуса",
+                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 3,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без льда",
+                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 4,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соленых огурцов",
+                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 5,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без майонеза",
+                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 6,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без салатного листа",
+                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 7,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без лука",
+                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 8,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без кетчупа",
+                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              }
+            ],
             "variants": []
           },
           {
-            "id": 66,
+            "id": 28,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Country style potatoes",
-                  "ru": "Картошка по-деревенски",
-                  "uz": "Jaydari kartoshka"
+                  "en": "Kids box lester BOY",
+                  "ru": "Кидс бокс лестер М",
+                  "uz": "Kids box lester O'"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Картошка по-деревенски L",
+                  "ru": "Кидс бокс лестер  BOY",
                   "uz": "",
-                  "val": "36bbc8c2-f8bc-4a40-a25d-fae99a2f955f"
+                  "val": "7ddabf47-571a-4771-bb60-23f58315ddfe"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Delicious potato slices with spices</p>",
-                  "ru": "<p>Аппетитные ломтики картофеля со специями</p>",
-                  "uz": "<p>Ziravorlar bilan qovurilgan, ishtahaochar kartoshka bo'laklari.</p>"
+                  "en": "<p>Mini lester, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лестер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Mini lester, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2024-08-20T11:02:02.000000Z",
+            "updated_at": "2024-08-13T11:19:59.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Картошка по-деревенски",
+            "custom_name": "Кидс бокс лестер М",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 12,
-            "weight": 120,
-            "additional_sales": "19,20,65,71,72",
+            "sort": 1,
+            "weight": 588,
+            "additional_sales": null,
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "18000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2022/02/23/VFbXTLqlOFyISDb2RkM49liUAe9GR1n3UdaPUBwP.webp",
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/n2jbtlfOgfAxTAqI1TdkavBfIQYMtRfPO6pWgF4K.webp",
             "variants": []
           },
           {
-            "id": 34,
+            "id": 39,
             "attribute_data": {
               "name": {
                 "chopar": {
-                  "en": "Chicken nuggets, 5 pcs",
-                  "ru": "Куриные наггетсы, 5 шт",
-                  "uz": "Tovuq nagetsi, 5 dona"
+                  "en": "Kids box lester GIRL",
+                  "ru": "Кидс бокс лестер Д",
+                  "uz": "Kids box lester Q"
                 }
               },
               "xml_id": {
                 "chopar": {
-                  "ru": "Куриные наггетсы 5",
+                  "ru": "Кидс бокс лестер GIRL",
                   "uz": "",
-                  "val": "41497d7e-fe1c-4252-92d9-905d914835b1"
+                  "val": "24647879-91e4-4323-9a86-36dbf9225ae2"
                 }
               },
               "description": {
                 "chopar": {
-                  "en": "<p>Appetizing minced chicken nuggets in branded breading</p>",
-                  "ru": "<p>Аппетитные наггетсы из куриного фарша в фирменной панировке</p>",
-                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar.</p>"
+                  "en": "<p>Mini lester, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лестер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Mini lester, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
                 }
               }
             },
             "option_data": [],
             "created_at": "2021-11-04T17:06:13.000000Z",
-            "updated_at": "2025-05-01T04:43:54.000000Z",
+            "updated_at": "2024-08-13T11:20:08.000000Z",
             "deleted_at": null,
             "product_family_id": 2,
             "layout_id": null,
             "group_pricing": 0,
             "drafted_at": null,
             "draft_parent_id": null,
-            "custom_name": "Куриные наггетсы, 5 шт",
+            "custom_name": "Кидс бокс лестер Д",
             "product_id": null,
             "custom_name_uz": null,
             "active": 1,
             "modifier_prod_id": null,
             "box_id": null,
-            "sort": 5,
-            "weight": 125,
-            "additional_sales": "19,20,65,71,72",
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "20000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2023/01/24/Yf0tksk8T27V4GgT2heBeQtvWQZMc8FYSXTOFMqO.webp",
-            "variants": []
-          },
-          {
-            "id": 166,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Чикен стикс, 5 шт",
-                  "uz": "Chiken stiks, 5 dona",
-                  "en": "Chicken sticks, 5 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Чикен стикс 5 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "09471f5f-eea9-4549-a2a2-4b155663713d"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Аппетитные наггетсы из куриного фарша (Halal) в фирменной панировке</p>",
-                  "uz": "<p>Maxsus panirovka bilan qoplangan, tovuq qiymasidan tayyorlangan ishtahaochar naggetslar (Halal)</p>",
-                  "en": "<p>Delicious minced chicken nuggets (Halal)</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2023-01-24T10:47:15.000000Z",
-            "updated_at": "2024-08-13T11:43:24.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Чикен стикс, 5 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 9,
-            "weight": 125,
+            "sort": 1,
+            "weight": 588,
             "additional_sales": null,
             "weight_unit": "g",
             "is_double_parent": null,
             "is_double_child": null,
-            "price": "20000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2023/01/25/M88mdNCSaakpn9zgM1GXkdzDavMWgRyecWH91thT.webp",
-            "variants": []
-          },
-          {
-            "id": 262,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "АКЦИЯ на Куриные шарики с сыром, 5 шт",
-                  "uz": "Pishloqli tovuq sharchalariga Aksiya, 5 dona",
-                  "en": "Bonus for the Cheesy chicken balls, 5 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "АКЦИЯ Куриные шарики с сыром, 5 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "e376071c-7ee0-4aa5-aaab-9b982ee08f69"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p><span style=\"color: rgb(0, 0, 0);\">Нежные и сочные куриные шарики с сыром в фирменной панировке.</span></p><p>Акция! Получите 5 наггетсов в подарок!</p>",
-                  "uz": "<p><span style=\"color: rgb(0, 0, 0);\">Maxsus panirovkadagi, yumshoq va mazali, pishloqli tovuq sharchalari.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Aksiya! 5 ta naggetsni sovg'aga oling!</span></p>",
-                  "en": "<p><span style=\"color: rgb(0, 0, 0);\">Tender and juicy chicken balls.</span></p><p>Bonus! Get 5 nuggets as a gift!</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2025-04-30T07:00:39.000000Z",
-            "updated_at": "2025-05-16T06:39:27.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "АКЦИЯ на Куриные шарики с сыром, 5 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": -2,
-            "weight": 1,
-            "additional_sales": null,
-            "weight_unit": null,
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "23000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2025/05/01/qdNUGGCEkg1KVUU5xYbpDm6bhJjvfwMRqp2kwPOT.webp",
-            "variants": []
-          },
-          {
-            "id": 155,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Картофельные шарики с сыром, 11 шт",
-                  "uz": "Pishloqli kartoshka sharchalari, 11 dona",
-                  "en": "Potato balls with cheese, 11 pcs"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "картофельные шарики с сыром 11 шт",
-                  "uz": "",
-                  "en": null,
-                  "val": "83094528-f2df-4924-9b36-b489b7510e12"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Сытные картофельные шарики с сыром в фирменной панировке. 11 шт</p>",
-                  "uz": "<p>Maxsus panirovkadagi, pishloqli kartoshka sharchalari. 11 dona</p>",
-                  "en": "<p>Tasty potato balls with cheese. 11 pcs</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2022-11-14T07:00:24.000000Z",
-            "updated_at": "2024-08-13T11:40:43.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Картофельные шарики с сыром, 11 шт",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 2,
-            "weight": 275,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "25000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2022/11/15/b7DfHdd7xXD8BBSMGreVClZ9stwFV0zlyv3vJH83.png",
-            "variants": []
-          },
-          {
-            "id": 171,
-            "attribute_data": {
-              "name": {
-                "chopar": {
-                  "ru": "Фри баскет",
-                  "uz": "Fri basket",
-                  "en": "French fries basket"
-                }
-              },
-              "xml_id": {
-                "chopar": {
-                  "ru": "Фри баскет",
-                  "uz": "",
-                  "en": null,
-                  "val": "7c5a216c-8d53-4404-a8fc-59ca8328f93a"
-                }
-              },
-              "description": {
-                "chopar": {
-                  "ru": "<p>Ещё больше картошки фри с аппетитно хрустящей корочкой</p>",
-                  "uz": "<p>Yanada ko'proq ishtahaochar, qarsildoq fri kartoshkasi</p>",
-                  "en": "<p>Even more appetizing and crispy french fries</p>"
-                }
-              }
-            },
-            "option_data": [],
-            "created_at": "2023-02-27T07:22:32.000000Z",
-            "updated_at": "2023-11-23T11:13:13.000000Z",
-            "deleted_at": null,
-            "product_family_id": 2,
-            "layout_id": null,
-            "group_pricing": 0,
-            "drafted_at": null,
-            "draft_parent_id": null,
-            "custom_name": "Фри баскет",
-            "product_id": null,
-            "custom_name_uz": null,
-            "active": 1,
-            "modifier_prod_id": null,
-            "box_id": null,
-            "sort": 14,
-            "weight": 182,
-            "additional_sales": null,
-            "weight_unit": "g",
-            "is_double_parent": null,
-            "is_double_child": null,
-            "price": "29000.00000",
-            "category_id": 5,
-            "image": "https://api.lesailes.uz/storage/products/2023/02/27/YXTQXg0BiotZoFri7R9rHhsKxz96kt4GrEzCU96W.webp",
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/GoFai5LPyo1m6rDqc1NFiqnmRaV8dvvbxOtxBA0F.webp",
             "variants": []
           }
         ],
         "selectedProduct": {
-          "id": 19,
+          "id": 73,
           "attribute_data": {
             "name": {
               "chopar": {
-                "en": "Ketchup",
-                "ru": "Кетчуп",
-                "uz": "Ketchup"
+                "en": "Chicken corn",
+                "ru": "Чикен корн",
+                "uz": "Chiken korn"
               }
             },
             "xml_id": {
               "chopar": {
-                "ru": "Кетчуп ",
+                "ru": "Чикен корн",
                 "uz": "",
-                "val": "3067edb0-b825-4aff-b92d-eb5724292f36"
+                "val": "61f45457-ac19-4890-ac48-5c83165e513a"
               }
             },
             "description": {
               "chopar": {
-                "en": null,
-                "ru": null,
-                "uz": null
+                "en": "<p>Tender chicken pieces</p>",
+                "ru": "<p>Нежные куриные кусочки</p>",
+                "uz": "<p>Yumshoq tovuq bo'lakchalari</p>"
               }
             }
           },
           "option_data": [],
-          "created_at": "2021-11-04T17:06:13.000000Z",
-          "updated_at": "2023-11-23T11:19:50.000000Z",
+          "created_at": "2021-11-04T17:06:14.000000Z",
+          "updated_at": "2023-11-23T10:58:05.000000Z",
           "deleted_at": null,
           "product_family_id": 2,
           "layout_id": null,
           "group_pricing": 0,
           "drafted_at": null,
           "draft_parent_id": null,
-          "custom_name": "Кетчуп",
+          "custom_name": "Чикен корн",
           "product_id": null,
           "custom_name_uz": null,
           "active": 1,
           "modifier_prod_id": null,
           "box_id": null,
-          "sort": 1,
-          "weight": 15,
+          "sort": 20,
+          "weight": 105,
           "additional_sales": null,
           "weight_unit": "g",
           "is_double_parent": null,
           "is_double_child": null,
-          "price": "4000.00000",
-          "category_id": 1,
-          "image": "https://api.lesailes.uz/storage/products/2023/11/02/rDBrPGwFET7ang8QoYYt7MdH8FWT3AafTLjZUbMJ.webp",
+          "price": "20000.00000",
+          "category_id": 6,
+          "image": "https://api.lesailes.uz/storage/products/2022/02/16/KmhdUqmEKWbGPxqGszEmP1Ib3f5UhE4xLQZm63US.webp",
           "variants": []
         },
         "productQuantities": {
           "7": 1,
           "19": 1,
           "33": 1,
+          "42": 1,
+          "45": 1,
           "46": 1,
           "49": 1,
           "54": 1,
@@ -660,16 +494,24 @@
           "114": 1,
           "141": 1,
           "165": 1,
-          "246": 1
+          "246": 2,
+          "261": 1
         },
         "cart": {
-          "items": [],
-          "total": 0,
-          "updatedAt": "2025-06-09T13:11:39.302Z"
+          "items": [
+            {
+              "id": 73,
+              "name": "Chiken korn",
+              "price": "20000.00000",
+              "quantity": 1
+            }
+          ],
+          "total": 20000,
+          "updatedAt": "2025-06-10T12:13:05.739Z"
         },
         "expectingTimeSlotSelection": true,
-        "selectedPickupTime": "✅ As soon as possible",
-        "selectedPaymentMethod": "📱 Payme",
+        "selectedPickupTime": "✅ Eng yaqin vaqt",
+        "selectedPaymentMethod": "💳 Click",
         "expectingAdditionalPhone": false,
         "additionalPhone": "не указан",
         "expectingCutleryChoice": false,
@@ -680,9 +522,186 @@
           "service": 5,
           "delivery": 5
         },
-        "selectedBranch": 8,
-        "deliveryType": "pickup",
-        "step": "pickup.chooseBranch"
+        "selectedBranch": 36,
+        "selectedCategory": {
+          "id": 3,
+          "attribute_data": {
+            "name": {
+              "chopar": {
+                "ru": "Детям",
+                "uz": "Bolajonlarga",
+                "en": "For kids"
+              }
+            },
+            "xml_id": {
+              "chopar": {
+                "ru": "Детям",
+                "uz": "",
+                "val": "63eb066f-6bcd-4d0e-92a8-f067b7553ec7"
+              }
+            }
+          },
+          "_lft": 13,
+          "_rgt": 14,
+          "parent_id": null,
+          "created_at": "2021-11-04T17:06:12.000000Z",
+          "updated_at": "2025-04-29T07:16:29.000000Z",
+          "sort": "min_price:asc",
+          "layout_id": null,
+          "drafted_at": null,
+          "draft_parent_id": null,
+          "active": 1,
+          "half_mode": 0,
+          "order": 10,
+          "icon": "👶",
+          "cities": null
+        },
+        "cities": [
+          {
+            "id": 2,
+            "xml_id": "d8204cd5-4f3b-45a6-b6ec-6b0c31abe5f5",
+            "name": "Ташкент",
+            "name_uz": "Toshkent",
+            "map_zoom": "13.760000",
+            "lat": "41.311158",
+            "lon": "69.279737",
+            "active": true,
+            "sort": 1,
+            "phone": "+998712004242",
+            "slug": "tashkent",
+            "bounds": "69.121678,41.163577,69.477725,41.422501",
+            "polygons": "69.128359,41.268156999999995,69.131587,41.269059999999996,69.134207,41.271735,69.136849,41.272946,69.140481,41.276094,69.140956,41.277795999999995,69.143072,41.278599,69.14468099999999,41.28039,69.146281,41.281189,69.147487,41.280938,69.146256,41.276178,69.146862,41.264949,69.14766999999999,41.262465999999996,69.152318,41.257897,69.16091899999999,41.252508999999996,69.163371,41.250116,69.166724,41.240251,69.164551,41.235859,69.16883,41.234711,69.17406199999999,41.228311,69.17383099999999,41.227142,69.171825,41.226031,69.172448,41.225437,69.1719,41.225131999999995,69.17440599999999,41.222522999999995,69.173963,41.221705,69.175516,41.221347,69.17452899999999,41.218765,69.176369,41.217679,69.177613,41.218942999999996,69.179644,41.217906,69.180585,41.219012,69.18368,41.216887,69.18139,41.214518999999996,69.185349,41.211558,69.18516199999999,41.210423999999996,69.182919,41.208298,69.183037,41.207167,69.182244,41.206813,69.182814,41.205957,69.18563499999999,41.204938,69.184677,41.200238999999996,69.185696,41.196953,69.20217699999999,41.178349999999995,69.205163,41.176108,69.208795,41.174372,69.22782099999999,41.168127,69.2372,41.166047,69.246847,41.165943999999996,69.269052,41.16363,69.27765699999999,41.16429,69.283547,41.166765,69.302005,41.178768,69.349649,41.214557,69.396428,41.244779,69.382689,41.255393999999995,69.384897,41.256813,69.385859,41.256161,69.387585,41.257101,69.395308,41.263166999999996,69.395867,41.262741,69.397637,41.264666,69.397499,41.265350999999995,69.395214,41.266051,69.385718,41.265116,69.382656,41.265786,69.381892,41.267573,69.384434,41.270997,69.38459,41.272270999999996,69.387379,41.2744,69.389943,41.275278,69.40397899999999,41.287441,69.419676,41.299400999999996,69.42032,41.300598,69.424032,41.302605,69.426446,41.306051,69.429783,41.308648,69.435587,41.311333999999995,69.44225,41.316196,69.451605,41.321290999999995,69.45344,41.324639999999995,69.45624,41.327389,69.467107,41.334227,69.46862999999999,41.334575,69.47363,41.343049,69.477728,41.346329,69.47395399999999,41.348894,69.466701,41.346437,69.459437,41.345242999999996,69.439343,41.344674999999995,69.40828499999999,41.342352999999996,69.41039599999999,41.344719999999995,69.41197,41.34876,69.410704,41.355565,69.407038,41.361526,69.404803,41.363828,69.401507,41.363054,69.400969,41.364886999999996,69.399807,41.364793999999996,69.398882,41.365967999999995,69.39581299999999,41.364283,69.39262699999999,41.36588,69.390042,41.365896,69.375875,41.361307,69.36345399999999,41.362341,69.36174199999999,41.361382,69.357372,41.356254,69.353788,41.354760999999996,69.35090799999999,41.354710999999995,69.344021,41.356024999999995,69.337904,41.359828,69.324895,41.369859999999996,69.31893,41.382705,69.3168,41.384521,69.311696,41.385135,69.300989,41.383928999999995,69.285277,41.38378,69.280318,41.385518999999995,69.26379,41.39602,69.260622,41.397267,69.256446,41.397892999999996,69.238466,41.398483,69.234762,41.398140999999995,69.230989,41.396761999999995,69.215385,41.387105,69.211139,41.386818,69.210325,41.383958,69.173579,41.360565,69.168825,41.356401999999996,69.165539,41.349795,69.163988,41.336797999999995,69.162888,41.333724,69.159784,41.328157,69.157916,41.328246,69.156711,41.327244,69.154816,41.327278,69.154669,41.325969,69.153437,41.325235,69.153548,41.323420999999996,69.154532,41.322474,69.153533,41.321106,69.154294,41.32064,69.152487,41.320324,69.147759,41.313393999999995,69.146472,41.313606,69.148018,41.311658,69.147221,41.310157,69.148279,41.309906,69.14895,41.308352,69.148501,41.305306,69.147503,41.303999,69.145161,41.302782,69.144735,41.300591,69.142802,41.299876999999995,69.14282899999999,41.29887,69.141066,41.296827,69.138426,41.294942,69.138094,41.292438,69.133648,41.289746,69.13380599999999,41.288700999999996,69.13203899999999,41.288018,69.131901,41.287290999999996,69.134872,41.283927,69.134081,41.281258,69.132829,41.280372,69.13331099999999,41.278931,69.13149,41.278996,69.128565,41.275965,69.128132,41.274085,69.125483,41.272017,69.125187,41.270109,69.122709,41.26989,69.121762,41.265549,69.123256,41.267244999999996,69.125254,41.266883",
+            "name_en": "Tashkent"
+          },
+          {
+            "id": 1,
+            "xml_id": "5de3332f-f9ec-4118-a574-5b927c123b88",
+            "name": "Андижан",
+            "name_uz": "Andijon",
+            "map_zoom": "12.760000",
+            "lat": "40.767190",
+            "lon": "72.349423",
+            "active": true,
+            "sort": 2,
+            "phone": null,
+            "slug": "andijan",
+            "bounds": "72.279319,40.702582,72.419528,40.831734",
+            "polygons": "72.279322,40.788053,72.279637,40.788544,72.280093,40.792314999999995,72.28110699999999,40.793738,72.28241,40.794729,72.28468,40.795629999999996,72.29740699999999,40.798308,72.30007499999999,40.799682,72.318251,40.823192,72.320954,40.824968999999996,72.324119,40.825769,72.326444,40.828041,72.33076,40.826097,72.347516,40.82734,72.34906099999999,40.827652,72.34938799999999,40.827847999999996,72.34926999999999,40.828292,72.352736,40.828964,72.353342,40.831737,72.355018,40.831624,72.356264,40.829009,72.356877,40.829111,72.357623,40.827393,72.35866899999999,40.82742,72.36049299999999,40.822708999999996,72.36117999999999,40.822807,72.362188,40.824045999999996,72.362617,40.824176,72.36333599999999,40.824144,72.36392599999999,40.822905,72.366142,40.823451,72.373775,40.823572999999996,72.375363,40.821388999999996,72.378002,40.822807,72.380127,40.820842999999996,72.380685,40.8211,72.38313099999999,40.819074,72.382133,40.817813,72.381586,40.815993,72.37785199999999,40.81283,72.378432,40.812422999999995,72.376136,40.809813999999996,72.37790799999999,40.809070999999996,72.387394,40.808653,72.386692,40.807155,72.39026199999999,40.807016999999995,72.393411,40.801685,72.391083,40.800413,72.389613,40.798553999999996,72.389661,40.797951,72.391025,40.797098999999996,72.393699,40.796299999999995,72.394548,40.795666,72.395774,40.795328999999995,72.395832,40.795069999999996,72.39546399999999,40.794993999999996,72.395814,40.793515,72.39675299999999,40.792491999999996,72.397931,40.791996999999995,72.399108,40.789618,72.39546,40.787628,72.396984,40.784169999999996,72.395911,40.783533999999996,72.397778,40.781349,72.39457,40.778486,72.394066,40.775949,72.389127,40.771781999999995,72.387472,40.769653,72.387665,40.769286,72.389189,40.76856,72.389811,40.76719,72.389875,40.766374,72.388652,40.764302,72.389704,40.763546999999996,72.390058,40.761319,72.389307,40.757461,72.388513,40.756963,72.387773,40.755201,72.390693,40.753962,72.390028,40.752603,72.389899,40.749324,72.389534,40.748568999999996,72.389078,40.744881,72.387608,40.744949999999996,72.38736999999999,40.743065,72.38897899999999,40.742945,72.38877,40.74106,72.388373,40.740807,72.38879399999999,40.740429,72.388448,40.739954,72.389059,40.739413,72.388333,40.738915,72.38856,40.738681,72.388314,40.738504,72.389927,40.737102,72.39237299999999,40.738073,72.394914,40.734888999999995,72.396367,40.734618,72.398834,40.736055,72.411086,40.719404,72.413726,40.719584,72.414316,40.717727,72.41944699999999,40.718047999999996,72.41953,40.716954,72.417768,40.71684,72.417918,40.715306,72.417226,40.715226,72.418095,40.714269,72.41816,40.713558,72.41713299999999,40.712951,72.417658,40.712207,72.417999,40.710277,72.417795,40.708268,72.416325,40.708169999999996,72.415869,40.705687999999995,72.412416,40.706105,72.41264799999999,40.707023,72.411593,40.707158,72.411894,40.708512999999996,72.411137,40.708635,72.411497,40.709966,72.410692,40.710015,72.410392,40.709202999999995,72.409297,40.709337999999995,72.408568,40.707844,72.406508,40.708154,72.405886,40.705888,72.404791,40.705068,72.398783,40.706047,72.39796799999999,40.707336999999995,72.398397,40.709117,72.39740499999999,40.709244,72.397936,40.710954,72.39748,40.710958,72.396973,40.711881,72.39418599999999,40.710889,72.393462,40.710301,72.390973,40.71066,72.39190099999999,40.711445999999995,72.391198,40.711749999999995,72.391831,40.712545999999996,72.39138,40.71266,72.39259299999999,40.714341999999995,72.390796,40.714983,72.390597,40.714726,72.38954,40.714816,72.38865,40.711256,72.387636,40.711517,72.38745899999999,40.711034,72.386585,40.711056,72.386021,40.712236,72.384208,40.712301,72.382218,40.711126,72.38100299999999,40.711417,72.380882,40.712134,72.379353,40.711875,72.37728299999999,40.710636,72.375115,40.704839,72.372286,40.705515,72.371968,40.704819,72.371522,40.704919,72.369928,40.704011,72.369025,40.703922999999996,72.369687,40.708407,72.370376,40.710206,72.36986399999999,40.710446,72.370127,40.710778999999995,72.36983699999999,40.710905,72.371747,40.712945999999995,72.370706,40.713265,72.369646,40.712106999999996,72.36800199999999,40.709134,72.36732099999999,40.708844,72.365599,40.704904,72.363813,40.705138,72.36358299999999,40.704474999999995,72.361041,40.703963,72.360591,40.702580999999995,72.359242,40.703116,72.359162,40.705704,72.35846599999999,40.705785,72.35893899999999,40.707335,72.359628,40.707611,72.36025599999999,40.708864,72.36150099999999,40.70995,72.36077399999999,40.710152,72.3608,40.710564,72.359516,40.710938,72.35866899999999,40.710668,72.358403,40.711779,72.35784699999999,40.711746,72.357788,40.712455999999996,72.351855,40.711824,72.350138,40.712008,72.350031,40.712657,72.351598,40.713938999999996,72.350445,40.715635,72.351652,40.715714,72.350689,40.717161,72.34777199999999,40.718025999999995,72.345764,40.719133,72.322636,40.735873,72.320227,40.736883,72.319953,40.737246999999996,72.313965,40.740358,72.312373,40.741572,72.28912,40.754293,72.28667899999999,40.754508,72.287013,40.75544,72.282979,40.757650999999996,72.28089,40.759223,72.280176,40.760235,72.279755,40.761784,72.279586,40.787334",
+            "name_en": "Andijon"
+          },
+          {
+            "id": 3,
+            "xml_id": "4976eb01-ae44-4f17-89dc-7326ca0f3eac",
+            "name": "Самарканд",
+            "name_uz": "Samarqand",
+            "map_zoom": "12.760000",
+            "lat": "39.669161",
+            "lon": "66.968915",
+            "active": true,
+            "sort": 3,
+            "phone": null,
+            "slug": "samarkand",
+            "bounds": "66.88225,39.615146,39.615146,39.723176",
+            "polygons": "66.88561,39.690591,66.885544,39.690301,66.883292,39.688939,66.88279,39.687568,66.882252,39.68501,66.882378,39.682888,66.883735,39.682749,66.88420599999999,39.680701,66.882981,39.680513999999995,66.882537,39.677932999999996,66.883661,39.677645999999996,66.884132,39.677018,66.885943,39.676292,66.886866,39.679437,66.896039,39.677143,66.901339,39.676266999999996,66.903847,39.66612,66.90664699999999,39.665983,66.906824,39.664024,66.90570799999999,39.660868,66.904686,39.655468,66.904523,39.639323999999995,66.90477299999999,39.637769999999996,66.90621999999999,39.635068,66.906735,39.635075,66.908704,39.632625,66.90848799999999,39.631194,66.908959,39.630418,66.910308,39.631040999999996,66.915573,39.62799,66.916791,39.626588999999996,66.917512,39.626643,66.918149,39.627099,66.919445,39.627233,66.920568,39.624151999999995,66.920586,39.622943,66.92376999999999,39.623039999999996,66.924187,39.622133,66.925624,39.622233,66.925715,39.622493,66.931659,39.62148,66.931873,39.622119,66.934125,39.621475,66.934095,39.619896,66.93610199999999,39.619341,66.936931,39.620201,66.93815599999999,39.619934,66.93850499999999,39.619648,66.938473,39.619164,66.942163,39.618393,66.942662,39.617961,66.94292,39.617019,66.94443799999999,39.616579,66.94691,39.616374,66.94717,39.619133,66.949891,39.618753,66.95022399999999,39.619786,66.951729,39.619895,66.95232899999999,39.621111,66.954696,39.620318999999995,66.956622,39.620097,66.961885,39.621593,66.962312,39.619748,66.96139,39.617939,66.965592,39.617416999999996,66.96672199999999,39.619425,66.96746999999999,39.621719,66.972995,39.621237,66.973883,39.62132,66.97382999999999,39.622059,66.974169,39.622045,66.975701,39.621052999999996,66.975444,39.620380999999995,66.975819,39.62019,66.976212,39.616292,66.976976,39.615147,66.97905899999999,39.616879999999995,66.983147,39.619246,66.984359,39.620345,66.986836,39.623037,66.988329,39.625766999999996,66.98831299999999,39.626505,66.98890899999999,39.626605,66.992327,39.630404999999996,66.993787,39.631031,66.994479,39.6324,66.995187,39.632881,66.995769,39.634049,66.997029,39.635335999999995,67.000366,39.635807,67.002971,39.636894,67.004328,39.637029,67.005595,39.637833,67.00838999999999,39.637969999999996,67.009113,39.638766,67.010374,39.638689,67.010891,39.639444,67.011374,39.639269999999996,67.012176,39.640153,67.012309,39.640843,67.014628,39.64049,67.015055,39.641459,67.01490799999999,39.642966,67.01519499999999,39.644324,67.01570099999999,39.644217999999995,67.016482,39.646708,67.01584199999999,39.648523999999995,67.01477799999999,39.648666,67.014945,39.649294999999995,67.014487,39.649583,67.01504899999999,39.650165,67.016685,39.649605,67.016693,39.650776,67.017116,39.650794,67.017331,39.652633,67.01760999999999,39.652674999999995,67.01790799999999,39.655218999999995,67.01470499999999,39.655404999999995,67.01536,39.659237,67.00850799999999,39.659728,67.009047,39.662067,67.009964,39.663692,67.012298,39.665611,67.023169,39.672089,67.02642999999999,39.670761,67.029541,39.671076,67.030988,39.671627,67.032787,39.671109,67.034595,39.671889,67.035168,39.672711,67.037733,39.67385,67.04138999999999,39.674225,67.04181,39.673362,67.04220699999999,39.673395,67.042979,39.674771,67.044964,39.674025,67.045771,39.674887999999996,67.04565,39.675937999999995,67.049151,39.680341999999996,67.050325,39.681081,67.05205099999999,39.681394,67.051416,39.683335,67.05192,39.684252,67.05279399999999,39.688238999999996,67.053752,39.688922,67.055576,39.689356,67.054883,39.693028,67.05384,39.693982,67.051558,39.693698999999995,67.04738,39.694247,67.042468,39.69594,67.031497,39.698266,67.030593,39.698603,67.028694,39.700694999999996,67.025615,39.701947,67.023823,39.702314,67.022342,39.701882999999995,67.018841,39.701556,67.017224,39.701898,67.011568,39.701709,66.976388,39.711663,66.973848,39.711771,66.97208499999999,39.711589,66.951168,39.706789,66.948647,39.706738,66.94881,39.70375,66.946991,39.704074,66.94654299999999,39.702563999999995,66.945995,39.70266,66.945667,39.701873,66.94745499999999,39.701285999999996,66.947339,39.699926999999995,66.947816,39.698647,66.947527,39.698046999999995,66.94776399999999,39.698060999999996,66.94798,39.696705,66.947127,39.693787,66.946591,39.693895999999995,66.946174,39.693343,66.944318,39.693128,66.942786,39.693446,66.94215799999999,39.693107999999995,66.941283,39.693182,66.93976599999999,39.694933,66.938678,39.695523,66.937393,39.695494,66.93696899999999,39.694739,66.936148,39.694514,66.934764,39.694958,66.933633,39.6947,66.930745,39.695099,66.929932,39.694925999999995,66.928236,39.695738999999996,66.925662,39.696135,66.92448399999999,39.697064999999995,66.923262,39.69665,66.92196799999999,39.697545,66.92111899999999,39.697444,66.92111,39.697167,66.920001,39.69661,66.918803,39.696963,66.918683,39.697297999999996,66.919178,39.697389,66.919,39.697825,66.918125,39.697790999999995,66.917681,39.697289,66.91695299999999,39.697641999999995,66.912824,39.697679,66.911943,39.698417,66.910106,39.698968,66.90989499999999,39.69954,66.907111,39.699556,66.903978,39.700949,66.902304,39.700883,66.900716,39.698065,66.91114499999999,39.694385,66.912347,39.693655,66.908098,39.688483",
+            "name_en": "Samarkand"
+          },
+          {
+            "id": 5,
+            "xml_id": "sdfsd5f4dsf654",
+            "name": "Фергана",
+            "name_uz": "Farg'ona",
+            "map_zoom": "12.760000",
+            "lat": "40.393562",
+            "lon": "71.793896",
+            "active": true,
+            "sort": 4,
+            "phone": null,
+            "slug": "fergana",
+            "bounds": "71.72328,40.326527,71.864513,40.46053",
+            "polygons": "71.72328,40.416789,71.724792,40.418471,71.724209,40.419658999999996,71.72679099999999,40.420859,71.727903,40.421904,71.730206,40.422883999999996,71.735083,40.429596,71.73608999999999,40.43002,71.737343,40.431435,71.73760399999999,40.431529999999995,71.737871,40.431174,71.738595,40.431439999999995,71.738208,40.433655,71.737538,40.434405,71.73818899999999,40.435555,71.736341,40.437635,71.73697,40.438652999999995,71.73601099999999,40.439701,71.73603899999999,40.440965999999996,71.73512199999999,40.441915,71.734932,40.443235,71.733823,40.444047999999995,71.732996,40.444191,71.732472,40.444742999999995,71.731708,40.444917,71.731065,40.445600999999996,71.73588,40.447688,71.73902,40.451025,71.742582,40.453424,71.74418299999999,40.453916,71.745483,40.454066999999995,71.74668299999999,40.453860999999996,71.74864,40.454381,71.74879899999999,40.454674,71.75661699999999,40.457049,71.757739,40.457499,71.75862599999999,40.458506,71.762096,40.459506,71.768597,40.460527,71.77081799999999,40.46024,71.774796,40.458932999999995,71.77673399999999,40.458728,71.78693,40.459247999999995,71.789422,40.459719,71.78998299999999,40.456754,71.790388,40.456137999999996,71.797544,40.455827,71.799926,40.456351,71.80727499999999,40.454933,71.808734,40.454876,71.809957,40.454302,71.810711,40.453319,71.81146199999999,40.449483,71.81249199999999,40.446647,71.812771,40.44627,71.813543,40.446155,71.81365,40.444811,71.813135,40.443991,71.813104,40.442166,71.81089399999999,40.43933,71.810765,40.438461,71.81123699999999,40.437953,71.810272,40.436215,71.811795,40.435428,71.81102299999999,40.432395,71.811752,40.43005,71.812997,40.429148,71.81231,40.427279,71.81421999999999,40.425688,71.814606,40.424819,71.817782,40.423556,71.818254,40.423032,71.819885,40.422753,71.82055,40.422112999999996,71.82198799999999,40.421638,71.822886,40.421914,71.825071,40.419315999999995,71.828282,40.418921999999995,71.828498,40.418012999999995,71.829025,40.417466999999995,71.831012,40.416319,71.832066,40.413978,71.831927,40.412870999999996,71.83278,40.410163999999995,71.834797,40.409048999999996,71.83534399999999,40.40804,71.83529,40.407030999999996,71.837425,40.404177,71.838653,40.399519,71.839897,40.397025,71.840283,40.396893999999996,71.840991,40.395073,71.84204299999999,40.39353,71.844596,40.390643,71.844983,40.389412,71.849768,40.381831999999996,71.850411,40.380322,71.85759999999999,40.37146,71.860947,40.369458,71.86216999999999,40.365486,71.864509,40.361678,71.861661,40.359756999999995,71.86121,40.358599,71.86412299999999,40.356552,71.8638,40.356286,71.86302599999999,40.35671,71.862594,40.35626,71.861532,40.357088999999995,71.859708,40.355788,71.853228,40.353691,71.85336699999999,40.353426999999996,71.842878,40.350452,71.84230699999999,40.351236,71.840712,40.350774,71.840009,40.351036,71.832585,40.349069,71.830407,40.348884,71.82614699999999,40.349064999999996,71.824822,40.348704,71.82318599999999,40.347023,71.819473,40.342104,71.819249,40.340737,71.820413,40.338448,71.82248899999999,40.338409,71.824018,40.337928999999995,71.824732,40.337983,71.82556,40.338327,71.825845,40.339226,71.82801599999999,40.339110999999995,71.828814,40.337976999999995,71.83075699999999,40.337616,71.83055999999999,40.336901,71.831941,40.336405,71.834582,40.336279,71.835014,40.335694,71.834761,40.334573999999996,71.833975,40.334828,71.832954,40.334219,71.831542,40.334578,71.831546,40.332771,71.831936,40.331891,71.830662,40.331302,71.830551,40.330917,71.829477,40.331120999999996,71.826908,40.330836999999995,71.826285,40.328575,71.82313599999999,40.327228999999996,71.820382,40.326526,71.819515,40.326988,71.819245,40.328106999999996,71.82003,40.328665,71.820139,40.331998,71.819192,40.331745999999995,71.819211,40.331362,71.817286,40.331826,71.81795,40.333771,71.81729299999999,40.335564,71.814694,40.337264,71.812339,40.335954,71.811877,40.336406,71.813506,40.337424,71.811915,40.338951,71.81106199999999,40.338654999999996,71.808713,40.340798,71.81039,40.342000999999996,71.808812,40.343257,71.809024,40.343516,71.807756,40.345183999999996,71.80689199999999,40.344708,71.80628899999999,40.345265999999995,71.806663,40.345717,71.804763,40.346776,71.804795,40.347023,71.804076,40.346975,71.80430199999999,40.347122999999996,71.803918,40.347404999999995,71.804328,40.34777,71.803197,40.348541,71.801216,40.347162,71.80063299999999,40.348082,71.800313,40.347971,71.799564,40.3485,71.79914,40.349115999999995,71.799906,40.349526,71.80130799999999,40.348607,71.802138,40.348985,71.802281,40.349213999999996,71.800632,40.350438,71.80178,40.350955,71.799881,40.353626,71.798277,40.352934999999995,71.797243,40.352992,71.796111,40.352367,71.79583699999999,40.352644999999995,71.796982,40.353362,71.79668099999999,40.355495,71.79611899999999,40.357045,71.79575,40.357094,71.794551,40.359082,71.79354,40.359640999999996,71.792115,40.356469,71.78879599999999,40.357074999999995,71.787899,40.356904,71.78567699999999,40.357727,71.785622,40.357137,71.784829,40.35734,71.784905,40.358025,71.782262,40.358033,71.78190099999999,40.354614,71.78147799999999,40.353676,71.779455,40.353767999999995,71.779251,40.351979,71.778651,40.351872,71.778211,40.348482,71.778812,40.344895,71.77387399999999,40.345315,71.77327,40.340367,71.769317,40.340765,71.770078,40.347423,71.768174,40.3476,71.767831,40.345197999999996,71.767378,40.345217,71.767434,40.345728,71.76412499999999,40.345855,71.764105,40.345551,71.762002,40.345777,71.764521,40.34872,71.76477799999999,40.353153,71.76327599999999,40.3544,71.762761,40.35788,71.76355699999999,40.368502,71.76079899999999,40.369561,71.754201,40.371407,71.753643,40.376207,71.752189,40.378267,71.750982,40.379038,71.75159,40.379459,71.751204,40.380258999999995,71.750501,40.38062,71.750748,40.381530999999995,71.750603,40.385424,71.747663,40.387724999999996,71.74448799999999,40.390879999999996,71.742136,40.391847,71.742462,40.392479,71.74462299999999,40.392206,71.74690799999999,40.392556,71.745925,40.394256,71.74579899999999,40.393882,71.744766,40.39393,71.744717,40.394954,71.744436,40.395137,71.744526,40.395495,71.74635099999999,40.395134999999996,71.74659199999999,40.396063,71.74685699999999,40.395990999999995,71.74698599999999,40.397377999999996,71.74148699999999,40.398095,71.740578,40.401731,71.73758699999999,40.401823,71.73716399999999,40.402533,71.73680499999999,40.40244,71.736474,40.402908,71.737022,40.403438,71.73727199999999,40.406174,71.737636,40.406673999999995,71.736604,40.406534,71.736283,40.407519,71.737571,40.407486,71.73737799999999,40.408422,71.730415,40.411727,71.7306,40.412462999999995,71.728962,40.413582,71.726784,40.414570999999995,71.725707,40.414581999999996,71.724893,40.413959,71.72438,40.414184,71.724409,40.415942",
+            "name_en": "Fergana"
+          },
+          {
+            "id": 6,
+            "xml_id": "d735c493-a20b-43a6-930d-15c4b334b6ff",
+            "name": "Бухара",
+            "name_uz": "Buxoro",
+            "map_zoom": "12.760000",
+            "lat": "39.774205",
+            "lon": "64.439735",
+            "active": true,
+            "sort": 5,
+            "phone": null,
+            "slug": "bukhara",
+            "bounds": "64.379373,39.723086,64.500097,39.825286",
+            "polygons": "64.37937,39.759040999999996,64.38114999999999,39.767058,64.381725,39.770972,64.381636,39.771988,64.38812399999999,39.777972,64.390934,39.784171,64.39219299999999,39.785498,64.408958,39.797689999999996,64.41872,39.808591,64.394565,39.822944,64.394015,39.82375,64.39382599999999,39.825193999999996,64.39439999999999,39.825016,64.39449499999999,39.825271,64.395394,39.825283999999996,64.403316,39.820403,64.40853299999999,39.822868,64.411227,39.820825,64.409114,39.818674,64.416125,39.814235,64.41866499999999,39.815089,64.416652,39.816708,64.419428,39.818034,64.42026299999999,39.818106,64.41943599999999,39.818737,64.422117,39.818508,64.422793,39.821342,64.420959,39.822745999999995,64.421264,39.823803999999996,64.422494,39.82375,64.42245799999999,39.823332,64.423287,39.823183,64.42822199999999,39.822827,64.428286,39.822182,64.43029299999999,39.822185999999995,64.43037,39.820889,64.43346799999999,39.82056,64.433951,39.821875999999996,64.43543199999999,39.821557,64.437148,39.82157,64.437309,39.819244999999995,64.439326,39.819468,64.43930499999999,39.818484,64.44079599999999,39.818401,64.44066699999999,39.817094,64.44321,39.816846,64.445174,39.817011,64.446327,39.815846,64.446107,39.81572,64.445195,39.815934999999996,64.44395,39.813531999999995,64.44601,39.812602999999996,64.445131,39.811502,64.445431,39.811355999999996,64.444895,39.810795,64.445306,39.810677,64.444988,39.810094,64.44424099999999,39.810307,64.443983,39.809878,64.441872,39.809900999999996,64.440818,39.808605,64.439927,39.806801,64.437846,39.806816999999995,64.433758,39.807950999999996,64.43496999999999,39.810342,64.432154,39.811149,64.431958,39.810683999999995,64.431065,39.81088,64.42974,39.807635999999995,64.43273599999999,39.806667999999995,64.432292,39.805895,64.431746,39.806022999999996,64.431333,39.805516999999995,64.430899,39.805606,64.430579,39.804854,64.428855,39.805203999999996,64.42851,39.80415,64.42895399999999,39.802732999999996,64.44505,39.793147,64.453271,39.782025,64.453571,39.781926,64.454869,39.782497,64.455148,39.782149,64.454312,39.781768,64.455009,39.780840999999995,64.458458,39.782311,64.458485,39.782588,64.458946,39.782745,64.46085599999999,39.784797999999995,64.463839,39.786983,64.464429,39.787016,64.464761,39.783805,64.46622099999999,39.784102999999995,64.47004,39.78272,64.471403,39.782537999999995,64.471177,39.780328,64.472336,39.78003,64.473548,39.77878,64.47331199999999,39.777439,64.472079,39.777414,64.47147799999999,39.7771,64.46725099999999,39.778772,64.46679999999999,39.777463999999995,64.467165,39.777249,64.466607,39.776305,64.470019,39.774992999999995,64.469589,39.774363,64.469107,39.774387999999995,64.468431,39.773005999999995,64.467572,39.773137999999996,64.46677799999999,39.771491,64.473804,39.769846,64.472107,39.764452,64.470671,39.761514,64.470845,39.761068,64.472565,39.759645,64.471902,39.758601,64.473998,39.757442,64.47062799999999,39.750972999999995,64.500095,39.736737999999995,64.497024,39.733826,64.49824199999999,39.732721,64.498442,39.731539,64.49699799999999,39.729586,64.496253,39.728866,64.495877,39.729039,64.49092,39.723149,64.48621899999999,39.72526,64.486547,39.725941,64.485379,39.726442999999996,64.486068,39.727312,64.4853,39.727379,64.485238,39.729247,64.481827,39.730843,64.481078,39.730187,64.47985899999999,39.730095,64.479423,39.732119999999995,64.477505,39.733027,64.47769199999999,39.734961999999996,64.481608,39.73488,64.482209,39.735592,64.483003,39.73536,64.484698,39.737621,64.48510499999999,39.737629999999996,64.482917,39.742492,64.481501,39.742906,64.481093,39.74062,64.47896899999999,39.740950999999995,64.478625,39.739618,64.475374,39.739906999999995,64.47574999999999,39.742616,64.473339,39.742851,64.472397,39.741429,64.468401,39.742318,64.467789,39.740263999999996,64.465536,39.740711,64.465214,39.739601,64.463562,39.739948999999996,64.463562,39.740247,64.462232,39.740057,64.46192599999999,39.739506,64.46,39.739435,64.45507599999999,39.73796,64.456471,39.735292,64.454904,39.734812,64.455054,39.734446999999996,64.451128,39.73347,64.442223,39.730435,64.43869699999999,39.729549999999996,64.438543,39.731956,64.436077,39.731515,64.43577499999999,39.733388,64.434705,39.733351,64.434557,39.734007999999996,64.427861,39.732003,64.425951,39.740324,64.422926,39.741192999999996,64.422924,39.741771,64.40712599999999,39.742156,64.406359,39.742345,64.405937,39.74133,64.405346,39.741139,64.405515,39.738544,64.404445,39.738783999999995,64.401674,39.738271,64.40160399999999,39.738763999999996,64.399577,39.739002,64.399188,39.737978999999996,64.397503,39.738358,64.397661,39.738924999999995,64.39676299999999,39.739095,64.397738,39.744085999999996,64.39836799999999,39.745052,64.397241,39.745425,64.396946,39.745053999999996,64.393298,39.74646,64.393524,39.746845,64.390428,39.748025,64.39061099999999,39.748315,64.38799,39.749175,64.388273,39.749666,64.386983,39.749973,64.387149,39.750653,64.387468,39.750591,64.388409,39.751489,64.391904,39.750803999999995,64.39401699999999,39.754762,64.39418599999999,39.755646,64.387813,39.754850999999995,64.388393,39.755662,64.38686899999999,39.756406999999996,64.387706,39.757284999999996,64.386547,39.757501,64.387706,39.760217,64.38717,39.760298999999996,64.386354,39.759836,64.384917,39.759836,64.383951,39.760464999999996,64.383028,39.759952",
+            "name_en": "Bukhara"
+          },
+          {
+            "id": 18,
+            "xml_id": "07568520-d7cf-42d5-9064-80d941e53082",
+            "name": "Маргилан",
+            "name_uz": "Marg'ilon",
+            "map_zoom": "11.760000",
+            "lat": "40.470773",
+            "lon": "71.730826",
+            "active": true,
+            "sort": 6,
+            "phone": null,
+            "slug": "margilan",
+            "bounds": null,
+            "polygons": null,
+            "name_en": "Margilan"
+          },
+          {
+            "id": 19,
+            "xml_id": "adec8cc0-f033-4729-b6a6-7fd71c80069b",
+            "name": "Нукус",
+            "name_uz": "Nukus",
+            "map_zoom": "11.760000",
+            "lat": "42.460341",
+            "lon": "59.617996",
+            "active": true,
+            "sort": 7,
+            "phone": null,
+            "slug": "nukus",
+            "bounds": "59.30794,42.36383744,59.915278,42.54917044",
+            "polygons": "59.542611,42.484272999999995,59.543822999999996,42.4839,59.562979,42.483418,59.575889,42.478941999999996,59.577984,42.479245999999996,59.587816,42.482124999999996,59.592489,42.484083,59.59095,42.486484999999995,59.589839999999995,42.489830999999995,59.576907999999996,42.490418999999996,59.577622999999996,42.499142,59.589586,42.498740999999995,59.589051,42.504082,59.586866,42.503993,59.586555999999995,42.509974,59.585204999999995,42.51378,59.585209,42.515181,59.585665,42.515674999999995,59.588159999999995,42.514713,59.588027,42.519028,59.588834999999996,42.523053999999995,59.589281,42.529641,59.590171,42.532363,59.589774,42.534127999999995,59.588068,42.536578999999996,59.58817,42.537614999999995,59.592037999999995,42.540288,59.592684999999996,42.544402999999996,59.598780999999995,42.550554,59.600626,42.55299,59.603705999999995,42.554029,59.606891,42.553926,59.613851999999994,42.555512,59.621379,42.558406,59.623014999999995,42.557319,59.627314999999996,42.557238,59.629014999999995,42.55686,59.629171,42.555237999999996,59.630331,42.554570999999996,59.629676999999994,42.552690999999996,59.628788,42.550636,59.624787,42.545432,59.6395,42.540378,59.651699,42.536693,59.644408999999996,42.524766,59.640822,42.520302,59.639759999999995,42.518175,59.638659999999994,42.517753,59.648216999999995,42.509519,59.670246,42.480934,59.672939,42.478583,59.674043999999995,42.475764,59.679804999999995,42.468036,59.680609999999994,42.461903,59.67885,42.448119,59.674454,42.427063,59.676856,42.424817999999995,59.675095999999996,42.423685,59.676016999999995,42.422633999999995,59.674057999999995,42.418054,59.646578999999996,42.358377999999995,59.642191999999994,42.355315,59.634578,42.354571,59.627215,42.356395,59.622724,42.358891,59.619088999999995,42.365297999999996,59.615472999999994,42.368767,59.613251999999996,42.369459,59.613059,42.370199,59.612210999999995,42.370466,59.61286,42.372709,59.612221999999996,42.375875,59.612463,42.378107,59.611743,42.383848,59.604023999999995,42.385904,59.601102,42.385856,59.597831,42.384518,59.595841,42.384585,59.594435999999995,42.387083,59.594575,42.388777,59.593137999999996,42.391918,59.586746999999995,42.401824999999995,59.585407,42.406911,59.585594,42.412441,59.587371999999995,42.419325,59.587776,42.428284999999995,59.586915,42.433088999999995,59.586078,42.43483,59.584233999999995,42.437,59.583078,42.437695999999995,59.576454999999996,42.436961,59.570549,42.438248,59.568684,42.439648,59.564446,42.441423,59.561324,42.443624,59.560852,42.443372,59.560207999999996,42.44385,59.559563999999995,42.446978,59.559777,42.450835,59.558983999999995,42.455126,59.557247,42.459151,59.556233,42.458977999999995,59.555394,42.461276999999995,59.556639999999994,42.461503,59.555198999999995,42.464642999999995,59.55511,42.465714999999996,59.555881,42.465967,59.553905,42.467791,59.554748,42.468317,59.550762999999996,42.472401999999995,59.550808999999994,42.473375,59.549769999999995,42.475383,59.549096999999996,42.476101,59.547149,42.476836999999996,59.545367999999996,42.478122",
+            "name_en": "Nukus"
+          },
+          {
+            "id": 22,
+            "xml_id": "9ca73931-2d3d-48a4-9e10-6b483e75ed2c",
+            "name": "Чирчик",
+            "name_uz": "Чирчик",
+            "map_zoom": "11.760000",
+            "lat": "41.461957",
+            "lon": "69.578714",
+            "active": true,
+            "sort": 11,
+            "phone": null,
+            "slug": "chirchiq",
+            "bounds": "69.520189,41.422339,69.64262,41.527092",
+            "polygons": "69.520192,41.450548999999995,69.521856,41.451668,69.522069,41.453426,69.52267499999999,41.454915,69.52256299999999,41.455349999999996,69.523223,41.455299,69.524216,41.455780999999995,69.524451,41.456427,69.52488,41.456347,69.527424,41.457772999999996,69.528185,41.456447,69.533924,41.459342,69.535581,41.457813,69.54025399999999,41.460538,69.543309,41.46265,69.543234,41.463549,69.543802,41.464154,69.54445299999999,41.464406,69.545309,41.464386999999995,69.546134,41.465016999999996,69.547541,41.464365,69.54775599999999,41.464569,69.54825199999999,41.464293,69.54871,41.464690999999995,69.548997,41.464528,69.55089199999999,41.466515,69.55188,41.467186999999996,69.555889,41.463739,69.557187,41.462104,69.55933,41.465357,69.558179,41.4658,69.55855199999999,41.466688,69.558413,41.467031,69.55905299999999,41.467605,69.558796,41.467672,69.56094999999999,41.469742,69.562698,41.470299999999995,69.56385999999999,41.473456,69.564985,41.474714,69.565338,41.475561,69.56693299999999,41.475739,69.567401,41.477188,69.566918,41.477351,69.567504,41.478407,69.56655099999999,41.478711,69.56804699999999,41.481373999999995,69.569495,41.48095,69.569694,41.481277,69.57110399999999,41.480855999999996,69.571688,41.481249999999996,69.571955,41.481165999999995,69.57269699999999,41.482284,69.572411,41.482648999999995,69.572699,41.483039,69.571529,41.483616999999995,69.571072,41.482794999999996,69.566377,41.484313,69.567895,41.48636,69.565623,41.488132,69.56547499999999,41.487991,69.563709,41.488924,69.563773,41.489264,69.56284,41.489537999999996,69.563013,41.491322,69.562001,41.492096,69.562071,41.493261,69.564387,41.493334,69.56786199999999,41.494378999999995,69.573801,41.496964999999996,69.573044,41.497789,69.57324299999999,41.49794,69.581116,41.501213,69.581897,41.500192999999996,69.590391,41.503507,69.592199,41.506341,69.599577,41.509494,69.60625399999999,41.513121999999996,69.619053,41.514810999999995,69.620026,41.516321,69.622389,41.518367999999995,69.625795,41.522889,69.628846,41.525611999999995,69.629795,41.527094,69.630366,41.52681,69.630143,41.524411,69.630606,41.523785,69.63107699999999,41.523464,69.63269799999999,41.523272,69.633427,41.522090999999996,69.636093,41.521896999999996,69.63662099999999,41.522144999999995,69.639338,41.519023,69.642477,41.516573,69.642535,41.513354,69.63699199999999,41.51208,69.634135,41.511843,69.633736,41.511632,69.63263599999999,41.508547,69.632204,41.508109999999995,69.631248,41.507887,69.630535,41.5074,69.628979,41.504144,69.62625899999999,41.503271999999996,69.62456399999999,41.502106,69.621597,41.498255,69.61940799999999,41.49648,69.617131,41.493435,69.616747,41.490688,69.616382,41.49013,69.61577,41.489685,69.612302,41.488710999999995,69.611504,41.488056,69.61130899999999,41.48748,69.611661,41.485901,69.611532,41.485006,69.609933,41.483053,69.609499,41.480149,69.610343,41.479093999999996,69.610485,41.477351,69.608077,41.472524,69.607562,41.470045999999996,69.606151,41.467631999999995,69.605918,41.465720999999995,69.60392999999999,41.463570999999995,69.60463299999999,41.460018,69.603212,41.456677,69.600218,41.451043,69.599451,41.450373,69.59879699999999,41.448315,69.59654499999999,41.445736,69.595992,41.444283999999996,69.594698,41.442986,69.593701,41.441213999999995,69.593363,41.437749,69.592531,41.435978999999996,69.58944799999999,41.432224,69.588506,41.43146,69.586823,41.430980999999996,69.58313199999999,41.431185,69.58116799999999,41.430955999999995,69.576959,41.429055,69.57511699999999,41.427817999999995,69.574765,41.428582999999996,69.573275,41.42791,69.571842,41.428616,69.570635,41.427918,69.568806,41.42911,69.571049,41.431269,69.57352,41.432235,69.574842,41.433963999999996,69.574835,41.434613999999996,69.572054,41.435742999999995,69.57099,41.435424,69.570542,41.434728,69.56924699999999,41.434112,69.56878999999999,41.434366,69.567792,41.433710999999995,69.566679,41.434854,69.567295,41.435187,69.566632,41.435877999999995,69.56540799999999,41.436417,69.561345,41.435094,69.560131,41.434328,69.55969,41.434429,69.557935,41.436091999999995,69.55425699999999,41.43476,69.55402099999999,41.435131999999996,69.54495,41.428458,69.534543,41.422336,69.53370199999999,41.423325999999996,69.534027,41.424295,69.53331299999999,41.426263999999996,69.53192299999999,41.42734,69.529888,41.425961,69.524656,41.430384,69.52669,41.432085,69.52842799999999,41.43291,69.529259,41.433583,69.530153,41.436696,69.527067,41.437318,69.52593399999999,41.437926999999995,69.526467,41.438713,69.52615,41.439060999999995,69.52526399999999,41.43889,69.525082,41.43909,69.52532,41.440197999999995,69.524436,41.440538,69.527097,41.443645,69.52684099999999,41.443765,69.527369,41.444109999999995,69.526112,41.445718,69.527424,41.446421,69.526588,41.447351999999995,69.52651399999999,41.447811,69.522003,41.448285999999996,69.521875,41.450286999999996",
+            "name_en": "Chirchiq"
+          },
+          {
+            "id": 23,
+            "xml_id": "7d9a1985-9e1a-46ec-b82e-94eca1204b04",
+            "name": "Коканд",
+            "name_uz": "Коканд",
+            "map_zoom": "11.760000",
+            "lat": "40.532708",
+            "lon": "70.938040",
+            "active": true,
+            "sort": 12,
+            "phone": null,
+            "slug": "kokand",
+            "bounds": "70.890281,40.500294,70.985799,40.565106",
+            "polygons": "70.890278,40.518597,70.893733,40.519588,70.892219,40.522162,70.895122,40.522728,70.89509,40.523089999999996,70.89420299999999,40.52402,70.89485599999999,40.524694,70.894582,40.526046,70.89531099999999,40.526187,70.89524899999999,40.526509999999995,70.89684,40.526714999999996,70.896958,40.527046,70.89787299999999,40.52729,70.897498,40.528192,70.898945,40.528436,70.903155,40.530722999999995,70.900033,40.534327999999995,70.90301099999999,40.535193,70.90259999999999,40.536879,70.902923,40.536916,70.902806,40.537411,70.902408,40.537911,70.90182999999999,40.539815999999995,70.90370899999999,40.54208,70.904063,40.542134999999995,70.905986,40.544526,70.907181,40.544595,70.908113,40.546237999999995,70.92478,40.565107999999995,70.926519,40.564135,70.927298,40.563382999999995,70.928789,40.561426,70.92982099999999,40.558937,70.930331,40.558482999999995,70.93082199999999,40.558443,70.93387,40.559090999999995,70.93501599999999,40.559086,70.938625,40.558529,70.94330599999999,40.557126,70.94511899999999,40.556877,70.954927,40.557185,70.95541399999999,40.55761,70.956482,40.558133999999995,70.956685,40.558102999999996,70.959154,40.559568999999996,70.96436899999999,40.563184,70.96516799999999,40.561384,70.965778,40.560542999999996,70.966197,40.55838,70.968353,40.557234,70.968722,40.556827999999996,70.969228,40.554082,70.97252999999999,40.555246,70.97317,40.554480999999996,70.978219,40.550311,70.97963299999999,40.548414,70.97988,40.548497,70.980009,40.548373999999995,70.98076,40.548798999999995,70.981152,40.548456,70.98280199999999,40.549202,70.982991,40.549084,70.983133,40.548353999999996,70.98299999999999,40.547301999999995,70.98396,40.544027,70.98382099999999,40.543561,70.983325,40.543028,70.983291,40.540859999999995,70.983582,40.539865999999996,70.984324,40.539766,70.985151,40.538947,70.985795,40.537288,70.98428299999999,40.536648,70.984445,40.535835,70.983392,40.535807999999996,70.983407,40.535568,70.981494,40.535472,70.981081,40.536311999999995,70.979164,40.535626,70.979314,40.535357,70.979292,40.53357,70.979068,40.532706999999995,70.978369,40.531622999999996,70.977869,40.5291,70.97796,40.526782,70.97901999999999,40.526610999999995,70.97898099999999,40.526295,70.97845099999999,40.525923999999996,70.97888499999999,40.525535999999995,70.977464,40.524969999999996,70.977608,40.524547,70.97851399999999,40.523674,70.97745499999999,40.523033,70.976564,40.521875,70.97602499999999,40.520136,70.975222,40.519225,70.974059,40.518460999999995,70.973472,40.517854,70.97247999999999,40.517444,70.97021699999999,40.517196,70.970218,40.516946999999995,70.96767899999999,40.517503999999995,70.96689099999999,40.516635,70.965985,40.516650999999996,70.96598,40.516797,70.964805,40.516929999999995,70.962854,40.516203999999995,70.962673,40.516268,70.960692,40.514624,70.956885,40.513169,70.956844,40.512921,70.95499699999999,40.512588,70.952765,40.512418,70.952725,40.50851,70.94990899999999,40.509011,70.950086,40.507794,70.95029199999999,40.507782999999996,70.950265,40.507151,70.948101,40.507587,70.948154,40.506912,70.946693,40.506747,70.94688,40.505189,70.944043,40.504836999999995,70.94336799999999,40.506862,70.938388,40.505680999999996,70.931766,40.503357,70.93018599999999,40.502956,70.923172,40.501811,70.922603,40.500291999999995,70.91919,40.502908999999995,70.920144,40.503654999999995,70.908619,40.512240999999996,70.907206,40.512831999999996,70.903909,40.513675,70.898303,40.513984,70.89769199999999,40.513902,70.896948,40.513523,70.89550299999999,40.516293,70.89295,40.515609",
+            "name_en": "Kokand"
+          }
+        ]
       }
     },
     {
@@ -690,6 +709,527 @@
       "data": {
         "__scenes": {},
         "__language_code": "en"
+      }
+    },
+    {
+      "id": "5253383136:5253383136",
+      "data": {
+        "__scenes": {
+          "current": "mainMenu",
+          "state": {}
+        },
+        "language": "ru",
+        "registered": true,
+        "phone": "998977501057",
+        "currentCity": "6",
+        "__language_code": "ru",
+        "selectedCity": 6,
+        "isAuthenticated": true,
+        "deliveryType": "pickup",
+        "step": "pickup.chooseBranch",
+        "selectedBranch": 19,
+        "selectedCategory": {
+          "id": 3,
+          "attribute_data": {
+            "name": {
+              "chopar": {
+                "ru": "Детям",
+                "uz": "Bolajonlarga",
+                "en": "For kids"
+              }
+            },
+            "xml_id": {
+              "chopar": {
+                "ru": "Детям",
+                "uz": "",
+                "val": "63eb066f-6bcd-4d0e-92a8-f067b7553ec7"
+              }
+            }
+          },
+          "_lft": 13,
+          "_rgt": 14,
+          "parent_id": null,
+          "created_at": "2021-11-04T17:06:12.000000Z",
+          "updated_at": "2025-04-29T07:16:29.000000Z",
+          "sort": "min_price:asc",
+          "layout_id": null,
+          "drafted_at": null,
+          "draft_parent_id": null,
+          "active": 1,
+          "half_mode": 0,
+          "order": 10,
+          "icon": "👶",
+          "cities": null
+        },
+        "products": [
+          {
+            "id": 12,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Kids box longer BOY",
+                  "ru": "Кидс бокс лонгер М",
+                  "uz": "Kids box longer O'"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Кидс бокс лонгер BOY",
+                  "uz": "",
+                  "val": "62ae3f0d-3e2a-4651-ae17-7c247b1036d5"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Mini longer, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лонгер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Longer-mini, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-08-13T11:19:04.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Кидс бокс лонгер М",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 1,
+            "weight": 580,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/UoE6NAte3lFDXCNHMk4MBkd4pXWdpowTDE7nFvWJ.webp",
+            "modifiers": [
+              {
+                "id": 1,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без помидора",
+                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 2,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соуса",
+                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 3,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без льда",
+                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 4,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соленых огурцов",
+                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 5,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без майонеза",
+                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 6,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без салатного листа",
+                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 7,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без лука",
+                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 8,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без кетчупа",
+                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              }
+            ],
+            "variants": []
+          },
+          {
+            "id": 13,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Kids box longer GIRL",
+                  "ru": "Кидс бокс лонгер Д",
+                  "uz": "Kids box longer Q"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Кидс бокс лонгер GIRL",
+                  "uz": "",
+                  "val": "14d34dd8-9f6f-4551-a428-69f0c97ebb6a"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Mini longer, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лонгер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Longer-mini, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-08-13T11:19:19.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Кидс бокс лонгер Д",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 1,
+            "weight": 580,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/10/13/ECQo2Gm2zzpDgb2RP4DXO2qZVqac6zAURKetkKR3.webp",
+            "modifiers": [
+              {
+                "id": 1,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без помидора",
+                "xml_id": "c7a358ec-b893-4766-be09-1c3cb49ba712",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 2,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соуса",
+                "xml_id": "ff97bc25-2624-49d4-a0ca-2d00d2fd82ce",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 3,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без льда",
+                "xml_id": "eb1ff1cf-a5d5-4fa9-9943-2eb902ca7908",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 4,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без соленых огурцов",
+                "xml_id": "3b2dc44d-a803-4f88-a861-3a09515976ee",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 5,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без майонеза",
+                "xml_id": "93b6d7b0-4e80-4fb8-b05e-3d7fecca7317",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 6,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без салатного листа",
+                "xml_id": "4428db1d-169b-4038-8065-65100e0ee2d1",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 7,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без лука",
+                "xml_id": "df4ed606-962b-4e66-aac3-e4437c39b6a6",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              },
+              {
+                "id": 8,
+                "created_at": "2021-11-04T17:06:12.000000Z",
+                "updated_at": "2021-11-04T17:06:12.000000Z",
+                "name": "без кетчупа",
+                "xml_id": "e18417c0-f191-47ab-88b0-ee800288bf3c",
+                "price": 0,
+                "weight": 0,
+                "groupId": "8bf0d581-ed5e-4510-8f3b-dd151add412e",
+                "name_uz": null,
+                "assets": []
+              }
+            ],
+            "variants": []
+          },
+          {
+            "id": 28,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Kids box lester BOY",
+                  "ru": "Кидс бокс лестер М",
+                  "uz": "Kids box lester O'"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Кидс бокс лестер  BOY",
+                  "uz": "",
+                  "val": "7ddabf47-571a-4771-bb60-23f58315ddfe"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Mini lester, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лестер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Mini lester, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-08-13T11:19:59.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Кидс бокс лестер М",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 1,
+            "weight": 588,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/n2jbtlfOgfAxTAqI1TdkavBfIQYMtRfPO6pWgF4K.webp",
+            "variants": []
+          },
+          {
+            "id": 39,
+            "attribute_data": {
+              "name": {
+                "chopar": {
+                  "en": "Kids box lester GIRL",
+                  "ru": "Кидс бокс лестер Д",
+                  "uz": "Kids box lester Q"
+                }
+              },
+              "xml_id": {
+                "chopar": {
+                  "ru": "Кидс бокс лестер GIRL",
+                  "uz": "",
+                  "val": "24647879-91e4-4323-9a86-36dbf9225ae2"
+                }
+              },
+              "description": {
+                "chopar": {
+                  "en": "<p>Mini lester, French fries, juice 125 ml, toy</p>",
+                  "ru": "<p>Мини лестер, картошка фри, сок 125 мл, игрушка</p>",
+                  "uz": "<p>Mini lester, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
+                }
+              }
+            },
+            "option_data": [],
+            "created_at": "2021-11-04T17:06:13.000000Z",
+            "updated_at": "2024-08-13T11:20:08.000000Z",
+            "deleted_at": null,
+            "product_family_id": 2,
+            "layout_id": null,
+            "group_pricing": 0,
+            "drafted_at": null,
+            "draft_parent_id": null,
+            "custom_name": "Кидс бокс лестер Д",
+            "product_id": null,
+            "custom_name_uz": null,
+            "active": 1,
+            "modifier_prod_id": null,
+            "box_id": null,
+            "sort": 1,
+            "weight": 588,
+            "additional_sales": null,
+            "weight_unit": "g",
+            "is_double_parent": null,
+            "is_double_child": null,
+            "price": "44000.00000",
+            "category_id": 3,
+            "image": "https://api.lesailes.uz/storage/products/2022/09/19/GoFai5LPyo1m6rDqc1NFiqnmRaV8dvvbxOtxBA0F.webp",
+            "variants": []
+          }
+        ],
+        "selectedProduct": {
+          "id": 28,
+          "attribute_data": {
+            "name": {
+              "chopar": {
+                "en": "Kids box lester BOY",
+                "ru": "Кидс бокс лестер М",
+                "uz": "Kids box lester O'"
+              }
+            },
+            "xml_id": {
+              "chopar": {
+                "ru": "Кидс бокс лестер  BOY",
+                "uz": "",
+                "val": "7ddabf47-571a-4771-bb60-23f58315ddfe"
+              }
+            },
+            "description": {
+              "chopar": {
+                "en": "<p>Mini lester, French fries, juice 125 ml, toy</p>",
+                "ru": "<p>Мини лестер, картошка фри, сок 125 мл, игрушка</p>",
+                "uz": "<p>Mini lester, fri kartoshkasi, sharbat 125 ml, o'yinchoq</p>"
+              }
+            }
+          },
+          "option_data": [],
+          "created_at": "2021-11-04T17:06:13.000000Z",
+          "updated_at": "2024-08-13T11:19:59.000000Z",
+          "deleted_at": null,
+          "product_family_id": 2,
+          "layout_id": null,
+          "group_pricing": 0,
+          "drafted_at": null,
+          "draft_parent_id": null,
+          "custom_name": "Кидс бокс лестер М",
+          "product_id": null,
+          "custom_name_uz": null,
+          "active": 1,
+          "modifier_prod_id": null,
+          "box_id": null,
+          "sort": 1,
+          "weight": 588,
+          "additional_sales": null,
+          "weight_unit": "g",
+          "is_double_parent": null,
+          "is_double_child": null,
+          "price": "44000.00000",
+          "category_id": 3,
+          "image": "https://api.lesailes.uz/storage/products/2022/09/19/n2jbtlfOgfAxTAqI1TdkavBfIQYMtRfPO6pWgF4K.webp",
+          "variants": []
+        },
+        "productQuantities": {
+          "28": 1
+        },
+        "cart": {
+          "items": [],
+          "total": 0,
+          "updatedAt": "2025-06-10T13:24:40.414Z"
+        },
+        "previousScene": "products",
+        "selectedPickupTime": "✅ Ближайшее время",
+        "selectedPaymentMethod": "📱 Payme",
+        "expectingAdditionalPhone": false,
+        "additionalPhone": "не указан",
+        "expectingCutleryChoice": false,
+        "includeCutlery": false,
+        "expectingOrderConfirmation": false
       }
     }
   ]

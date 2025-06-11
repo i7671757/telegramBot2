@@ -250,40 +250,16 @@ console.log('Feedback command received in callback scene, reloading the scene');
 await ctx.scene.reenter(); // Reenter the same scene to reset it
 });
 
-// Cart functionality
-const userCarts = new Map<number, {items: Array<{id: number, name: string, price: number, quantity: number}>, total: number}>();
+import { cartService } from '../services/CartService';
 
-// Initialize cart for user if it doesn't exist
-function getOrCreateCart(userId: number, ctx?: AuthContext) {
-  if (!userCarts.has(userId)) {
-    // Try to restore cart from session
-    let cartData: {items: Array<{id: number, name: string, price: number, quantity: number}>, total: number} = { items: [], total: 0 };
-    
-    if (ctx?.session?.cart) {
-      // If session has cart data, use it
-      cartData = {
-        items: ctx.session.cart.items || [] as Array<{id: number, name: string, price: number, quantity: number}>,
-        total: ctx.session.cart.total || 0
-      };
-      console.log(`Restored cart from session for user ${userId}: ${cartData.items.length} items, total: ${cartData.total}`);
-    }
-    
-    userCarts.set(userId, cartData);
-  }
-  return userCarts.get(userId)!;
+// Legacy exports for backward compatibility - will be removed after full migration
+export const userCarts = new Map();
+export function getOrCreateCart(userId: number, ctx?: AuthContext) {
+  return cartService.getOrCreateCart(userId, ctx);
 }
-
-// Function to sync cart changes back to session
-function syncCartToSession(userId: number, ctx: AuthContext) {
-  const cart = userCarts.get(userId);
-  if (cart && ctx.session) {
-    ctx.session.cart = {
-      items: cart.items,
-      total: cart.total,
-      updatedAt: new Date().toISOString()
-    };
-    console.log(`Synced cart to session for user ${userId}: ${cart.items.length} items, total: ${cart.total}`);
-  }
+export function syncCartToSession(userId: number, ctx: AuthContext) {
+  // This is now handled automatically by CartService
+  console.log('syncCartToSession called - now handled by CartService');
 }
 
   // Show cart contents
@@ -298,10 +274,8 @@ async function showCart(ctx: AuthContext) {
     }
 
     console.log(`Showing cart for user ${userId}`);
-    const cart = getOrCreateCart(userId, ctx);
-    console.log(`Cart has ${cart.items.length} items, total: ${cart.total}`);
-
-    if (cart.items.length === 0) {
+    
+    if (cartService.isEmpty(userId, ctx)) {
       console.log('Cart is empty, showing empty message');
       await ctx.reply(
         ctx.i18n.t('cart.empty') || 'Ваша корзина пуста',
@@ -311,6 +285,9 @@ async function showCart(ctx: AuthContext) {
       );
       return;
     }
+
+    const cart = cartService.getCart(userId, ctx);
+    console.log(`Cart has ${cart.items.length} items, total: ${cart.total}`);
 
     // Build cart message with numbered items
     let cartMessage = `🛒 <b>${ctx.i18n.t('cart.title') || 'Ваша корзина'}:</b>\n\n`;
@@ -367,9 +344,7 @@ async function updateCartMessage(ctx: AuthContext) {
     const userId = ctx.from?.id;
     if (!userId) return;
 
-    const cart = getOrCreateCart(userId, ctx);
-
-    if (cart.items.length === 0) {
+    if (cartService.isEmpty(userId, ctx)) {
       // If cart is empty, delete the message and show empty cart
       try {
         await ctx.deleteMessage();
@@ -379,6 +354,8 @@ async function updateCartMessage(ctx: AuthContext) {
       await showCart(ctx);
       return;
     }
+
+    const cart = cartService.getCart(userId, ctx);
 
     // Build cart message with numbered items
     let cartMessage = `🛒 <b>${ctx.i18n.t('cart.title') || 'Ваша корзина'}:</b>\n\n`;
@@ -435,16 +412,8 @@ categoriesScene.action(/remove_item_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId, ctx);
-  
-  // Remove item from cart
-  cart.items = cart.items.filter(item => item.id !== itemId);
-  
-  // Recalculate total
-  cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-  
-  // Sync changes to session
-  syncCartToSession(userId, ctx);
+  // Use CartService to remove item
+  cartService.removeItem(userId, itemId, ctx);
   
   await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
   
@@ -459,22 +428,14 @@ categoriesScene.action(/increase_cart_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId, ctx);
-  
-  // Find and increase quantity
+  const cart = cartService.getCart(userId, ctx);
   const item = cart.items.find(item => item.id === itemId);
+  
   if (item && item.quantity < 20) {
-    item.quantity++;
-    
-    // Recalculate total
-    cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-    
-    // Sync changes to session
-    syncCartToSession(userId, ctx);
+    // Use CartService to update quantity
+    cartService.updateQuantity(userId, itemId, item.quantity + 1, ctx);
     
     await ctx.answerCbQuery();
-    
-    // Update cart message instead of recreating it
     await updateCartMessage(ctx);
   } else {
     await ctx.answerCbQuery(ctx.i18n.t('cart.max_quantity') || 'Максимальное количество: 20');
@@ -488,39 +449,21 @@ categoriesScene.action(/decrease_cart_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId, ctx);
-  
-  // Find and decrease quantity
+  const cart = cartService.getCart(userId, ctx);
   const item = cart.items.find(item => item.id === itemId);
+  
   if (item) {
     if (item.quantity > 1) {
-      item.quantity--;
-      
-      // Recalculate total
-      cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-      
-      // Sync changes to session
-      syncCartToSession(userId, ctx);
-      
+      // Use CartService to update quantity
+      cartService.updateQuantity(userId, itemId, item.quantity - 1, ctx);
       await ctx.answerCbQuery();
-      
-      // Update cart message instead of recreating it
-      await updateCartMessage(ctx);
     } else {
       // If quantity is 1, remove the item
-      cart.items = cart.items.filter(item => item.id !== itemId);
-      
-      // Recalculate total
-      cart.total = cart.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-      
-      // Sync changes to session
-      syncCartToSession(userId, ctx);
-      
+      cartService.removeItem(userId, itemId, ctx);
       await ctx.answerCbQuery(ctx.i18n.t('cart.item_removed') || 'Товар удален из корзины');
-      
-      // Update cart message instead of recreating it
-      await updateCartMessage(ctx);
     }
+    
+    await updateCartMessage(ctx);
   }
 });
 
@@ -529,7 +472,7 @@ categoriesScene.action(/item_quantity_(\d+)/, async (ctx) => {
   const userId = ctx.from?.id;
   if (!userId) return;
   
-  const cart = getOrCreateCart(userId, ctx);
+  const cart = cartService.getCart(userId, ctx);
   const item = cart.items.find(item => item.id === itemId);
   
   if (item) {
@@ -539,5 +482,4 @@ categoriesScene.action(/item_quantity_(\d+)/, async (ctx) => {
 
 
 
-// Export cart functions for use in other scenes
-export { getOrCreateCart, userCarts, syncCartToSession }; 
+// Cart functions are now exported above near their definitions 

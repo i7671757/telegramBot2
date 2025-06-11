@@ -25,7 +25,7 @@ export interface AuthSession {
   selectedCategory?: any;
   cities?: any[];
   userName?: string;
-  products?: any[];
+  products?: any;
   productQuantities?: Record<string, number>;
   selectedProduct?: any;
   ratings?: {
@@ -48,6 +48,8 @@ export interface AuthSession {
   includeCutlery?: boolean;
   expectingOrderConfirmation?: boolean;
   lastViewedOrder?: string;
+  // Поле для отслеживания изменений сессии
+  _isDirty?: boolean;
 }
 
 export interface AuthContext extends Context {
